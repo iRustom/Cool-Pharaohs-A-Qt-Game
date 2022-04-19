@@ -18,6 +18,13 @@ int main(int argc, char *argv[])
     QBrush brush(Qt::black);
     view.setBackgroundBrush(brush);
 
+    //creating scene and item
+    QGraphicsScene* scene= new QGraphicsScene();
+    QPixmap p("arabRight.png");
+    p=p.scaledToWidth(50);
+    p=p.scaledToHeight(50);
+    QGraphicsPixmapItem player(p);
+
     //object of class game created
     return a.exec();
 }
