@@ -18,3 +18,4 @@ int main(int argc, char *argv[])
     view.setBackgroundBrush(brush);
     return a.exec();
 }
+//hello world
