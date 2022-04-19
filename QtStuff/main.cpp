@@ -11,7 +11,7 @@
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
-    MainWindow w;
-    w.show();
+    QGraphicsView view;
+    view.setFixedSize(600,600);
     return a.exec();
 }
