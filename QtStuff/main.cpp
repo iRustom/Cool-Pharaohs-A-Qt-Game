@@ -14,5 +14,7 @@ int main(int argc, char *argv[])
     QGraphicsView view;
     view.setFixedSize(600,600);
     view.setWindowTitle("Cool Pharaoh Fights Bad Guys");
+    QBrush brush(Qt::black);
+    view.setBackgroundBrush(brush);
     return a.exec();
 }
