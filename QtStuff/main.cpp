@@ -13,5 +13,6 @@ int main(int argc, char *argv[])
     QApplication a(argc, argv);
     QGraphicsView view;
     view.setFixedSize(600,600);
+    view.setWindowTitle("Cool Pharaoh Fights Bad Guys");
     return a.exec();
 }
