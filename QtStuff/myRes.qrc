@@ -1,0 +1,8 @@
+<RCC>
+    <qresource prefix="/images">
+        <file>arabRight.png</file>
+        <file>sand.jpg</file>
+        <file>sandStone.jpg</file>
+        <file>arabLeft.png</file>
+    </qresource>
+</RCC>

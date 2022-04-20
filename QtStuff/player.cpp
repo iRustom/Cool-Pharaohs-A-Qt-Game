@@ -1,11 +1,11 @@
 #include "player.h"
-#include <stdlib.h>
+#include <QDebug>
 player::player()
 {
 
-    QPixmap p("arabRight.png");
-    p=p.scaledToWidth(50);
-    p=p.scaledToHeight(50);
+    QPixmap p(":/images/arabRight.png");
+    //p=p.scaledToWidth(50);
+    //p=p.scaledToHeight(50);
     setPixmap(p);
 
     row = 1;
@@ -15,21 +15,5 @@ player::player()
 }
 void player::keyPressEvent(QKeyEvent* event)
 {
-    if(event->key()==Qt::Key_Up)
-    {
-        row--;
-    }
-    else if(event->key()==Qt::Key_Down)
-    {
-        row++;
-    }
-    else if(event->key()==Qt::Key_Left)
-    {
-        column--;
-    }
-    else if(event->key()==Qt::Key_Right)
-    {
-        column++;
-    }
-    setPos(50+50*column,50+50*row);
+    qDebug() << "Key was pressed";
 }
