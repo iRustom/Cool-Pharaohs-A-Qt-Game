@@ -1,8 +1,9 @@
 #ifndef BULLET_H
 #define BULLET_H
+#include <QGraphicsRectItem>
 
 
-class Bullet
+class Bullet: public QGraphicsRectItem
 {
 public:
     Bullet();

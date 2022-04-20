@@ -1,5 +1,7 @@
 #include "testing.h"
 #include <QKeyEvent>
+#include <QGraphicsScene>
+#include "bullet.h"
 Testing::Testing()
 {
 
@@ -22,5 +24,8 @@ void Testing::keyPressEvent(QKeyEvent *event)
     else if(event->key()==Qt::Key_Right)
     {
         setPos(x()+10,y());
+    }else if(event->key() == Qt::Key_Space){
+        Bullet * bullet = new Bullet();
+        scene()->addItem(bullet);
     }
 }
