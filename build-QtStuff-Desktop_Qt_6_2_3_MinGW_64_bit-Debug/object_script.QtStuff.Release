@@ -1,0 +1,10 @@
+release/bullet.o
+release/enemy.o
+release/game.o
+release/main.o
+release/player.o
+release/testing.o
+release/qrc_myRes.o
+release/moc_bullet.o
+release/moc_enemy.o
+release/moc_testing.o

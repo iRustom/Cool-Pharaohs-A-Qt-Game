@@ -2,7 +2,7 @@
 #include <QGraphicsScene>
 #include <QGraphicsView>
 #include <QGraphicsRectItem>
-#include <QBrush>
+#include <QObject>
 #include <QFile>
 #include <QTextStream>
 #include <QGraphicsPixmapItem>
@@ -10,6 +10,9 @@
 #include <player.h>
 #include <QDebug>
 #include <testing.h>
+#include <QTimer>
+
+// all this stuff should be moved into a game class...
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
@@ -34,6 +37,10 @@ int main(int argc, char *argv[])
     scene->setSceneRect(0,0,600,600);
 
     p->setPos(view->height()/2,view->height()-p->rect().height());
+
+    QTimer * timer = new QTimer();
+    QObject::connect(timer,SIGNAL(timeout()), p, SLOT(spawn())); // switch from p to game later
+    timer->start(2000);
 
     return a.exec();
 }

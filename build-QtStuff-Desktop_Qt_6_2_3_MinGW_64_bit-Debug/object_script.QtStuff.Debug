@@ -1,0 +1,10 @@
+debug/bullet.o
+debug/enemy.o
+debug/game.o
+debug/main.o
+debug/player.o
+debug/testing.o
+debug/qrc_myRes.o
+debug/moc_bullet.o
+debug/moc_enemy.o
+debug/moc_testing.o
