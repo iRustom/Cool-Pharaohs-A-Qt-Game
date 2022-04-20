@@ -1,11 +1,16 @@
 #ifndef GAME_H
 #define GAME_H
+#include <QGraphicsView>
+#include <QWidget>
+#include <QGraphicsScene>
+#include "testing.h"
 
-
-class game
+class Game: public QGraphicsView
 {
 public:
-    game();
+    Game(QWidget * parent =0);
+    QGraphicsScene * scene;
+    Testing * player;
 };
 
 #endif // GAME_H
