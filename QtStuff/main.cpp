@@ -27,10 +27,14 @@ int main(int argc, char *argv[])
     QGraphicsView *view= new QGraphicsView(scene);
     //view->setFixedSize(600,600);
     view->setWindowTitle("Guy Fights Cool Pharaohs");
+    view->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+    view->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     view->show();
+    view->setFixedSize(600,600);
+    scene->setSceneRect(0,0,600,600);
 
+    p->setPos(view->height()/2,view->height()-p->rect().height());
 
-    //object of class game created
     return a.exec();
 }
 //hello world num 2
