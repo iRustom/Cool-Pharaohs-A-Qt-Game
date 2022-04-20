@@ -26,6 +26,7 @@ void Testing::keyPressEvent(QKeyEvent *event)
         setPos(x()+10,y());
     }else if(event->key() == Qt::Key_Space){
         Bullet * bullet = new Bullet();
+        bullet->setPos(x(),y());
         scene()->addItem(bullet);
     }
 }
