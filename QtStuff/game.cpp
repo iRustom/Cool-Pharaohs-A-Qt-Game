@@ -2,7 +2,7 @@
 #include <QTimer>
 #include "enemy.h"
 
-Game::Game(QWidget *parent)
+Game::Game(QWidget *parent): QGraphicsView(parent)
 {
     scene = new QGraphicsScene();
     scene->setSceneRect(0,0,600,600);
@@ -25,6 +25,12 @@ Game::Game(QWidget *parent)
     player->setFocus();
 
     scene->addItem(player);
+
+    score = new Score();
+    scene->addItem(score);
+    health = new Health();
+    scene->addItem(health);
+    health-> setPos(health->x(),health->y()+25);
 
     QTimer * timer = new QTimer();
     QObject::connect(timer,SIGNAL(timeout()), player, SLOT(spawn())); // switch from p to game later

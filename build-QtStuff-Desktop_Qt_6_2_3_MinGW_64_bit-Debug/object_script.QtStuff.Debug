@@ -1,8 +1,10 @@
 debug/bullet.o
 debug/enemy.o
 debug/game.o
+debug/health.o
 debug/main.o
 debug/player.o
+debug/score.o
 debug/testing.o
 debug/qrc_myRes.o
 debug/moc_bullet.o
