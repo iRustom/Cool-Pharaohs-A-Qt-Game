@@ -28,6 +28,12 @@ void Bullet::move()
             delete colliding_items[i];
             delete this;
             return;
+        }else if(typeid(*(colliding_items[i]))==typeid(Testing)){
+            game->health->decrease();
+
+            scene()-> removeItem(this);
+            delete this;
+            return;
         }
     }
     setPos(x(),y()-10);
