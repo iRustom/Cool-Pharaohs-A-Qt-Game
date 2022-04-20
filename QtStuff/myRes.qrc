@@ -5,4 +5,8 @@
         <file>sandStone.jpg</file>
         <file>arabLeft.png</file>
     </qresource>
+    <qresource prefix="/sfx">
+        <file>arrow.mp3</file>
+        <file>EgyptBg.mp3</file>
+    </qresource>
 </RCC>
