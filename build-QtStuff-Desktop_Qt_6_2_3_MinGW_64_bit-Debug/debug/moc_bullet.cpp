@@ -22,19 +22,23 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_Bullet_t {
-    const uint offsetsAndSize[6];
-    char stringdata0[13];
+    const uint offsetsAndSize[12];
+    char stringdata0[43];
 };
 #define QT_MOC_LITERAL(ofs, len) \
     uint(offsetof(qt_meta_stringdata_Bullet_t, stringdata0) + ofs), len 
 static const qt_meta_stringdata_Bullet_t qt_meta_stringdata_Bullet = {
     {
 QT_MOC_LITERAL(0, 6), // "Bullet"
-QT_MOC_LITERAL(7, 4), // "move"
-QT_MOC_LITERAL(12, 0) // ""
+QT_MOC_LITERAL(7, 6), // "moveUp"
+QT_MOC_LITERAL(14, 0), // ""
+QT_MOC_LITERAL(15, 8), // "moveDown"
+QT_MOC_LITERAL(24, 9), // "moveRight"
+QT_MOC_LITERAL(34, 8) // "moveLeft"
 
     },
-    "Bullet\0move\0"
+    "Bullet\0moveUp\0\0moveDown\0moveRight\0"
+    "moveLeft"
 };
 #undef QT_MOC_LITERAL
 
@@ -44,7 +48,7 @@ static const uint qt_meta_data_Bullet[] = {
       10,       // revision
        0,       // classname
        0,    0, // classinfo
-       1,   14, // methods
+       4,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -52,9 +56,15 @@ static const uint qt_meta_data_Bullet[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags, initial metatype offsets
-       1,    0,   20,    2, 0x0a,    1 /* Public */,
+       1,    0,   38,    2, 0x0a,    1 /* Public */,
+       3,    0,   39,    2, 0x0a,    2 /* Public */,
+       4,    0,   40,    2, 0x0a,    3 /* Public */,
+       5,    0,   41,    2, 0x0a,    4 /* Public */,
 
  // slots: parameters
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
     QMetaType::Void,
 
        0        // eod
@@ -66,7 +76,10 @@ void Bullet::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void
         auto *_t = static_cast<Bullet *>(_o);
         (void)_t;
         switch (_id) {
-        case 0: _t->move(); break;
+        case 0: _t->moveUp(); break;
+        case 1: _t->moveDown(); break;
+        case 2: _t->moveRight(); break;
+        case 3: _t->moveLeft(); break;
         default: ;
         }
     }
@@ -81,7 +94,7 @@ const QMetaObject Bullet::staticMetaObject = { {
     nullptr,
 qt_incomplete_metaTypeArray<qt_meta_stringdata_Bullet_t
 , QtPrivate::TypeAndForceComplete<Bullet, std::true_type>
-, QtPrivate::TypeAndForceComplete<void, std::false_type>
+, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>
 
 
 >,
@@ -110,13 +123,13 @@ int Bullet::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 1)
+        if (_id < 4)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 1;
+        _id -= 4;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 1)
+        if (_id < 4)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 1;
+        _id -= 4;
     }
     return _id;
 }

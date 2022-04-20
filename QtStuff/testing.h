@@ -8,8 +8,9 @@ class Testing : public QObject, public QGraphicsRectItem
 public:
     Testing();
     void keyPressEvent(QKeyEvent* event);
+    int check;
 public slots:
-    void spawn(); // should be moved to game class
+    void spawn();// should be moved to game class
 
 };
 

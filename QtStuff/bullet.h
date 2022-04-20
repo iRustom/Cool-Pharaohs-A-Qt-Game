@@ -8,9 +8,12 @@ class Bullet:  public QObject, public QGraphicsRectItem
 {
     Q_OBJECT
 public:
-    Bullet();
+    Bullet(int check);
 public slots:
-    void move();
+    void moveUp();
+    void moveDown();
+    void moveRight();
+    void moveLeft();
 };
 
 #endif // BULLET_H
