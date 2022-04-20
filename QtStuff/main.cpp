@@ -7,23 +7,29 @@
 #include <QTextStream>
 #include <QGraphicsPixmapItem>
 #include <QApplication>
+#include <player.h>
 
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
+
     //creating view
     QGraphicsView view;
     view.setFixedSize(600,600);
     view.setWindowTitle("Guy Fights Cool Pharaohs");
-    QBrush brush(Qt::black);
+    QBrush brush(Qt::blue);
     view.setBackgroundBrush(brush);
 
     //creating scene and item
     QGraphicsScene* scene= new QGraphicsScene();
-    QPixmap p("arabRight.png");
-    p=p.scaledToWidth(50);
-    p=p.scaledToHeight(50);
-    QGraphicsPixmapItem player(p);
+    player p;
+    scene->addItem(&p);
+    p.setFlag(QGraphicsPixmapItem::ItemIsFocusable);
+    p.setFocus();
+    view.setScene(scene);
+    view.show();
+    QApplication::closeAllWindows();
+
 
     //object of class game created
     return a.exec();

@@ -1,13 +1,17 @@
 #ifndef PLAYER_H
 #define PLAYER_H
+#include <QGraphicsPixmapItem>
+#include <QKeyEvent>
 
-#include <QObject>
-
-class player : public QObject
+class player : public QObject, public QGraphicsPixmapItem
 {
-    Q_OBJECT
 public:
-    explicit player(QObject *parent = nullptr);
+    player();
+private:
+    int row;
+    int column;
+public slots:
+    void keyPressEvent(QKeyEvent* event);
 
 signals:
 

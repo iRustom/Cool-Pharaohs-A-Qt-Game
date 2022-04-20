@@ -2,8 +2,4 @@
 
 game::game()
 {
-public:
-    game();
-private:
-
 }
