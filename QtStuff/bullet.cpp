@@ -6,22 +6,21 @@
 #include "game.h"
 extern Game * game;
 
-Bullet::Bullet(int check, QGraphicsItem* parent): QObject(), QGraphicsPixmapItem(parent)
+Bullet::Bullet(int rotateCheck, QGraphicsItem* parent): QObject(), QGraphicsPixmapItem(parent)
 {
     QTimer * timer = new QTimer(this);
     setPixmap(QPixmap(":/images/bullet.png").scaled(10,10));
 
-    if(check == 1){
+    if(rotateCheck == 0){
     connect(timer, SIGNAL(timeout()),this,SLOT(moveUp()));
-    }else if(check == 2){
+    }else if(rotateCheck == 180){
     connect(timer, SIGNAL(timeout()),this,SLOT(moveDown()));
-    }else if(check == 3){
+    }else if(rotateCheck == 270){
     connect(timer, SIGNAL(timeout()),this,SLOT(moveLeft()));
-    }else if(check == 4){
+    }else if(rotateCheck == 90){
     connect(timer, SIGNAL(timeout()),this,SLOT(moveRight()));
     }
     timer->start(50);
-
 }
 
 void Bullet::moveUp()
