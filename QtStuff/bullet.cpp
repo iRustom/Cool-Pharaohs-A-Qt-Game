@@ -6,33 +6,22 @@
 #include "game.h"
 extern Game * game;
 
-Bullet::Bullet(int check)
+Bullet::Bullet(int check, QGraphicsItem* parent): QObject(), QGraphicsPixmapItem(parent)
 {
     QTimer * timer = new QTimer();
-    if(check == 1)
-    {
-    setRect(0,0,10,50);
+    setPixmap(QPixmap(":/images/bullet.png").scaled(10,10));
+
+    if(check == 1){
     connect(timer, SIGNAL(timeout()),this,SLOT(moveUp()));
-    timer->start(50);
-    }
-    if(check == 2)
-    {
-    setRect(0,0,10,50);
+    }else if(check == 2){
     connect(timer, SIGNAL(timeout()),this,SLOT(moveDown()));
-    timer->start(50);
-    }
-    if(check == 3)
-    {
-    setRect(0,0,50,10);
+    }else if(check == 3){
     connect(timer, SIGNAL(timeout()),this,SLOT(moveLeft()));
-    timer->start(50);
-    }
-    if(check == 4)
-    {
-    setRect(0,0,50,10);
+    }else if(check == 4){
     connect(timer, SIGNAL(timeout()),this,SLOT(moveRight()));
-    timer->start(50);
     }
+    timer->start(50);
+
 }
 
 void Bullet::moveUp()
@@ -57,7 +46,7 @@ void Bullet::moveUp()
         }
     }
     setPos(x(),y()-10);
-    if(pos().y()+rect().height()<0){
+    if(pos().y()+pixmap().height()<0){
         scene()->removeItem(this);
         delete this;
     }
@@ -85,7 +74,7 @@ void Bullet::moveDown()
         }
     }
     setPos(x(),y()+10);
-    if(pos().y()+rect().height()<0){
+    if(pos().y()+pixmap().height()<0){
         scene()->removeItem(this);
         delete this;
     }
@@ -113,7 +102,7 @@ void Bullet::moveRight()
         }
     }
     setPos(x()+10,y());
-    if(pos().y()+rect().height()<0){
+    if(pos().y()+pixmap().height()<0){
         scene()->removeItem(this);
         delete this;
     }
@@ -141,7 +130,7 @@ void Bullet::moveLeft()
         }
     }
     setPos(x()-10,y());
-    if(pos().y()+rect().height()<0){
+    if(pos().y()+pixmap().height()<0){
         scene()->removeItem(this);
         delete this;
     }

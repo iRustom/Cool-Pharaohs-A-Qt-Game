@@ -4,6 +4,12 @@
         <file>sand.jpg</file>
         <file>sandStone.jpg</file>
         <file>arabLeft.png</file>
+        <file>arrow.png</file>
+        <file>mainCharacterDown.png</file>
+        <file>mainCharacterLeft.png</file>
+        <file>mainCharacterRight.png</file>
+        <file>mainCharacterUp.png</file>
+        <file>bullet.png</file>
     </qresource>
     <qresource prefix="/sfx">
         <file>arrow.mp3</file>

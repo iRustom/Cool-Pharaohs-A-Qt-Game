@@ -201,9 +201,15 @@ release\qrc_myRes.cpp: ..\QtStuff\myRes.qrc \
 		C:\Qt\6.3.0\msvc2019_64\bin\rcc.exe \
 		..\QtStuff\EgyptBg.mp3 \
 		..\QtStuff\arrow.mp3 \
+		..\QtStuff\arrow.png \
+		..\QtStuff\mainCharacterLeft.png \
+		..\QtStuff\mainCharacterDown.png \
+		..\QtStuff\sand.jpg \
+		..\QtStuff\mainCharacterRight.png \
+		..\QtStuff\mainCharacterUp.png \
+		..\QtStuff\bullet.png \
 		..\QtStuff\arabRight.png \
 		..\QtStuff\sandStone.jpg \
-		..\QtStuff\sand.jpg \
 		..\QtStuff\arabLeft.png
 	C:\Qt\6.3.0\msvc2019_64\bin\rcc.exe -name myRes ..\QtStuff\myRes.qrc -o release\qrc_myRes.cpp
 
@@ -217,7 +223,7 @@ compiler_moc_header_make_all: release\moc_bullet.cpp release\moc_enemy.cpp relea
 compiler_moc_header_clean:
 	-$(DEL_FILE) release\moc_bullet.cpp release\moc_enemy.cpp release\moc_testing.cpp
 release\moc_bullet.cpp: ..\QtStuff\bullet.h \
-		C:\Qt\6.3.0\msvc2019_64\include\QtWidgets\QGraphicsRectItem \
+		C:\Qt\6.3.0\msvc2019_64\include\QtWidgets\QGraphicsPixmapItem \
 		C:\Qt\6.3.0\msvc2019_64\include\QtWidgets\qgraphicsitem.h \
 		C:\Qt\6.3.0\msvc2019_64\include\QtWidgets\qtwidgetsglobal.h \
 		C:\Qt\6.3.0\msvc2019_64\include\QtGui\qtguiglobal.h \
@@ -322,6 +328,7 @@ release\moc_bullet.cpp: ..\QtStuff\bullet.h \
 		C:\Qt\6.3.0\msvc2019_64\include\QtGui\qrgba64.h \
 		C:\Qt\6.3.0\msvc2019_64\include\QtGui\qimage.h \
 		C:\Qt\6.3.0\msvc2019_64\include\QtGui\qpixelformat.h \
+		C:\Qt\6.3.0\msvc2019_64\include\QtWidgets\QGraphicsItem \
 		C:\Qt\6.3.0\msvc2019_64\include\QtCore\QObject \
 		release\moc_predefs.h \
 		C:\Qt\6.3.0\msvc2019_64\bin\moc.exe
@@ -545,6 +552,17 @@ release\moc_testing.cpp: ..\QtStuff\testing.h \
 		C:\Qt\6.3.0\msvc2019_64\include\QtGui\qrgba64.h \
 		C:\Qt\6.3.0\msvc2019_64\include\QtGui\qimage.h \
 		C:\Qt\6.3.0\msvc2019_64\include\QtGui\qpixelformat.h \
+		C:\Qt\6.3.0\msvc2019_64\include\QtMultimedia\QMediaPlayer \
+		C:\Qt\6.3.0\msvc2019_64\include\QtMultimedia\qmediaplayer.h \
+		C:\Qt\6.3.0\msvc2019_64\include\QtCore\qurl.h \
+		C:\Qt\6.3.0\msvc2019_64\include\QtMultimedia\qtmultimediaglobal.h \
+		C:\Qt\6.3.0\msvc2019_64\include\QtMultimedia\qtmultimedia-config.h \
+		C:\Qt\6.3.0\msvc2019_64\include\QtMultimedia\qtmultimediaexports.h \
+		C:\Qt\6.3.0\msvc2019_64\include\QtMultimedia\qmediaenumdebug.h \
+		C:\Qt\6.3.0\msvc2019_64\include\QtCore\qmetaobject.h \
+		C:\Qt\6.3.0\msvc2019_64\include\QtMultimedia\qaudio.h \
+		C:\Qt\6.3.0\msvc2019_64\include\QtMultimedia\QAudioOutput \
+		C:\Qt\6.3.0\msvc2019_64\include\QtMultimedia\qaudiooutput.h \
 		release\moc_predefs.h \
 		C:\Qt\6.3.0\msvc2019_64\bin\moc.exe
 	C:\Qt\6.3.0\msvc2019_64\bin\moc.exe $(DEFINES) --compiler-flavor=msvc --include C:/Users/Omare/OneDrive/Desktop/CoolPharohs/build-QtStuff-Desktop_Qt_6_2_3_MinGW_64_bit-Debug/release/moc_predefs.h -IC:/Qt/6.3.0/msvc2019_64/mkspecs/win32-msvc -IC:/Users/Omare/OneDrive/Desktop/CoolPharohs/QtStuff -IC:/Qt/6.3.0/msvc2019_64/include -IC:/Qt/6.3.0/msvc2019_64/include/QtMultimedia -IC:/Qt/6.3.0/msvc2019_64/include/QtWidgets -IC:/Qt/6.3.0/msvc2019_64/include/QtGui -IC:/Qt/6.3.0/msvc2019_64/include/QtNetwork -IC:/Qt/6.3.0/msvc2019_64/include/QtCore -I. -I"C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\ATLMFC\include" -I"C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\shared" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\winrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\cppwinrt" ..\QtStuff\testing.h -o release\moc_testing.cpp
@@ -568,7 +586,7 @@ compiler_clean: compiler_rcc_clean compiler_moc_predefs_clean compiler_moc_heade
 ####### Compile
 
 release\bullet.obj: ..\QtStuff\bullet.cpp ..\QtStuff\bullet.h \
-		C:\Qt\6.3.0\msvc2019_64\include\QtWidgets\QGraphicsRectItem \
+		C:\Qt\6.3.0\msvc2019_64\include\QtWidgets\QGraphicsPixmapItem \
 		C:\Qt\6.3.0\msvc2019_64\include\QtWidgets\qgraphicsitem.h \
 		C:\Qt\6.3.0\msvc2019_64\include\QtWidgets\qtwidgetsglobal.h \
 		C:\Qt\6.3.0\msvc2019_64\include\QtGui\qtguiglobal.h \
@@ -673,6 +691,7 @@ release\bullet.obj: ..\QtStuff\bullet.cpp ..\QtStuff\bullet.h \
 		C:\Qt\6.3.0\msvc2019_64\include\QtGui\qrgba64.h \
 		C:\Qt\6.3.0\msvc2019_64\include\QtGui\qimage.h \
 		C:\Qt\6.3.0\msvc2019_64\include\QtGui\qpixelformat.h \
+		C:\Qt\6.3.0\msvc2019_64\include\QtWidgets\QGraphicsItem \
 		C:\Qt\6.3.0\msvc2019_64\include\QtCore\QObject \
 		C:\Qt\6.3.0\msvc2019_64\include\QtCore\QTimer \
 		C:\Qt\6.3.0\msvc2019_64\include\QtCore\qtimer.h \
@@ -684,6 +703,7 @@ release\bullet.obj: ..\QtStuff\bullet.cpp ..\QtStuff\bullet.h \
 		C:\Qt\6.3.0\msvc2019_64\include\QtGui\qpen.h \
 		C:\Qt\6.3.0\msvc2019_64\include\QtCore\QList \
 		..\QtStuff\enemy.h \
+		C:\Qt\6.3.0\msvc2019_64\include\QtWidgets\QGraphicsRectItem \
 		..\QtStuff\game.h \
 		C:\Qt\6.3.0\msvc2019_64\include\QtWidgets\QGraphicsView \
 		C:\Qt\6.3.0\msvc2019_64\include\QtWidgets\qgraphicsview.h \
@@ -719,10 +739,19 @@ release\bullet.obj: ..\QtStuff\bullet.cpp ..\QtStuff\bullet.h \
 		C:\Qt\6.3.0\msvc2019_64\include\QtCore\qnativeinterface.h \
 		C:\Qt\6.3.0\msvc2019_64\include\QtWidgets\QWidget \
 		..\QtStuff\testing.h \
+		C:\Qt\6.3.0\msvc2019_64\include\QtMultimedia\QMediaPlayer \
+		C:\Qt\6.3.0\msvc2019_64\include\QtMultimedia\qmediaplayer.h \
+		C:\Qt\6.3.0\msvc2019_64\include\QtMultimedia\qtmultimediaglobal.h \
+		C:\Qt\6.3.0\msvc2019_64\include\QtMultimedia\qtmultimedia-config.h \
+		C:\Qt\6.3.0\msvc2019_64\include\QtMultimedia\qtmultimediaexports.h \
+		C:\Qt\6.3.0\msvc2019_64\include\QtMultimedia\qmediaenumdebug.h \
+		C:\Qt\6.3.0\msvc2019_64\include\QtCore\qmetaobject.h \
+		C:\Qt\6.3.0\msvc2019_64\include\QtMultimedia\qaudio.h \
+		C:\Qt\6.3.0\msvc2019_64\include\QtMultimedia\QAudioOutput \
+		C:\Qt\6.3.0\msvc2019_64\include\QtMultimedia\qaudiooutput.h \
 		..\QtStuff\score.h \
 		C:\Qt\6.3.0\msvc2019_64\include\QtWidgets\QGraphicsTextItem \
-		..\QtStuff\health.h \
-		C:\Qt\6.3.0\msvc2019_64\include\QtWidgets\QGraphicsItem
+		..\QtStuff\health.h
 
 release\enemy.obj: ..\QtStuff\enemy.cpp ..\QtStuff\enemy.h \
 		C:\Qt\6.3.0\msvc2019_64\include\QtWidgets\QGraphicsRectItem \
@@ -987,6 +1016,16 @@ release\game.obj: ..\QtStuff\game.cpp ..\QtStuff\game.h \
 		C:\Qt\6.3.0\msvc2019_64\include\QtWidgets\QGraphicsRectItem \
 		C:\Qt\6.3.0\msvc2019_64\include\QtWidgets\qgraphicsitem.h \
 		C:\Qt\6.3.0\msvc2019_64\include\QtGui\qpainterpath.h \
+		C:\Qt\6.3.0\msvc2019_64\include\QtMultimedia\QMediaPlayer \
+		C:\Qt\6.3.0\msvc2019_64\include\QtMultimedia\qmediaplayer.h \
+		C:\Qt\6.3.0\msvc2019_64\include\QtMultimedia\qtmultimediaglobal.h \
+		C:\Qt\6.3.0\msvc2019_64\include\QtMultimedia\qtmultimedia-config.h \
+		C:\Qt\6.3.0\msvc2019_64\include\QtMultimedia\qtmultimediaexports.h \
+		C:\Qt\6.3.0\msvc2019_64\include\QtMultimedia\qmediaenumdebug.h \
+		C:\Qt\6.3.0\msvc2019_64\include\QtCore\qmetaobject.h \
+		C:\Qt\6.3.0\msvc2019_64\include\QtMultimedia\qaudio.h \
+		C:\Qt\6.3.0\msvc2019_64\include\QtMultimedia\QAudioOutput \
+		C:\Qt\6.3.0\msvc2019_64\include\QtMultimedia\qaudiooutput.h \
 		..\QtStuff\score.h \
 		C:\Qt\6.3.0\msvc2019_64\include\QtWidgets\QGraphicsTextItem \
 		..\QtStuff\health.h \
@@ -1279,6 +1318,16 @@ release\main.obj: ..\QtStuff\main.cpp C:\Qt\6.3.0\msvc2019_64\include\QtWidgets\
 		C:\Qt\6.3.0\msvc2019_64\include\QtGui\QKeyEvent \
 		C:\Qt\6.3.0\msvc2019_64\include\QtCore\QDebug \
 		..\QtStuff\testing.h \
+		C:\Qt\6.3.0\msvc2019_64\include\QtMultimedia\QMediaPlayer \
+		C:\Qt\6.3.0\msvc2019_64\include\QtMultimedia\qmediaplayer.h \
+		C:\Qt\6.3.0\msvc2019_64\include\QtMultimedia\qtmultimediaglobal.h \
+		C:\Qt\6.3.0\msvc2019_64\include\QtMultimedia\qtmultimedia-config.h \
+		C:\Qt\6.3.0\msvc2019_64\include\QtMultimedia\qtmultimediaexports.h \
+		C:\Qt\6.3.0\msvc2019_64\include\QtMultimedia\qmediaenumdebug.h \
+		C:\Qt\6.3.0\msvc2019_64\include\QtCore\qmetaobject.h \
+		C:\Qt\6.3.0\msvc2019_64\include\QtMultimedia\qaudio.h \
+		C:\Qt\6.3.0\msvc2019_64\include\QtMultimedia\QAudioOutput \
+		C:\Qt\6.3.0\msvc2019_64\include\QtMultimedia\qaudiooutput.h \
 		C:\Qt\6.3.0\msvc2019_64\include\QtCore\QTimer \
 		C:\Qt\6.3.0\msvc2019_64\include\QtCore\qtimer.h \
 		C:\Qt\6.3.0\msvc2019_64\include\QtCore\qbasictimer.h \
@@ -1632,12 +1681,22 @@ release\testing.obj: ..\QtStuff\testing.cpp ..\QtStuff\testing.h \
 		C:\Qt\6.3.0\msvc2019_64\include\QtGui\qrgba64.h \
 		C:\Qt\6.3.0\msvc2019_64\include\QtGui\qimage.h \
 		C:\Qt\6.3.0\msvc2019_64\include\QtGui\qpixelformat.h \
+		C:\Qt\6.3.0\msvc2019_64\include\QtMultimedia\QMediaPlayer \
+		C:\Qt\6.3.0\msvc2019_64\include\QtMultimedia\qmediaplayer.h \
+		C:\Qt\6.3.0\msvc2019_64\include\QtCore\qurl.h \
+		C:\Qt\6.3.0\msvc2019_64\include\QtMultimedia\qtmultimediaglobal.h \
+		C:\Qt\6.3.0\msvc2019_64\include\QtMultimedia\qtmultimedia-config.h \
+		C:\Qt\6.3.0\msvc2019_64\include\QtMultimedia\qtmultimediaexports.h \
+		C:\Qt\6.3.0\msvc2019_64\include\QtMultimedia\qmediaenumdebug.h \
+		C:\Qt\6.3.0\msvc2019_64\include\QtCore\qmetaobject.h \
+		C:\Qt\6.3.0\msvc2019_64\include\QtMultimedia\qaudio.h \
+		C:\Qt\6.3.0\msvc2019_64\include\QtMultimedia\QAudioOutput \
+		C:\Qt\6.3.0\msvc2019_64\include\QtMultimedia\qaudiooutput.h \
 		..\QtStuff\enemy.h \
 		C:\Qt\6.3.0\msvc2019_64\include\QtGui\QKeyEvent \
 		C:\Qt\6.3.0\msvc2019_64\include\QtGui\qevent.h \
 		C:\Qt\6.3.0\msvc2019_64\include\QtCore\qiodevice.h \
 		C:\Qt\6.3.0\msvc2019_64\include\QtCore\qpointer.h \
-		C:\Qt\6.3.0\msvc2019_64\include\QtCore\qurl.h \
 		C:\Qt\6.3.0\msvc2019_64\include\QtGui\qeventpoint.h \
 		C:\Qt\6.3.0\msvc2019_64\include\QtGui\qvector2d.h \
 		C:\Qt\6.3.0\msvc2019_64\include\QtGui\qvectornd.h \
@@ -1656,7 +1715,9 @@ release\testing.obj: ..\QtStuff\testing.cpp ..\QtStuff\testing.h \
 		C:\Qt\6.3.0\msvc2019_64\include\QtGui\qbrush.h \
 		C:\Qt\6.3.0\msvc2019_64\include\QtGui\qfont.h \
 		C:\Qt\6.3.0\msvc2019_64\include\QtGui\qpen.h \
-		..\QtStuff\bullet.h
+		..\QtStuff\bullet.h \
+		C:\Qt\6.3.0\msvc2019_64\include\QtWidgets\QGraphicsPixmapItem \
+		C:\Qt\6.3.0\msvc2019_64\include\QtWidgets\QGraphicsItem
 
 release\qrc_myRes.obj: release\qrc_myRes.cpp 
 

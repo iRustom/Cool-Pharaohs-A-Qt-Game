@@ -44,22 +44,22 @@ void Testing::keyPressEvent(QKeyEvent *event)
         Bullet * bullet = new Bullet(check);
         if (check == 1)
         {
-        bullet->setPos(x()+(rect().width()/2)-(bullet->rect().width()/2),y()-(bullet->rect().height()+1));
+        bullet->setPos(x()+(rect().width()/2)-(bullet->pixmap().width()/2),y()-(bullet->pixmap().height()+1));
         scene()->addItem(bullet);
         }
         else if (check == 2)
         {
-        bullet->setPos(x()+(rect().width()/2)-(bullet->rect().width()/2),y()+(rect().height()+1));
+        bullet->setPos(x()+(rect().width()/2)-(bullet->pixmap().width()/2),y()+(rect().height()+1));
         scene()->addItem(bullet);
         }
         else if (check == 3)
         {
-        bullet->setPos(x()-bullet->rect().width()-1,y()+rect().height()/2-bullet->rect().height()/2);
+        bullet->setPos(x()-bullet->pixmap().width()-1,y()+rect().height()/2-bullet->pixmap().height()/2);
         scene()->addItem(bullet);
         }
         else if (check == 4)
         {
-        bullet->setPos(x()+rect().width()+1,y()+rect().height()/2-bullet->rect().height()/2);
+        bullet->setPos(x()+rect().width()+1,y()+rect().height()/2-bullet->pixmap().height()/2);
         scene()->addItem(bullet);
         }
         if(bulletSound->playbackState()==QMediaPlayer::PlayingState){
