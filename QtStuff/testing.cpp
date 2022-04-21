@@ -64,8 +64,9 @@ void Testing::keyPressEvent(QKeyEvent *event)
         }
         if(bulletSound->playbackState()==QMediaPlayer::PlayingState){
             bulletSound -> setPosition(0);
+        }else if(bulletSound->playbackState()==QMediaPlayer::StoppedState){
+            bulletSound->play();
         }
-        bulletSound->play();
     }
 }
 
