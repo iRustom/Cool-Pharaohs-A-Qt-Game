@@ -9,7 +9,7 @@ Game::Game(QWidget *parent): QGraphicsView(parent)
 {
     scene = new QGraphicsScene(this);
     scene->setSceneRect(0,0,600,600);
-    setBackgroundBrush(QBrush(QImage(":/images/sand.jpg")));
+    setBackgroundBrush(QBrush(QImage(":/images/sand.jpg").scaled(600,600)));
 
     setScene(scene);
     setWindowTitle("Guy Fights Cool Pharaohs");
