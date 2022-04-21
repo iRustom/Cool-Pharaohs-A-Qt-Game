@@ -1,9 +1,9 @@
 To-Do:
 
--Log-in menu									No progress
+-Log-in menu - screen res, volume, play, exit				No progress
 -Add maze/map									No progress
--Graphics									No progress
--SFX										No progress
+-Graphics										No progress
+-SFX											No progress
 -Boundaries for player and enemies						No progress	
 -Boundaries for bullet								No progress
 -Spawn count for enemies, move onto next room when score == that spawn count	Score is created, spawn count still
