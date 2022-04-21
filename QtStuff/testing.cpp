@@ -13,6 +13,7 @@ Testing::Testing(QGraphicsItem * parent): QGraphicsPixmapItem(parent)
     bulletoutput->setVolume(100);
 
     setPixmap(QPixmap(":/images/mainCharacterUp.png").scaled(100,100));
+    setTransformOriginPoint(pixmap().width()/2,pixmap().height()/2);
 
     check = 1;
 }

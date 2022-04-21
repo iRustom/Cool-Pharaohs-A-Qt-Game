@@ -3,11 +3,13 @@
 #include "enemy.h"
 #include <QMediaPlayer>
 #include <QAudioOutput>
+#include <QImage>
 
 Game::Game(QWidget *parent): QGraphicsView(parent)
 {
     scene = new QGraphicsScene();
     scene->setSceneRect(0,0,600,600);
+    setBackgroundBrush(QBrush(QImage(":/images/sand.jpg")));
 
     setScene(scene);
     setWindowTitle("Guy Fights Cool Pharaohs");
