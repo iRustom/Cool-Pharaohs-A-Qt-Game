@@ -7,7 +7,7 @@
 
 Game::Game(QWidget *parent): QGraphicsView(parent)
 {
-    scene = new QGraphicsScene();
+    scene = new QGraphicsScene(this);
     scene->setSceneRect(0,0,600,600);
     setBackgroundBrush(QBrush(QImage(":/images/sand.jpg")));
 
