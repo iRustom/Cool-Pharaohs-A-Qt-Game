@@ -2,6 +2,9 @@
 #define TESTING_H
 #include <QObject>
 #include <QGraphicsRectItem>
+#include <QMediaPlayer>
+#include <QAudioOutput>
+
 class Testing : public QObject, public QGraphicsRectItem
 {
     Q_OBJECT
@@ -11,6 +14,9 @@ public:
     int check;
 public slots:
     void spawn();// should be moved to game class
+private:
+    QMediaPlayer * bulletSound;
+    QAudioOutput * bulletoutput;
 
 };
 

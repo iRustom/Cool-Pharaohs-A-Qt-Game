@@ -5,6 +5,13 @@
 #include "bullet.h"
 Testing::Testing()
 {
+    bulletSound = new QMediaPlayer();
+    bulletoutput = new QAudioOutput();
+
+    bulletSound-> setAudioOutput(bulletoutput);
+    bulletSound->setSource(QUrl("qrc:/sfx/arrow.mp3"));
+    bulletoutput->setVolume(100);
+
     check = 1;
 }
 
@@ -55,6 +62,10 @@ void Testing::keyPressEvent(QKeyEvent *event)
         bullet->setPos(x()+rect().width()+1,y()+rect().height()/2-bullet->rect().height()/2);
         scene()->addItem(bullet);
         }
+        if(bulletSound->playbackState()==QMediaPlayer::PlayingState){
+            bulletSound -> setPosition(0);
+        }
+        bulletSound->play();
     }
 }
 

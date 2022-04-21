@@ -44,6 +44,7 @@ Game::Game(QWidget *parent): QGraphicsView(parent)
     music-> setAudioOutput(output);
     music->setSource(QUrl("qrc:/sfx/EgyptBg.mp3"));
     output->setVolume(50);
+    music->setLoops(QMediaPlayer::Infinite);
     music->play();
 
     show();
