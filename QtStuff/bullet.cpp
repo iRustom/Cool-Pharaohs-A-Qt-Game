@@ -8,7 +8,7 @@ extern Game * game;
 
 Bullet::Bullet(int check, QGraphicsItem* parent): QObject(), QGraphicsPixmapItem(parent)
 {
-    QTimer * timer = new QTimer();
+    QTimer * timer = new QTimer(this);
     setPixmap(QPixmap(":/images/bullet.png").scaled(10,10));
 
     if(check == 1){
