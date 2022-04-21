@@ -24,24 +24,28 @@ void Testing::keyPressEvent(QKeyEvent *event)
     {
         if(pos().y()>0)
         setPos(x(),y()-10);
+        setRotation(0);
         check = 1;
     }
     else if(event->key()==Qt::Key_Down)
     {
         if(pos().y()+pixmap().height()<600)
         setPos(x(),y()+10);
+        setRotation(180);
         check = 2;
     }
     else if(event->key()==Qt::Key_Left)
     {
         if(pos().x()>0)
         setPos(x()-10,y());
+        setRotation(270);
         check = 3;
     }
     else if(event->key()==Qt::Key_Right)
     {
         if(pos().x()+pixmap().width()<600)
         setPos(x()+10,y());
+        setRotation(90);
         check = 4;
     }else if(event->key() == Qt::Key_Space){
         Bullet * bullet = new Bullet(check);
