@@ -15,6 +15,7 @@ SOURCES += \
     game.cpp \
     health.cpp \
     main.cpp \
+    menu.cpp \
     player.cpp \
     score.cpp \
     testing.cpp
@@ -24,6 +25,7 @@ HEADERS += \
     enemy.h \
     game.h \
     health.h \
+    menu.h \
     player.h \
     score.h \
     testing.h
