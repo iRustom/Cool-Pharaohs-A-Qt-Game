@@ -17,11 +17,10 @@ Game::Game(QWidget *parent): QGraphicsView(parent)
 
 
     player = new Testing();
-    player->setRect(0,0,100,100);
     scene->addItem(player);
     player->setFlag(QGraphicsPixmapItem::ItemIsFocusable);
     player->setFocus();
-    player->setPos(width()/2-player->rect().width()/2,height()-player->rect().height());
+    player->setPos(width()/2-player->pixmap().width()/2,height()-player->pixmap().height());
 
     player->setFlag(QGraphicsItem::ItemIsFocusable);
     player->setFocus();

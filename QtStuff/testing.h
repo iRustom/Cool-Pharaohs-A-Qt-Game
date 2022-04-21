@@ -1,15 +1,15 @@
 #ifndef TESTING_H
 #define TESTING_H
 #include <QObject>
-#include <QGraphicsRectItem>
+#include <QGraphicsPixmapItem>
 #include <QMediaPlayer>
 #include <QAudioOutput>
 
-class Testing : public QObject, public QGraphicsRectItem
+class Testing : public QObject, public QGraphicsPixmapItem
 {
     Q_OBJECT
 public:
-    Testing();
+    Testing(QGraphicsItem * parent = 0);
     void keyPressEvent(QKeyEvent* event);
     int check;
 public slots:
