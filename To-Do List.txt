@@ -1,0 +1,13 @@
+To-Do:
+
+-Log-in menu									No progress
+-Add maze/map									No progress
+-Graphics									No progress
+-SFX										No progress
+-Boundaries for player and enemies						No progress	
+-Boundaries for bullet								No progress
+-Spawn count for enemies, move onto next room when score == that spawn count	Score is created, spawn count still
+-Different enemies								No progress
+-Different maps									No progress
+-Loss condition									Health created, no loss condition yet
+-Win condition									No progress
