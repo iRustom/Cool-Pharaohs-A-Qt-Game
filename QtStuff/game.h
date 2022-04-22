@@ -11,6 +11,7 @@ class Game: public QGraphicsView
 {
 public:
     Game(QWidget * parent =0);
+    void start();
     QGraphicsScene * scene;
     Testing * player;
     Score * score;

@@ -7,19 +7,24 @@
 
 Game::Game(QWidget *parent): QGraphicsView(parent)
 {
-    scene = new QGraphicsScene(this);
-    scene->setSceneRect(0,0,600,600);
-    setBackgroundBrush(QBrush(QImage(":/images/sand.jpg").scaled(600,600)));
-
-    setScene(scene);
-    setWindowTitle("Guy Fights Cool Pharaohs");
     setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     setFixedSize(600,600);
+    setWindowTitle("Guy Fights Cool Pharaohs");
 
+    scene = new QGraphicsScene(this);
+    scene->setSceneRect(0,0,600,600);
+    setScene(scene);
+
+    show();
+
+}
+
+void Game::start()
+{
+    setBackgroundBrush(QBrush(QImage(":/images/sand.jpg").scaled(600,600)));
 
     player = new Testing();
-    scene->addItem(player);
     player->setFlag(QGraphicsPixmapItem::ItemIsFocusable);
     player->setFocus();
     player->setPos(width()/2-player->pixmap().width()/2,height()-player->pixmap().height());
@@ -47,7 +52,5 @@ Game::Game(QWidget *parent): QGraphicsView(parent)
     output->setVolume(50);
     music->setLoops(QMediaPlayer::Infinite);
     music->play();
-
-    show();
 
 }
