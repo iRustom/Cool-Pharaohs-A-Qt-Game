@@ -7,7 +7,6 @@ To-Do:
 		clears scene- loss anounced and calls mainmenu
 	menu
 		add login  - user should be able to enter name
-		add volume toggle color - button colour should change on click and remain that way even on hover exit
 -maze
 	need door class
 	need puddle + skull
