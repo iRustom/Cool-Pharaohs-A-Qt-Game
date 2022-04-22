@@ -2,11 +2,12 @@ To-Do:
 
 -game
 	win condition
-		using score?
+		using score? clears scene and calls mainmenu from game
 	loss condition
+		clears scene- loss anounced and calls mainmenu
 	menu
-		add login
-		add volume toggle color
+		add login  - user should be able to enter name
+		add volume toggle color - button colour should change on click and remain that way even on hover exit
 -maze
 	need door class
 	need puddle + skull
@@ -14,8 +15,10 @@ To-Do:
 -player
 	door boundries + door teleportation + health and score movement
 -enemy
-	movement/shoot
-	enemy graphics
-	enemy types and wall traversal
-	enemies should only move/shoot if player is in room
-	dooe boundries
+	random movement public move slot connected to a timer 60 pixel steps but slow? and use map cords? objectCords[x][y] =1 then bedrock wall =2 then normal wall
+	random shooting public shoot slot connected to a timer
+	graphics for all types enemy 1 enemy 2 boss
+	implment boss subclass (targeting if there is time)
+	enemy types and wall traversal - type 1 and 2 have been included in constructor use Type member to decide movement
+	enemies should only move/shoot if player is in room - mapFromScene()
+	do boundries and collisions  including a collison with player in case enemy moves into player will replace players enemey detect

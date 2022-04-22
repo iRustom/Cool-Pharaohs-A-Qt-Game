@@ -14,6 +14,7 @@ Button::Button(QString name, QGraphicsItem *parent): QGraphicsRectItem(parent), 
 
 void Button::mousePressEvent(QGraphicsSceneMouseEvent *event)
 {
+    //colour change to red
     emit clicked();
 }
 
@@ -25,6 +26,7 @@ void Button::hoverEnterEvent(QGraphicsSceneHoverEvent *event)
 
 void Button::hoverLeaveEvent(QGraphicsSceneHoverEvent *event)
 {
+    //should change to dark red if clicked is true or create a member
     QBrush brush;brush.setStyle(Qt::SolidPattern); brush.setColor(Qt::darkCyan);
     setBrush(brush);
 }
