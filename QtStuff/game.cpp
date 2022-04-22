@@ -35,7 +35,7 @@ void Game::start()
 
     setBackgroundBrush(QBrush(QImage(":/images/sand.jpg").scaled(600,600)));
 
-    player = new Testing();
+    player = new Player();
     player->setFlag(QGraphicsPixmapItem::ItemIsFocusable);
     player->setFocus();
     player->setPos(width()/2-player->pixmap().width()/2,height()-player->pixmap().height());

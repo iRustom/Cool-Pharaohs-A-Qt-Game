@@ -3,7 +3,7 @@
 #include <QGraphicsView>
 #include <QWidget>
 #include <QGraphicsScene>
-#include "testing.h"
+#include "player.h"
 #include "score.h"
 #include "health.h"
 
@@ -14,7 +14,7 @@ public:
     Game(QWidget * parent =0);
     void mainMenu();
     QGraphicsScene * scene;
-    Testing * player;
+    Player * player;
     Score * score;
     Health * health;
 public slots:

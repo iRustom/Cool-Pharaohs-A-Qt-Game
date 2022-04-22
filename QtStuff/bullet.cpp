@@ -36,7 +36,7 @@ void Bullet::moveUp()
             delete colliding_items[i];
             delete this;
             return;
-        }else if(typeid(*(colliding_items[i]))==typeid(Testing)){
+        }else if(typeid(*(colliding_items[i]))==typeid(Player)){
             game->health->decrease();
 
             scene()-> removeItem(this);
@@ -64,7 +64,7 @@ void Bullet::moveDown()
             delete colliding_items[i];
             delete this;
             return;
-        }else if(typeid(*(colliding_items[i]))==typeid(Testing)){
+        }else if(typeid(*(colliding_items[i]))==typeid(Player)){
             game->health->decrease();
 
             scene()-> removeItem(this);
@@ -92,7 +92,7 @@ void Bullet::moveRight()
             delete colliding_items[i];
             delete this;
             return;
-        }else if(typeid(*(colliding_items[i]))==typeid(Testing)){
+        }else if(typeid(*(colliding_items[i]))==typeid(Player)){
             game->health->decrease();
 
             scene()-> removeItem(this);
@@ -120,7 +120,7 @@ void Bullet::moveLeft()
             delete colliding_items[i];
             delete this;
             return;
-        }else if(typeid(*(colliding_items[i]))==typeid(Testing)){
+        }else if(typeid(*(colliding_items[i]))==typeid(Player)){
             game->health->decrease();
 
             scene()-> removeItem(this);

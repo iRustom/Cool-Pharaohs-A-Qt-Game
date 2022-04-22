@@ -9,7 +9,7 @@
 #include <QApplication>
 #include <player.h>
 #include <QDebug>
-#include <testing.h>
+#include <player.h>
 #include <QTimer>
 #include "game.h"
 
