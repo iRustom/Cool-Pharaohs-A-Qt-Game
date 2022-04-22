@@ -3,7 +3,7 @@
 #include <QGraphicsView>
 #include <QWidget>
 #include <QGraphicsScene>
-#include "testing.h"
+#include "player.h"
 #include "score.h"
 #include "health.h"
 
