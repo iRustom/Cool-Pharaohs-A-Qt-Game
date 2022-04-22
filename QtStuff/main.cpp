@@ -7,8 +7,9 @@
 #include <QTextStream>
 #include <QGraphicsPixmapItem>
 #include <QApplication>
-#include <QDebug>
 #include <player.h>
+#include <QDebug>
+#include <testing.h>
 #include <QTimer>
 #include "game.h"
 

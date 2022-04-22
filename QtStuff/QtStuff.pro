@@ -18,7 +18,8 @@ SOURCES += \
     main.cpp \
     player.cpp \
     score.cpp \
-    slider.cpp
+    slider.cpp \
+    testing.cpp
 
 HEADERS += \
     bullet.h \
@@ -28,7 +29,8 @@ HEADERS += \
     health.h \
     player.h \
     score.h \
-    slider.h
+    slider.h \
+    testing.h
 
 FORMS +=
 

@@ -1,21 +1,19 @@
 #ifndef PLAYER_H
 #define PLAYER_H
-#include <QObject>
 #include <QGraphicsPixmapItem>
-#include <QMediaPlayer>
-#include <QAudioOutput>
+#include <QKeyEvent>
 
-class Testing : public QObject, public QGraphicsPixmapItem
+class player : public QObject, public QGraphicsPixmapItem
 {
-    Q_OBJECT
 public:
-    Testing(QGraphicsItem * parent = 0);
-    void keyPressEvent(QKeyEvent* event);
-public slots:
-    void spawn();// should be moved to game class
+    player();
 private:
-    QMediaPlayer * bulletSound;
-    QAudioOutput * bulletoutput;
+    int row;
+    int column;
+public slots:
+    void keyPressEvent(QKeyEvent* event);
+
+signals:
 
 };
 
