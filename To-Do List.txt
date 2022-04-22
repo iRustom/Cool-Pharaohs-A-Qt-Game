@@ -1,13 +1,21 @@
 To-Do:
 
--Log-in menu - play, options (screen res, volume), exit				Play and exit options exist, volume turns on or off (need an indicator)
--Add maze/map									No progress
--Graphics									No progress
--SFX										Music added, bullet sounds added
--Boundaries for player and enemies						No progress	
--Boundaries for bullet								No progress
--Spawn count for enemies, move onto next room when score == that spawn count	Score is created, spawn count still
--Different enemies								No progress
--Different maps									No progress
--Loss condition									Health created, no loss condition yet
--Win condition									No progress
+-game
+	win condition
+		using score?
+	loss condition
+	menu
+		add login
+		add volume toggle color
+-maze
+	need door class
+	need puddle + skull
+	scene switching when door opened(pos()&&keyevent enter && enemies dead
+-player
+	door boundries + door teleportation + health and score movement
+-enemy
+	movement/shoot
+	enemy graphics
+	enemy types and wall traversal
+	enemies should only move/shoot if player is in room
+	dooe boundries
