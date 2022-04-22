@@ -1,6 +1,6 @@
 To-Do:
 
--Log-in menu - play, options (screen res, volume), exit				No progress
+-Log-in menu - play, options (screen res, volume), exit				Play and exit options exist, volume not functional
 -Add maze/map									No progress
 -Graphics									No progress
 -SFX										Music added, bullet sounds added
