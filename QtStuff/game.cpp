@@ -5,7 +5,11 @@
 #include <QAudioOutput>
 #include <QImage>
 #include <QGraphicsTextItem>
+#include <QSlider>
+#include <QVBoxLayout>
+#include <QWidget>
 #include "button.h"
+#include "slider.h"
 
 Game::Game(QWidget *parent): QGraphicsView(parent)
 {
@@ -59,8 +63,15 @@ void Game::start()
 
 }
 
+void Game::changeVol(int vol)
+{
+    float volF = vol;
+    volume = volF/100;
+}
+
 void Game::mainMenu()
 {
+    //can be reimplemented using widgets
     QGraphicsTextItem* title = new QGraphicsTextItem(QString("Guy kills cool pharaohs"));
     QFont titleFont("comic sans",25);
     title->setFont(titleFont);
@@ -76,5 +87,14 @@ void Game::mainMenu()
     quit->setPos(this->width()/2-quit->boundingRect().width()/2,300);
     connect(quit, SIGNAL(clicked()),this,SLOT(close()));
     scene->addItem(quit);
+
+    /*Slider *slider = new Slider();
+    slider->setRange(0, 100);
+    slider->setValue(50);
+    connect(slider, SIGNAL(valueChanged(int)),this,SLOT(changVol(int)));
+    slider->setFixedHeight(20);
+    slider->setFixedWidth(200);
+    slider->setPos(this->width()/2-100,400);
+    scene->addItem(slider);*/
 
 }

@@ -2,7 +2,8 @@
 #define BUTTON_H
 #include <QGraphicsRectItem>
 #include <QGraphicsSceneMouseEvent>
-class Button:public QObject,public QGraphicsRectItem
+#include <QWidget>
+class Button:public QWidget, public QGraphicsRectItem
 {
     Q_OBJECT
 public:

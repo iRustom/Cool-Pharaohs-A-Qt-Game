@@ -2,13 +2,13 @@
 #include <QBrush>
 #include <QGraphicsTextItem>
 
-Button::Button(QString name, QGraphicsItem *parent): QGraphicsRectItem(parent)
+Button::Button(QString name, QGraphicsItem *parent): QGraphicsRectItem(parent), QWidget()
 {
     setRect(0,0,200,50);
     QBrush brush; brush.setStyle(Qt::SolidPattern); brush.setColor(Qt::darkCyan);
     setBrush(brush);
     text = new QGraphicsTextItem(name,this);
-    text->setPos(rect().width()/2- text->boundingRect().width()/2, rect().height()/2- text->boundingRect().height()/2);
+    text->setPos(QGraphicsRectItem::rect().width()/2- text->boundingRect().width()/2, QGraphicsRectItem::rect().height()/2- text->boundingRect().height()/2);
     setAcceptHoverEvents(true);
 }
 

@@ -19,6 +19,10 @@ public:
     Health * health;
 public slots:
     void start();
+private:
+    float volume;
+private slots:
+    void changeVol(int);
 
 };
 
