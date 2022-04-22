@@ -22,7 +22,10 @@ Game::Game(QWidget *parent): QGraphicsView(parent)
     scene->setSceneRect(0,0,600,600);
     setScene(scene);
 
+    volume =1;
+
     show();
+
 
 }
 
@@ -57,16 +60,19 @@ void Game::start()
 
     music-> setAudioOutput(output);
     music->setSource(QUrl("qrc:/sfx/EgyptBg.mp3"));
-    output->setVolume(50);
+    if(volume==1){
+        output->setVolume(50);
+    }else{
+        output->setVolume(0);
+    }
     music->setLoops(QMediaPlayer::Infinite);
     music->play();
 
 }
 
-void Game::changeVol(int vol)
+void Game::toggleVol()
 {
-    float volF = vol;
-    volume = volF/100;
+    volume *=-1;
 }
 
 void Game::mainMenu()
@@ -88,13 +94,9 @@ void Game::mainMenu()
     connect(quit, SIGNAL(clicked()),this,SLOT(close()));
     scene->addItem(quit);
 
-    /*Slider *slider = new Slider();
-    slider->setRange(0, 100);
-    slider->setValue(50);
-    connect(slider, SIGNAL(valueChanged(int)),this,SLOT(changVol(int)));
-    slider->setFixedHeight(20);
-    slider->setFixedWidth(200);
-    slider->setPos(this->width()/2-100,400);
-    scene->addItem(slider);*/
+    Button * togVol = new Button(QString("Toggle Volume"));
+    togVol->setPos(this->width()/2-togVol->boundingRect().width()/2,400);
+    connect(togVol,SIGNAL(clicked()),this,SLOT(toggleVol()));
+    scene->addItem(togVol);
 
 }

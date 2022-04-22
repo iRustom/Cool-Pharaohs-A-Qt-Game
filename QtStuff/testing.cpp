@@ -3,6 +3,8 @@
 #include <QKeyEvent>
 #include <QGraphicsScene>
 #include "bullet.h"
+#include "game.h"
+extern Game* game;
 Testing::Testing(QGraphicsItem * parent): QGraphicsPixmapItem(parent)
 {
     bulletSound = new QMediaPlayer();
@@ -10,8 +12,11 @@ Testing::Testing(QGraphicsItem * parent): QGraphicsPixmapItem(parent)
 
     bulletSound-> setAudioOutput(bulletoutput);
     bulletSound->setSource(QUrl("qrc:/sfx/bulletsound.mp3"));
-    bulletoutput->setVolume(100);
-
+    if(game->volume == 1){
+        bulletoutput->setVolume(100);
+    }else{
+        bulletoutput->setVolume(0);
+    }
     setPixmap(QPixmap(":/images/mainCharacterUp.png").scaled(100,100));
     setTransformOriginPoint(pixmap().width()/2,pixmap().height()/2);
 }

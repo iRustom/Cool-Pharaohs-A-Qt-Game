@@ -32,10 +32,10 @@ static const qt_meta_stringdata_Game_t qt_meta_stringdata_Game = {
 QT_MOC_LITERAL(0, 4), // "Game"
 QT_MOC_LITERAL(5, 5), // "start"
 QT_MOC_LITERAL(11, 0), // ""
-QT_MOC_LITERAL(12, 9) // "changeVol"
+QT_MOC_LITERAL(12, 9) // "toggleVol"
 
     },
-    "Game\0start\0\0changeVol"
+    "Game\0start\0\0toggleVol"
 };
 #undef QT_MOC_LITERAL
 
@@ -54,11 +54,11 @@ static const uint qt_meta_data_Game[] = {
 
  // slots: name, argc, parameters, tag, flags, initial metatype offsets
        1,    0,   26,    2, 0x0a,    1 /* Public */,
-       3,    1,   27,    2, 0x08,    2 /* Private */,
+       3,    0,   27,    2, 0x08,    2 /* Private */,
 
  // slots: parameters
     QMetaType::Void,
-    QMetaType::Void, QMetaType::Int,    2,
+    QMetaType::Void,
 
        0        // eod
 };
@@ -70,10 +70,11 @@ void Game::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void *
         (void)_t;
         switch (_id) {
         case 0: _t->start(); break;
-        case 1: _t->changeVol((*reinterpret_cast< std::add_pointer_t<int>>(_a[1]))); break;
+        case 1: _t->toggleVol(); break;
         default: ;
         }
     }
+    (void)_a;
 }
 
 const QMetaObject Game::staticMetaObject = { {
@@ -84,7 +85,7 @@ const QMetaObject Game::staticMetaObject = { {
     nullptr,
 qt_incomplete_metaTypeArray<qt_meta_stringdata_Game_t
 , QtPrivate::TypeAndForceComplete<Game, std::true_type>
-, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<int, std::false_type>
+, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>
 
 
 >,
