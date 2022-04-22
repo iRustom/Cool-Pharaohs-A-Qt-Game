@@ -9,9 +9,9 @@ class Map
 public:
     Map();
     void readMap(QString );
-    int objectCords[10][20];
+    int objectCords[20][20];
     void  drawMap();
-    QGraphicsPixmapItem* objects[10][20];
+    QGraphicsPixmapItem* objects[20][20];
 };
 
 #endif // MAP_H

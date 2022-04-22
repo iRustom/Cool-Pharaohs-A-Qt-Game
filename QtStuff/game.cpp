@@ -33,7 +33,7 @@ Game::Game(QWidget *parent): QGraphicsView(parent)
 void Game::start()
 {
     scene->clear();
-    setFixedSize(1200,1200);
+    setFixedSize(600,600);
     scene->setSceneRect(0,0,1200,1200);
 
     qDebug()<< "i work";
@@ -45,7 +45,7 @@ void Game::start()
     player = new Player();
     player->setFlag(QGraphicsPixmapItem::ItemIsFocusable);
     player->setFocus();
-    player->setPos(scene->width()/2-player->pixmap().width()/2,scene->height()-player->pixmap().height());
+    player->setPos(61,479);
 
     player->setFlag(QGraphicsItem::ItemIsFocusable);
     player->setFocus();

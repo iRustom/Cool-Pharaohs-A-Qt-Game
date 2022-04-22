@@ -16,6 +16,7 @@ public slots:
 private:
     QMediaPlayer * bulletSound;
     QAudioOutput * bulletoutput;
+    bool stopUp = false; bool stopDown = false;bool stopRight = false;bool stopLeft = false;
 
 };
 

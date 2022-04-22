@@ -3,7 +3,7 @@
 
 Health::Health(QGraphicsItem *parent): QGraphicsTextItem(parent)
 {
-    health = 100;
+    health = 3;
 
     setPlainText(QString("Health: ")+ QString::number(health));
     setDefaultTextColor(Qt::red);

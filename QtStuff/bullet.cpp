@@ -4,6 +4,7 @@
 #include <QList>
 #include "enemy.h"
 #include "game.h"
+#include "wall.h"
 extern Game * game;
 
 Bullet::Bullet(int rotateCheck, QGraphicsItem* parent): QObject(), QGraphicsPixmapItem(parent)
@@ -42,9 +43,14 @@ void Bullet::moveUp()
             scene()-> removeItem(this);
             delete this;
             return;
+        }else if(typeid(*(colliding_items[i]))==typeid(Wall)){
+
+            scene()-> removeItem(this);
+            delete this;
+            return;
         }
     }
-    setPos(x(),y()-10);
+    setPos(x(),y()-30);
     if(pos().y()+pixmap().height()<0){
         scene()->removeItem(this);
         delete this;
@@ -70,9 +76,14 @@ void Bullet::moveDown()
             scene()-> removeItem(this);
             delete this;
             return;
+        }else if(typeid(*(colliding_items[i]))==typeid(Wall)){
+
+            scene()-> removeItem(this);
+            delete this;
+            return;
         }
     }
-    setPos(x(),y()+10);
+    setPos(x(),y()+30);
     if(pos().y()+pixmap().height()<0){
         scene()->removeItem(this);
         delete this;
@@ -98,9 +109,14 @@ void Bullet::moveRight()
             scene()-> removeItem(this);
             delete this;
             return;
+        }else if(typeid(*(colliding_items[i]))==typeid(Wall)){
+
+            scene()-> removeItem(this);
+            delete this;
+            return;
         }
     }
-    setPos(x()+10,y());
+    setPos(x()+30,y());
     if(pos().y()+pixmap().height()<0){
         scene()->removeItem(this);
         delete this;
@@ -126,9 +142,14 @@ void Bullet::moveLeft()
             scene()-> removeItem(this);
             delete this;
             return;
+        }else if(typeid(*(colliding_items[i]))==typeid(Wall)){
+
+            scene()-> removeItem(this);
+            delete this;
+            return;
         }
     }
-    setPos(x()-10,y());
+    setPos(x()-30,y());
     if(pos().y()+pixmap().height()<0){
         scene()->removeItem(this);
         delete this;

@@ -21,7 +21,7 @@ void Map::readMap(QString fileName)
     QTextStream stream(&file);
     QString temp;
 
-    for(int i = 0;i<10;i++)
+    for(int i = 0;i<20;i++)
         for(int j=0;j<20;j++){
             stream>>temp;
             objectCords[i][j] =  temp.toInt();
@@ -33,7 +33,7 @@ void Map::readMap(QString fileName)
 void Map::drawMap()
 {
     Wall * wall;Enemy * enemy;//Skull * skull
-    for(int i = 0;i<10;i++)
+    for(int i = 0;i<20;i++)
         for(int j=0;j<20;j++){
             if(objectCords[i][j]==1){
                 wall = new Wall(0,game->player);//player set as parent

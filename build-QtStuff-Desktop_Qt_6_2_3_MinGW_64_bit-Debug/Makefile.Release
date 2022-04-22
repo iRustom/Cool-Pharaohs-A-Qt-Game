@@ -1083,7 +1083,8 @@ release\bullet.obj: ..\QtStuff\bullet.cpp ..\QtStuff\bullet.h \
 		C:\Qt\6.3.0\msvc2019_64\include\QtMultimedia\qaudiooutput.h \
 		..\QtStuff\score.h \
 		C:\Qt\6.3.0\msvc2019_64\include\QtWidgets\QGraphicsTextItem \
-		..\QtStuff\health.h
+		..\QtStuff\health.h \
+		..\QtStuff\wall.h
 
 release\button.obj: ..\QtStuff\button.cpp ..\QtStuff\button.h \
 		C:\Qt\6.3.0\msvc2019_64\include\QtWidgets\QGraphicsRectItem \
@@ -1526,7 +1527,8 @@ release\game.obj: ..\QtStuff\game.cpp ..\QtStuff\game.h \
 		C:\Qt\6.3.0\msvc2019_64\include\QtWidgets\QGraphicsRectItem \
 		C:\Qt\6.3.0\msvc2019_64\include\QtWidgets\QGraphicsSceneMouseEvent \
 		C:\Qt\6.3.0\msvc2019_64\include\QtWidgets\qgraphicssceneevent.h \
-		..\QtStuff\slider.h
+		..\QtStuff\slider.h \
+		C:\Qt\6.3.0\msvc2019_64\include\QtCore\QDebug
 
 release\health.obj: ..\QtStuff\health.cpp ..\QtStuff\health.h \
 		C:\Qt\6.3.0\msvc2019_64\include\QtWidgets\QGraphicsItem \
@@ -2171,7 +2173,8 @@ release\player.obj: ..\QtStuff\player.cpp ..\QtStuff\player.h \
 		C:\Qt\6.3.0\msvc2019_64\include\QtCore\QTextStream \
 		..\QtStuff\score.h \
 		C:\Qt\6.3.0\msvc2019_64\include\QtWidgets\QGraphicsTextItem \
-		..\QtStuff\health.h
+		..\QtStuff\health.h \
+		..\QtStuff\wall.h
 
 release\score.obj: ..\QtStuff\score.cpp ..\QtStuff\score.h \
 		C:\Qt\6.3.0\msvc2019_64\include\QtWidgets\QGraphicsTextItem \
