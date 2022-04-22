@@ -16,9 +16,10 @@ SOURCES += \
     game.cpp \
     health.cpp \
     main.cpp \
+    map.cpp \
     player.cpp \
     score.cpp \
-    slider.cpp
+    wall.cpp
 
 HEADERS += \
     bullet.h \
@@ -26,9 +27,10 @@ HEADERS += \
     enemy.h \
     game.h \
     health.h \
+    map.h \
     player.h \
     score.h \
-    slider.h
+    wall.h
 
 FORMS +=
 

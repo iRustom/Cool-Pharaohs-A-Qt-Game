@@ -10,6 +10,7 @@
 #include <QWidget>
 #include "button.h"
 #include "slider.h"
+#include <QDebug>
 
 Game::Game(QWidget *parent): QGraphicsView(parent)
 {
@@ -32,13 +33,19 @@ Game::Game(QWidget *parent): QGraphicsView(parent)
 void Game::start()
 {
     scene->clear();
+    setFixedSize(1200,1200);
+    scene->setSceneRect(0,0,1200,1200);
+
+    qDebug()<< "i work";
+    map.readMap(":/maps/map.txt");
+    map.drawMap();
 
     setBackgroundBrush(QBrush(QImage(":/images/sand.jpg").scaled(600,600)));
 
     player = new Player();
     player->setFlag(QGraphicsPixmapItem::ItemIsFocusable);
     player->setFocus();
-    player->setPos(width()/2-player->pixmap().width()/2,height()-player->pixmap().height());
+    player->setPos(scene->width()/2-player->pixmap().width()/2,scene->height()-player->pixmap().height());
 
     player->setFlag(QGraphicsItem::ItemIsFocusable);
     player->setFocus();
@@ -47,13 +54,14 @@ void Game::start()
 
     score = new Score();
     scene->addItem(score);
-    health = new Health();
-    scene->addItem(health);
-    health-> setPos(health->x(),health->y()+25);
 
-    QTimer * timer = new QTimer();
+    health = new Health();
+    health-> setPos(health->x(),health->y()+25);
+    scene->addItem(health);
+
+    /*QTimer * timer = new QTimer();
     QObject::connect(timer,SIGNAL(timeout()), player, SLOT(spawn())); // switch from p to game later
-    timer->start(2000);
+    timer->start(2000);*/
 
     QMediaPlayer * music= new QMediaPlayer();
     QAudioOutput * output = new QAudioOutput();

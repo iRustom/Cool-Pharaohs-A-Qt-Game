@@ -3,6 +3,7 @@
 #include <QGraphicsView>
 #include <QWidget>
 #include <QGraphicsScene>
+#include "map.h"
 #include "player.h"
 #include "score.h"
 #include "health.h"
@@ -17,6 +18,7 @@ public:
     Player * player;
     Score * score;
     Health * health;
+    Map map;
 public slots:
     void start();
 public:

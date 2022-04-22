@@ -17,7 +17,7 @@ Player::Player(QGraphicsItem * parent): QGraphicsPixmapItem(parent)
     }else{
         bulletoutput->setVolume(0);
     }
-    setPixmap(QPixmap(":/images/mainCharacterUp.png").scaled(100,100));
+    setPixmap(QPixmap(":/images/mainCharacterUp.png").scaled(50,50));
     setTransformOriginPoint(pixmap().width()/2,pixmap().height()/2);
 }
 
