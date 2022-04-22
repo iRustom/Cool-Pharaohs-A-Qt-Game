@@ -4,6 +4,8 @@
 #include <QMediaPlayer>
 #include <QAudioOutput>
 #include <QImage>
+#include <QGraphicsTextItem>
+#include "button.h"
 
 Game::Game(QWidget *parent): QGraphicsView(parent)
 {
@@ -22,6 +24,8 @@ Game::Game(QWidget *parent): QGraphicsView(parent)
 
 void Game::start()
 {
+    scene->clear();
+
     setBackgroundBrush(QBrush(QImage(":/images/sand.jpg").scaled(600,600)));
 
     player = new Testing();
@@ -52,5 +56,25 @@ void Game::start()
     output->setVolume(50);
     music->setLoops(QMediaPlayer::Infinite);
     music->play();
+
+}
+
+void Game::mainMenu()
+{
+    QGraphicsTextItem* title = new QGraphicsTextItem(QString("Guy kills cool pharaohs"));
+    QFont titleFont("comic sans",25);
+    title->setFont(titleFont);
+    title->setPos(this->width()/2-title->boundingRect().width()/2,100);
+    scene->addItem(title);
+
+    Button * play = new Button(QString("Play"));
+    play->setPos(this->width()/2-play->boundingRect().width()/2,200);
+    connect(play, SIGNAL(clicked()),this,SLOT(start()));
+    scene->addItem(play);
+
+    Button * quit = new Button(QString("Quit"));
+    quit->setPos(this->width()/2-quit->boundingRect().width()/2,300);
+    connect(quit, SIGNAL(clicked()),this,SLOT(close()));
+    scene->addItem(quit);
 
 }
