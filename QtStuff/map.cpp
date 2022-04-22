@@ -29,7 +29,7 @@ void Map::readMap(QString fileName)
 
 
 }
-//empty = 0; bedrock wall =1;normal wall =2 ; skull =  3; enemy = 4; triggerBlock = 5
+//empty = 0; bedrock wall =1;normal wall =2 ;door = 3 ; enemy type 1= 4;enemy type 2=5;boss =6; pudlle =7 ;skull =  8
 void Map::drawMap()
 {
     Wall * wall;Enemy * enemy;//Skull * skull
@@ -48,15 +48,31 @@ void Map::drawMap()
                 game->scene->addItem(wall);
                 qDebug()<<"Added wall";
             }else if(objectCords[i][j]==3){
-                //skull code
+                //door
             }else if(objectCords[i][j]==4){
-                enemy = new Enemy(game->player);
+                enemy = new Enemy(0,game->player);
                 enemy->setPos(game->scene->sceneRect().x()+j*60,game->scene->sceneRect().y()+i*60);
                 objects[i][j]= enemy;
                 game->scene->addItem(enemy);
 
                 qDebug()<<"Added enemy";
 
+            }else if(objectCords[i][j]==5){
+                enemy = new Enemy(1,game->player);
+                enemy->setPos(game->scene->sceneRect().x()+j*60,game->scene->sceneRect().y()+i*60);
+                objects[i][j]= enemy;
+                game->scene->addItem(enemy);
+
+                qDebug()<<"Added enemy";
+
+            }else if(objectCords[i][j]==6){
+                //boss
+
+            }else if(objectCords[i][j]==7){
+                //puddle
+            }
+            else if(objectCords[i][j]==7){
+                 //skull
             }
 
         }

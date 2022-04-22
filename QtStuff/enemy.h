@@ -9,9 +9,11 @@ class Enemy: public QObject, public QGraphicsPixmapItem
 {
     Q_OBJECT
 public:
-    Enemy(QGraphicsItem * parent = 0);
+    Enemy(int type,QGraphicsItem * parent = 0);
+    int Type;
 public slots:
     void move();
+
 };
 
 #endif // ENEMY_H
