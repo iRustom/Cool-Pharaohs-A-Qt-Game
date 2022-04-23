@@ -14,7 +14,7 @@ Omar:
 	need puddle + skull
 	scene switching when door opened(pos()&&keyevent enter && enemies dead
 -player
-	door boundries + door teleportation + health and score movement
+	door boundries + door teleportation + health and score movement (set pos() scene and scene is parent)
 	player collision prevention using objectcords
 	door should destory bullet (typeid door deleteitem)
 
