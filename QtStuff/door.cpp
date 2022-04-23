@@ -20,7 +20,7 @@ Door::Door(QGraphicsItem *parent):QObject(), QGraphicsPixmapItem(parent)
         setPixmap(QPixmap(":/images/portal3.png").scaled(60,60));
 
     }else if(count ==3){
-        nextDestination = QPointF(969,459);
+        nextDestination = QPointF(969,491);
         endRoomNum=2;
         setPixmap(QPixmap(":/images/portal2.png").scaled(60,60));
 
