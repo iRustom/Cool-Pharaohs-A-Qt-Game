@@ -51,13 +51,23 @@ void Enemy::move()
     notOcc.push_back(QPoint(currentX - 60, currentY));
     moveCheck = true;
     }
+
     if (moveCheck == true)
     {
     int rando;
     rando = rand()%notOcc.size();
-    qDebug() << "moving from" << QString::number(currentX) << ", " << QString::number(currentY) << "to "<< QString::number(notOcc[rando].x()) << QString::number(notOcc[rando].y());
+    if(notOcc[rando].x() > currentX )
+        setRotation(270);
+    else if(notOcc[rando].x() < currentX)
+        setRotation(90);
+    else if(notOcc[rando].y() < currentY)
+        setRotation(180);
+    else if(notOcc[rando].y() > currentY)
+        setRotation(0);
+
     setPos(notOcc[rando]);
     }
+//change objectCord so that new pos of enemy is recorded (not 0).
 
     //setPos(x(),y()+5);
     //if(pos().y()+pixmap().height()<600){

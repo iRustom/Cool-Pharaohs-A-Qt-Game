@@ -21,7 +21,7 @@ Bullet::Bullet(int rotateCheck, QGraphicsItem* parent): QObject(), QGraphicsPixm
     }else if(rotateCheck == 90){
     connect(timer, SIGNAL(timeout()),this,SLOT(moveRight()));
     }
-    timer->start(50);
+    timer->start(5);
 }
 
 void Bullet::moveUp()
@@ -50,7 +50,7 @@ void Bullet::moveUp()
             return;
         }
     }
-    setPos(x(),y()-30);
+    setPos(x(),y()-2);
     if(pos().y()+pixmap().height()<0){
         scene()->removeItem(this);
         delete this;
@@ -83,7 +83,7 @@ void Bullet::moveDown()
             return;
         }
     }
-    setPos(x(),y()+30);
+    setPos(x(),y()+2);
     if(pos().y()+pixmap().height()<0){
         scene()->removeItem(this);
         delete this;
@@ -116,7 +116,7 @@ void Bullet::moveRight()
             return;
         }
     }
-    setPos(x()+30,y());
+    setPos(x()+2,y());
     if(pos().y()+pixmap().height()<0){
         scene()->removeItem(this);
         delete this;
@@ -149,7 +149,7 @@ void Bullet::moveLeft()
             return;
         }
     }
-    setPos(x()-30,y());
+    setPos(x()-2,y());
     if(pos().y()+pixmap().height()<0){
         scene()->removeItem(this);
         delete this;
