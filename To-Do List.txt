@@ -10,17 +10,19 @@ Nour:
 		add login  - user should be able to enter name
 Omar:
 -maze
-	need door class
+	need door class (fix 2, 4, 6)
 	need puddle + skull
 	scene switching when door opened(pos()&&keyevent enter && enemies dead
 -player
 	door boundries + door teleportation + health and score movement
+	player collision prevention using objectcords
+	door should destory bullet (typeid door deleteitem)
 
 -enemy
-	random movement public move slot connected to a timer 60 pixel steps but slow? and use map cords? objectCords[x][y] =1 then bedrock wall =2 then normal wall
+	enemy types and wall traversal - type 1 and 2 have been included in constructor use Type member to decide movement
 	random shooting public shoot slot connected to a timer
 	graphics for all types enemy 1 enemy 2 boss
 	implment boss subclass (targeting if there is time)
-	enemy types and wall traversal - type 1 and 2 have been included in constructor use Type member to decide movement
 	enemies should only move/shoot if player is in room - mapFromScene()
-	do boundries and collisions  including a collison with player in case enemy moves into player will replace players enemey detect
+	do boundaries and collisions including a collison with player in case enemy moves into player will replace players enemey detect
+	enemy-enemy collision prevention (probably map fix)
