@@ -56,6 +56,12 @@ void Player::keyPressEvent(QKeyEvent *event)
                 delete (colliding_items[i]);
                 qDebug("Hit enemy");
             }
+            if(typeid(*(colliding_items[i]))==typeid(Door)){
+
+                        scene()-> removeItem(this);
+                        delete this;
+                        return;
+             }
         }
         if(stopDown==true){
             stopDown=false;
@@ -83,6 +89,12 @@ void Player::keyPressEvent(QKeyEvent *event)
                 delete (colliding_items[i]);
                 qDebug("Hit enemy");
             }
+            if(typeid(*(colliding_items[i]))==typeid(Door)){
+
+                        scene()-> removeItem(this);
+                        delete this;
+                        return;
+             }
         }
         if(stopUp==true){
             stopUp = false;
@@ -111,6 +123,12 @@ void Player::keyPressEvent(QKeyEvent *event)
                 delete (colliding_items[i]);
                 qDebug("Hit enemy");
             }
+            if(typeid(*(colliding_items[i]))==typeid(Door)){
+
+                        scene()-> removeItem(this);
+                        delete this;
+                        return;
+             }
         }
         if(stopRight == true){
             stopRight = false;
@@ -139,6 +157,12 @@ void Player::keyPressEvent(QKeyEvent *event)
                 delete (colliding_items[i]);
                 qDebug("Hit enemy");
             }
+            if(typeid(*(colliding_items[i]))==typeid(Door)){
+
+                        scene()-> removeItem(this);
+                        delete this;
+                        return;
+             }
         }
         if(stopLeft == true){
             stopLeft = false;

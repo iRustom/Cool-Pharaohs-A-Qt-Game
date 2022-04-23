@@ -10,7 +10,8 @@ class EnemyBullet:  public QObject, public QGraphicsPixmapItem
 {
     Q_OBJECT
 public:
-    EnemyBullet(int check=0,QGraphicsItem* parent=0);
+    EnemyBullet(int check=0, int type = 0, QGraphicsItem* parent=0);
+    int enemyType;
 public slots:
     void moveUp();
     void moveDown();

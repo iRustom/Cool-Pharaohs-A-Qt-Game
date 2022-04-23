@@ -109,7 +109,7 @@ void Enemy::move()
 
     setPos(notOcc[rando]);
 
-    EnemyBullet * enemyBullet = new EnemyBullet(rotation());
+    EnemyBullet * enemyBullet = new EnemyBullet(rotation(), Type);
     if (rotation() == 0)
     {
     enemyBullet->setPos(x()+(pixmap().width()/2)-(enemyBullet->pixmap().width()/2),y()+(enemyBullet->pixmap().height()+11));

@@ -5,9 +5,11 @@
 #include "game.h"
 #include "wall.h"
 #include "enemybullet.h"
+#include "bedrockwall.h"
+#include "door.h"
 extern Game * game;
 
-EnemyBullet::EnemyBullet(int rotateCheck, QGraphicsItem* parent): QObject(), QGraphicsPixmapItem(parent)
+EnemyBullet::EnemyBullet(int rotateCheck, int type, QGraphicsItem* parent): QObject(), QGraphicsPixmapItem(parent)
 {
     QTimer * timer = new QTimer(this);
     setPixmap(QPixmap(":/images/bullet.png").scaled(10,10));
@@ -21,7 +23,8 @@ EnemyBullet::EnemyBullet(int rotateCheck, QGraphicsItem* parent): QObject(), QGr
     }else if(rotateCheck == 270){
     connect(timer, SIGNAL(timeout()),this,SLOT(moveRight()));
     }
-    timer->start(5);
+    timer->start(10);
+    enemyType = type;
 }
 
 void EnemyBullet::moveUp()
@@ -34,14 +37,27 @@ void EnemyBullet::moveUp()
             scene()-> removeItem(this);
             delete this;
             return;
-        }else if(typeid(*(colliding_items[i]))==typeid(Wall)){
+        }
+        if(enemyType == 0 && (typeid(*(colliding_items[i]))==typeid(Wall) || typeid(*(colliding_items[i]))==typeid(BedrockWall))){
+
+            scene()-> removeItem(this);
+            delete this;
+            return;
+        }
+        if(enemyType == 1 && typeid(*(colliding_items[i]))==typeid(BedrockWall)){
+
+            scene()-> removeItem(this);
+            delete this;
+            return;
+        }
+        if(typeid(*(colliding_items[i]))==typeid(Door)){
 
             scene()-> removeItem(this);
             delete this;
             return;
         }
     }
-    setPos(x(),y()-2);
+    setPos(x(),y()-4);
     if(pos().y()+pixmap().height()<0){
         scene()->removeItem(this);
         delete this;
@@ -58,14 +74,27 @@ void EnemyBullet::moveDown()
             scene()-> removeItem(this);
             delete this;
             return;
-        }else if(typeid(*(colliding_items[i]))==typeid(Wall)){
+        }
+        if(enemyType == 0 && (typeid(*(colliding_items[i]))==typeid(Wall) || typeid(*(colliding_items[i]))==typeid(BedrockWall))){
+
+            scene()-> removeItem(this);
+            delete this;
+            return;
+        }
+        if(enemyType == 1 && typeid(*(colliding_items[i]))==typeid(BedrockWall)){
+
+            scene()-> removeItem(this);
+            delete this;
+            return;
+        }
+        if(typeid(*(colliding_items[i]))==typeid(Door)){
 
             scene()-> removeItem(this);
             delete this;
             return;
         }
     }
-    setPos(x(),y()+2);
+    setPos(x(),y()+4);
     if(pos().y()+pixmap().height()<0){
         scene()->removeItem(this);
         delete this;
@@ -82,14 +111,27 @@ void EnemyBullet::moveRight()
             scene()-> removeItem(this);
             delete this;
             return;
-        }else if(typeid(*(colliding_items[i]))==typeid(Wall)){
+        }
+        if(enemyType == 0 && (typeid(*(colliding_items[i]))==typeid(Wall) || typeid(*(colliding_items[i]))==typeid(BedrockWall))){
+
+            scene()-> removeItem(this);
+            delete this;
+            return;
+        }
+        if(enemyType == 1 && typeid(*(colliding_items[i]))==typeid(BedrockWall)){
+
+            scene()-> removeItem(this);
+            delete this;
+            return;
+        }
+        if(typeid(*(colliding_items[i]))==typeid(Door)){
 
             scene()-> removeItem(this);
             delete this;
             return;
         }
     }
-    setPos(x()+2,y());
+    setPos(x()+4,y());
     if(pos().y()+pixmap().height()<0){
         scene()->removeItem(this);
         delete this;
@@ -106,14 +148,27 @@ void EnemyBullet::moveLeft()
             scene()-> removeItem(this);
             delete this;
             return;
-        }else if(typeid(*(colliding_items[i]))==typeid(Wall)){
+        }
+        if(enemyType == 0 && (typeid(*(colliding_items[i]))==typeid(Wall) || typeid(*(colliding_items[i]))==typeid(BedrockWall))){
+
+            scene()-> removeItem(this);
+            delete this;
+            return;
+        }
+        if(enemyType == 1 && typeid(*(colliding_items[i]))==typeid(BedrockWall)){
+
+            scene()-> removeItem(this);
+            delete this;
+            return;
+        }
+        if(typeid(*(colliding_items[i]))==typeid(Door)){
 
             scene()-> removeItem(this);
             delete this;
             return;
         }
     }
-    setPos(x()-2,y());
+    setPos(x()-4,y());
     if(pos().y()+pixmap().height()<0){
         scene()->removeItem(this);
         delete this;

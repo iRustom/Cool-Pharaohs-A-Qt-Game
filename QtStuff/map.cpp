@@ -4,6 +4,8 @@
 #include "enemy.h"
 #include "wall.h"
 #include <QDebug>
+#include "bedrockwall.h"
+
 extern Game* game;
 
 Map::Map()
@@ -33,17 +35,22 @@ void Map::readMap(QString fileName)
 //empty = 0; bedrock wall =1;normal wall =2 ;door = 3 ; enemy type 1= 4;enemy type 2=5;boss =6; pudlle =7 ;skull =  8
 void Map::drawMap()
 {
-    Wall * wall;Enemy * enemy;Door* door;//Skull * skull
+    Wall * wall;Enemy * enemy;Door* door; BedrockWall* bedrockWall;//Skull * skull
     for(int i = 0;i<20;i++)
         for(int j=0;j<20;j++){
             if(objectCords[i][j]==1){
-                wall = new Wall(0,game->player);//player set as parent
-                wall->setPos(game->scene->sceneRect().x()+j*60,game->scene->sceneRect().y()+i*60);
-                objects[i][j]= wall;
-                game->scene->addItem(wall);
-                qDebug()<<"Added wall";
+                qDebug() << "about to draw mr bedrock";
+                bedrockWall = new BedrockWall();//player set as parent
+                qDebug() << "about to draw mr bedrock 2";
+                qDebug() << QString::number(game->scene->sceneRect().x()+j*60) << QString::number(game->scene->sceneRect().y()+i*60);
+                bedrockWall->setPos(game->scene->sceneRect().x()+j*60,game->scene->sceneRect().y()+i*60);
+                qDebug() << "about to draw mr bedrock 3";
+                objects[i][j]= bedrockWall;
+                qDebug() << "about to draw mr bedrock 4";
+                game->scene->addItem(bedrockWall);
+                qDebug()<<"Added bedrock wall";
             }else if(objectCords[i][j]==2){
-                wall = new Wall(1,game->player);//player set as parent
+                wall = new Wall();//player set as parent
                 wall->setPos(game->scene->sceneRect().x()+j*60,game->scene->sceneRect().y()+i*60);
                 objects[i][j]= wall;
                 game->scene->addItem(wall);
