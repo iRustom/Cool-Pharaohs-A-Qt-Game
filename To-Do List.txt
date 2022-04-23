@@ -7,17 +7,17 @@ Nour:
 	loss condition
 		clears scene- loss anounced and calls mainmenu
 	menu
-		add login  - user should be able to enter name
+		add login  - user should be able to enter name !!
 Omar:
 -game
 	need puddle + skull
 	door conditions (pos()&&keyevent enter && enemies dead
 -player
-	door-player collison
-	player collision prevention using objectcords
+	door-player collison invis barrier?
+	player-wall collision prevention using objectcords 30x30 grid?
 
 -enemy
-	implment boss subclass (targeting if there is time)
-	enemies should only move/shoot if player is in room - mapFromScene()
+	implment boss subclass (targeting if there is time!!)
+	enemies should only move/shoot if player is in room - mapFromScene() !!
 	do boundaries and collisions including a collison with player in case enemy moves into player will replace players enemey detect
-	enemy-enemy collision prevention (probably map fix, but unsure because 2 enemies can move into the same empty block at the same time)
+	enemy-enemy collision prevention (objectCords needs to be updated)
