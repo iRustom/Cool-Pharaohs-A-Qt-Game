@@ -3,6 +3,8 @@
 #include <QGraphicsScene>
 #include <stdlib.h>
 #include "game.h"
+#include <qDebug>
+
 extern Game* game;
 
 Enemy::Enemy(int type, QGraphicsItem *parent): QObject(), QGraphicsPixmapItem() //this should probably be changed to a new abstract class that all of our objects inherit from
@@ -23,16 +25,39 @@ void Enemy::move()
     QVector<QPoint> notOcc;
     int currentX = pos().x();
     int currentY = pos().y();
-    for (int i = currentX/60 - 1; i < currentX/60 + 2; i++)
-        for (int j = currentY/60 - 1; j < currentY/60 + 2; j++)
-            if(game->map.objectCords[i][j] == 0)
-                notOcc.push_back(QPoint(i*60, j*60));
+    bool moveCheck = false;     //was testing, just in case
+
+    if(game->map.objectCords[currentX/60][currentY/60 - 1] == 0) //up
+    {
+    notOcc.push_back(QPoint(currentX, currentY - 60));
+    moveCheck = true;
+    }
+
+    if(game->map.objectCords[currentX/60 + 1][currentY/60] == 0) //right
+    {
+    notOcc.push_back(QPoint(currentX + 60, currentY));
+    moveCheck = true;
+    }
+
+    if(game->map.objectCords[currentX/60][currentY/60 + 1] == 0) //down
+    {
+    notOcc.push_back(QPoint(currentX, currentY + 60));
+    moveCheck = true;
+    }
+
+    if(game->map.objectCords[currentX/60 - 1][currentY/60] == 0)  //left
+    {
+    notOcc.push_back(QPoint(currentX - 60, currentY));
+    moveCheck = true;
+    }
+    if (moveCheck == true)
+    {
     int rando;
     rando = rand()%notOcc.size();
     setPos(notOcc[rando]);
-
-    //setPos(x(),y()+5);
-    if(pos().y()+pixmap().height()<600){
-
     }
+    //setPos(x(),y()+5);
+    //if(pos().y()+pixmap().height()<600){
+
+    //}
 }
