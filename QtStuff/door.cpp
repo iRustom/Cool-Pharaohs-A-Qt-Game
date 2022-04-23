@@ -15,12 +15,12 @@ Door::Door(QGraphicsItem *parent):QObject(), QGraphicsPixmapItem(parent)
         setPixmap(QPixmap(":/images/portal2.png").scaled(60,60));
 
     }else if(count ==2){
-        nextDestination = QPointF(1019,660);
+        nextDestination = QPointF(969,661);
         endRoomNum=3;
         setPixmap(QPixmap(":/images/portal3.png").scaled(60,60));
 
     }else if(count ==3){
-        nextDestination = QPointF(959,479);
+        nextDestination = QPointF(969,459);
         endRoomNum=2;
         setPixmap(QPixmap(":/images/portal2.png").scaled(60,60));
 
@@ -52,13 +52,13 @@ void Door::teleportPlayer()
 void Door::moveScene()
 {
     if(endRoomNum == 1){
-        game->setSceneRect(0,0,1200,1200);
+        game->setSceneRect(0,0,600,600);
     }else if(endRoomNum==2){
-        game->setSceneRect(600,0,1200,1200);
+        game->setSceneRect(600,0,600,600);
     }else if(endRoomNum==3){
-        game->setSceneRect(600,600,1200,1200);
+        game->setSceneRect(600,600,600,600);
     }else if(endRoomNum==4){
-        game->setSceneRect(0,600,1200,1200);
+        game->setSceneRect(0,600,600,600);
     }
 }
 
