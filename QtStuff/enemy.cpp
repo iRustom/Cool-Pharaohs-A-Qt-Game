@@ -3,13 +3,23 @@
 #include <QGraphicsScene>
 #include <stdlib.h>
 #include "game.h"
-#include <qDebug>
+#include "enemybullet.h"
 
 extern Game* game;
 
 Enemy::Enemy(int type, QGraphicsItem *parent): QObject(), QGraphicsPixmapItem() //this should probably be changed to a new abstract class that all of our objects inherit from
 {
-    //setPos(rand()%600,0);
+    //setPos(rand()%600,0);    
+    enemyBulletSound = new QMediaPlayer();
+    enemyBulletoutput = new QAudioOutput();
+
+    enemyBulletSound-> setAudioOutput(enemyBulletoutput);
+    enemyBulletSound->setSource(QUrl("qrc:/sfx/bulletsound.mp3"));
+    if(game->volume == 1){
+        enemyBulletoutput->setVolume(100);
+    }else{
+        enemyBulletoutput->setVolume(0);
+    }
 
     setPixmap(QPixmap(":/images/mainCharacterDown.png").scaled(60,60));
     setTransformOriginPoint(pixmap().width()/2,pixmap().height()/2);
@@ -66,11 +76,39 @@ void Enemy::move()
         setRotation(0);
 
     setPos(notOcc[rando]);
+
+    EnemyBullet * enemyBullet = new EnemyBullet(rotation());
+    if (rotation() == 0)
+    {
+    enemyBullet->setPos(x()+(pixmap().width()/2)-(enemyBullet->pixmap().width()/2),y()+(enemyBullet->pixmap().height()+11));
+    scene()->addItem(enemyBullet);
     }
+    else if (rotation() == 180)
+    {
+    enemyBullet->setPos(x()+(pixmap().width()/2)-(enemyBullet->pixmap().width()/2),y()-(pixmap().height()+11));
+    scene()->addItem(enemyBullet);
+    }
+    else if (rotation() == 270)
+    {
+    enemyBullet->setPos(x()-enemyBullet->pixmap().width()+11,y()+pixmap().height()/2-enemyBullet->pixmap().height()/2);
+    scene()->addItem(enemyBullet);
+    }
+    else if (rotation() == 90)
+    {
+    enemyBullet->setPos(x()+pixmap().width()-11,y()+pixmap().height()/2-enemyBullet->pixmap().height()/2);
+    scene()->addItem(enemyBullet);
+    }
+    if(enemyBulletSound->playbackState()==QMediaPlayer::PlayingState){
+        enemyBulletSound -> setPosition(0);
+    }else if(enemyBulletSound->playbackState()==QMediaPlayer::StoppedState){
+        enemyBulletSound->play();
+    }
+
 //change objectCord so that new pos of enemy is recorded (not 0).
 
     //setPos(x(),y()+5);
     //if(pos().y()+pixmap().height()<600){
 
     //}
+    }
 }

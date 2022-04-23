@@ -1,9 +1,10 @@
 #ifndef ENEMY_H
 #define ENEMY_H
 
-#include <QGraphicsPixmapItem>
 #include <QObject>
-
+#include <QGraphicsPixmapItem>
+#include <QMediaPlayer>
+#include <QAudioOutput>
 
 class Enemy: public QObject, public QGraphicsPixmapItem
 {
@@ -13,6 +14,9 @@ public:
     int Type;
 public slots:
     void move();
+private:
+    QMediaPlayer * enemyBulletSound;
+    QAudioOutput * enemyBulletoutput;
 
 };
 

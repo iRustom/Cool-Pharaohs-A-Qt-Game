@@ -14,6 +14,7 @@ SOURCES += \
     button.cpp \
     door.cpp \
     enemy.cpp \
+    enemybullet.cpp \
     game.cpp \
     health.cpp \
     main.cpp \
@@ -27,6 +28,7 @@ HEADERS += \
     button.h \
     door.h \
     enemy.h \
+    enemybullet.h \
     game.h \
     health.h \
     map.h \
