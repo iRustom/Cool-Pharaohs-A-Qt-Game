@@ -1,0 +1,38 @@
+#include "enemy.h"
+#include <QTimer>
+#include <QGraphicsScene>
+#include <stdlib.h>
+#include "game.h"
+extern Game* game;
+
+Enemy::Enemy(int type, QGraphicsItem *parent): QObject(), QGraphicsPixmapItem() //this should probably be changed to a new abstract class that all of our objects inherit from
+{
+    //setPos(rand()%600,0);
+
+    setPixmap(QPixmap(":/images/mainCharacterDown.png").scaled(60,60));
+    setTransformOriginPoint(pixmap().width()/2,pixmap().height()/2);
+
+    QTimer * timer = new QTimer(this);
+    connect(timer,SIGNAL(timeout()),this,SLOT(move()));
+    timer->start(5000);
+    Type = type;
+}
+
+void Enemy::move()
+{
+    QVector<QPoint> notOcc;
+    int currentX = pos().x();
+    int currentY = pos().y();
+    for (int i = currentX/60 - 1; i < currentX/60 + 2; i++)
+        for (int j = currentY/60 - 1; j < currentY/60 + 2; j++)
+            if(game->map.objectCords[i][j] == 0)
+                notOcc.push_back(QPoint(i*60, j*60));
+    int rando;
+    rando = rand()%notOcc.size();
+    setPos(notOcc[rando]);
+
+    //setPos(x(),y()+5);
+    if(pos().y()+pixmap().height()<600){
+
+    }
+}
