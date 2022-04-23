@@ -14,6 +14,8 @@
         <file>portal2.png</file>
         <file>portal3.png</file>
         <file>portal4.png</file>
+        <file>enemy1.png</file>
+        <file>enemy2.png</file>
     </qresource>
     <qresource prefix="/sfx">
         <file>arrow.mp3</file>

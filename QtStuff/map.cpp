@@ -58,6 +58,7 @@ void Map::drawMap()
                 enemy = new Enemy(0,game->player);
                 enemy->setPos(game->scene->sceneRect().x()+j*60,game->scene->sceneRect().y()+i*60);
                 objects[i][j]= enemy;
+                enemy->setZValue(99);
                 game->scene->addItem(enemy);
 
                 qDebug()<<"Added enemy";
@@ -66,6 +67,7 @@ void Map::drawMap()
                 enemy = new Enemy(1,game->player);
                 enemy->setPos(game->scene->sceneRect().x()+j*60,game->scene->sceneRect().y()+i*60);
                 objects[i][j]= enemy;
+                enemy->setZValue(99);
                 game->scene->addItem(enemy);
 
                 qDebug()<<"Added enemy";
