@@ -9,12 +9,11 @@ Nour:
 	menu
 		add login  - user should be able to enter name
 Omar:
--maze
-	need door class (fix 2, 4, 6)
+-game
 	need puddle + skull
-	scene switching when door opened(pos()&&keyevent enter && enemies dead
+	door conditions (pos()&&keyevent enter && enemies dead
 -player
-	door boundries + door teleportation + health and score movement (set pos() scene and scene is parent)
+	door-player collison
 	player collision prevention using objectcords
 	door should destory bullet (typeid door deleteitem)
 

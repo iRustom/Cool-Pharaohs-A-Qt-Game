@@ -5,7 +5,7 @@ Health::Health(QGraphicsItem *parent): QGraphicsTextItem(parent)
 {
     health = 3;
 
-    setPlainText(QString("Lives: ")+ QString::number(health));
+    setPlainText(QString("       ")+ QString::number(health));
     setDefaultTextColor(Qt::red);
     setFont(QFont("times",20));
 }
@@ -13,7 +13,7 @@ Health::Health(QGraphicsItem *parent): QGraphicsTextItem(parent)
 void Health::decrease()
 {
     health--;
-    setPlainText(QString("Lives: ")+ QString::number(health));
+    setPlainText(QString("       ")+ QString::number(health));
 }
 
 int Health::getHealth()

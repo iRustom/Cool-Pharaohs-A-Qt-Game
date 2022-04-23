@@ -53,12 +53,19 @@ void Door::moveScene()
 {
     if(endRoomNum == 1){
         game->setSceneRect(0,0,600,600);
+        game->score->setPos(0,0);
     }else if(endRoomNum==2){
         game->setSceneRect(600,0,600,600);
+        game->score->setPos(600,0);
+
     }else if(endRoomNum==3){
         game->setSceneRect(600,600,600,600);
+        game->score->setPos(600,600);
+
     }else if(endRoomNum==4){
         game->setSceneRect(0,600,600,600);
+        game->score->setPos(0,600);
+
     }
 }
 

@@ -56,8 +56,9 @@ void Game::start()
     scene->addItem(score);
 
     health = new Health();
-    health-> setPos(health->x(),health->y()+25);
-    scene->addItem(health);
+    //health-> setPos(health->x(),health->y()+25);
+    //scene->addItem(health);
+    health->setParentItem(player);
 
     /*QTimer * timer = new QTimer();
     QObject::connect(timer,SIGNAL(timeout()), player, SLOT(spawn())); // switch from p to game later
