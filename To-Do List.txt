@@ -15,12 +15,8 @@ Omar:
 -player
 	door-player collison
 	player collision prevention using objectcords
-	door should destory bullet (typeid door deleteitem)
 
 -enemy
-	enemy types and wall traversal - type 1 and 2 have been included in constructor use Type member to decide movement
-	random shooting public shoot slot connected to a timer
-	graphics for all types enemy 1 enemy 2 boss
 	implment boss subclass (targeting if there is time)
 	enemies should only move/shoot if player is in room - mapFromScene()
 	do boundaries and collisions including a collison with player in case enemy moves into player will replace players enemey detect
