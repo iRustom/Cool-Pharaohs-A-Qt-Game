@@ -1,4 +1,5 @@
 #include "map.h"
+#include "door.h"
 #include "game.h"
 #include "enemy.h"
 #include "wall.h"
@@ -32,7 +33,7 @@ void Map::readMap(QString fileName)
 //empty = 0; bedrock wall =1;normal wall =2 ;door = 3 ; enemy type 1= 4;enemy type 2=5;boss =6; pudlle =7 ;skull =  8
 void Map::drawMap()
 {
-    Wall * wall;Enemy * enemy;//Skull * skull
+    Wall * wall;Enemy * enemy;Door* door;//Skull * skull
     for(int i = 0;i<20;i++)
         for(int j=0;j<20;j++){
             if(objectCords[i][j]==1){
@@ -48,7 +49,11 @@ void Map::drawMap()
                 game->scene->addItem(wall);
                 qDebug()<<"Added wall";
             }else if(objectCords[i][j]==3){
-                //door
+                door = new Door();
+                door->setPos(game->scene->sceneRect().x()+j*60 ,game->scene->sceneRect().y()+i*60);
+                objects[i][j]= door;
+                game->scene->addItem(door);
+                qDebug("added door");
             }else if(objectCords[i][j]==4){
                 enemy = new Enemy(0,game->player);
                 enemy->setPos(game->scene->sceneRect().x()+j*60,game->scene->sceneRect().y()+i*60);

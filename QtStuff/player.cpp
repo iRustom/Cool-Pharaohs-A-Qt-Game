@@ -1,4 +1,5 @@
 #include "player.h"
+#include "door.h"
 #include "enemy.h"
 #include <QKeyEvent>
 #include <QGraphicsScene>

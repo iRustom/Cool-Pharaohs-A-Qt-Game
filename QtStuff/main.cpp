@@ -12,9 +12,11 @@
 #include <player.h>
 #include <QTimer>
 #include "game.h"
+#include "door.h"
 
 // all this stuff should be moved into a game class...
 Game * game;
+int Door::count = 0;
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
