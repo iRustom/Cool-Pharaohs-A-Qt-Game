@@ -25,4 +25,4 @@ Omar:
 	implment boss subclass (targeting if there is time)
 	enemies should only move/shoot if player is in room - mapFromScene()
 	do boundaries and collisions including a collison with player in case enemy moves into player will replace players enemey detect
-	enemy-enemy collision prevention (probably map fix)
+	enemy-enemy collision prevention (probably map fix, but unsure because 2 enemies can move into the same empty block at the same time)
