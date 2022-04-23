@@ -41,7 +41,7 @@ void Map::drawMap()
                 wall->setPos(game->scene->sceneRect().x()+j*60,game->scene->sceneRect().y()+i*60);
                 objects[i][j]= wall;
                 game->scene->addItem(wall);
-                qDebug()<<"Added wal";
+                qDebug()<<"Added wall";
             }else if(objectCords[i][j]==2){
                 wall = new Wall(1,game->player);//player set as parent
                 wall->setPos(game->scene->sceneRect().x()+j*60,game->scene->sceneRect().y()+i*60);

@@ -29,6 +29,7 @@ Enemy::Enemy(int type, QGraphicsItem *parent): QObject(), QGraphicsPixmapItem() 
     timer->start(rand()%2000+1000);
     Type = type;
 }
+//qDebug() << "Type is: " << QString::number(Type) << "moving to " << QString::number(notOcc[rando].x()) << QString::number(notOcc[rando].y());
 
 void Enemy::move()
 {
@@ -43,20 +44,42 @@ void Enemy::move()
     notOcc.push_back(QPoint(currentX, currentY - 60));
     moveCheck = true;
     }
+    if(Type == 1 && game->map.objectCords[currentY/60 - 1][currentX/60] == 2) //up
+    {
+    notOcc.push_back(QPoint(currentX, currentY - 60));
+    moveCheck = true;
+    }
+
 
     if(game->map.objectCords[currentY/60][currentX/60 + 1] == 0) //right
     {
     notOcc.push_back(QPoint(currentX + 60, currentY));
     moveCheck = true;
     }
+    if(Type == 1 && game->map.objectCords[currentY/60][currentX/60 + 1] == 2) //right
+    {
+    notOcc.push_back(QPoint(currentX + 60, currentY));
+    moveCheck = true;
+    }
+
 
     if(game->map.objectCords[currentY/60 + 1][currentX/60] == 0) //down
     {
     notOcc.push_back(QPoint(currentX, currentY + 60));
     moveCheck = true;
     }
+    if(Type == 1 && game->map.objectCords[currentY/60 + 1][currentX/60] == 2) //down
+    {
+    notOcc.push_back(QPoint(currentX, currentY + 60));
+    moveCheck = true;
+    }
 
     if(game->map.objectCords[currentY/60][currentX/60 - 1] == 0)  //left
+    {
+    notOcc.push_back(QPoint(currentX - 60, currentY));
+    moveCheck = true;
+    }
+    if(Type == 1 && game->map.objectCords[currentY/60][currentX/60 - 1] == 2)  //left
     {
     notOcc.push_back(QPoint(currentX - 60, currentY));
     moveCheck = true;
