@@ -120,6 +120,20 @@ void Enemy::move()
         qDebug() << "Type is: " << QString::number(Type) << "moving to " << QString::number(notOcc[rando].x()) << QString::number(notOcc[rando].y());
 
         setPos(notOcc[rando]);
+
+        QList<QGraphicsItem *> colliding_items = collidingItems();
+        for(int i =0;i<colliding_items.size();i++)
+                {
+                    if(typeid(*(colliding_items[i]))==typeid(Player))
+                    {
+                    game->score->increase();
+                    game->health->decrease();
+                    scene()->removeItem(this);
+                    delete this;
+                    return;
+                    }
+                }
+
         qDebug()<<QString::number(rotation());
         EnemyBullet * enemyBullet = new EnemyBullet(rotation(), Type);
         if (rotation() == 0)
