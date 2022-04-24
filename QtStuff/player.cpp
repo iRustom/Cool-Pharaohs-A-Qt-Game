@@ -53,9 +53,10 @@ void Player::keyPressEvent(QKeyEvent *event)
                 //qDebug("stop up is true");
             }
             if(typeid(*(colliding_items[i]))==typeid(Enemy)){
+                delete (colliding_items[i]);
                 game->score->increase();
                 game->health->decrease();
-                delete (colliding_items[i]);
+
                 //qDebug("Hit enemy");
             }
         }
@@ -81,9 +82,10 @@ void Player::keyPressEvent(QKeyEvent *event)
                 //qDebug(" stop down true");
             }
             if(typeid(*(colliding_items[i]))==typeid(Enemy)){
+                delete (colliding_items[i]);
                 game->score->increase();
                 game->health->decrease();
-                delete (colliding_items[i]);
+
                 //qDebug("Hit enemy");
             }
         }
@@ -110,9 +112,10 @@ void Player::keyPressEvent(QKeyEvent *event)
                 //qDebug("Stop left set to true");
             }
             if(typeid(*(colliding_items[i]))==typeid(Enemy)){
+                 delete (colliding_items[i]);
                 game->score->increase();
                 game->health->decrease();
-                delete (colliding_items[i]);
+
                 //qDebug("Hit enemy");
             }
 
@@ -140,9 +143,10 @@ void Player::keyPressEvent(QKeyEvent *event)
                 //qDebug("stop right set to true");
             }
             if(typeid(*(colliding_items[i]))==typeid(Enemy)){
+                delete (colliding_items[i]);
                 game->score->increase();
                 game->health->decrease();
-                delete (colliding_items[i]);
+
                 //qDebug("Hit enemy");
             }
         }

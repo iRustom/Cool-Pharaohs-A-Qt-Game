@@ -19,6 +19,8 @@ public:
     Score * score;
     Health * health;
     Map * map;
+    void lose();
+    void win();
 public slots:
     void start();
     void display_login();

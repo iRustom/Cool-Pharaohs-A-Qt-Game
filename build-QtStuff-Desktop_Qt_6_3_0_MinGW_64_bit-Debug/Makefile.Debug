@@ -966,6 +966,8 @@ debug/moc_game.cpp: ../QtStuff/game.h \
 		C:/Qt/6.3.0/mingw_64/include/QtCore/qfile.h \
 		C:/Qt/6.3.0/mingw_64/include/QtCore/qfiledevice.h \
 		C:/Qt/6.3.0/mingw_64/include/QtCore/QTextStream \
+		C:/Qt/6.3.0/mingw_64/include/QtCore/QVector \
+		C:/Qt/6.3.0/mingw_64/include/QtCore/qvector.h \
 		../QtStuff/player.h \
 		../QtStuff/score.h \
 		C:/Qt/6.3.0/mingw_64/include/QtWidgets/QGraphicsTextItem \
@@ -1536,6 +1538,8 @@ debug/bullet.o: ../QtStuff/bullet.cpp ../QtStuff/bullet.h \
 		C:/Qt/6.3.0/mingw_64/include/QtCore/qfile.h \
 		C:/Qt/6.3.0/mingw_64/include/QtCore/qfiledevice.h \
 		C:/Qt/6.3.0/mingw_64/include/QtCore/QTextStream \
+		C:/Qt/6.3.0/mingw_64/include/QtCore/QVector \
+		C:/Qt/6.3.0/mingw_64/include/QtCore/qvector.h \
 		../QtStuff/player.h \
 		../QtStuff/score.h \
 		C:/Qt/6.3.0/mingw_64/include/QtWidgets/QGraphicsTextItem \
@@ -1716,6 +1720,8 @@ debug/button.o: ../QtStuff/button.cpp ../QtStuff/button.h \
 		C:/Qt/6.3.0/mingw_64/include/QtCore/qfile.h \
 		C:/Qt/6.3.0/mingw_64/include/QtCore/qfiledevice.h \
 		C:/Qt/6.3.0/mingw_64/include/QtCore/QTextStream \
+		C:/Qt/6.3.0/mingw_64/include/QtCore/QVector \
+		C:/Qt/6.3.0/mingw_64/include/QtCore/qvector.h \
 		../QtStuff/player.h \
 		../QtStuff/score.h \
 		C:/Qt/6.3.0/mingw_64/include/QtWidgets/QGraphicsTextItem \
@@ -1892,6 +1898,8 @@ debug/door.o: ../QtStuff/door.cpp ../QtStuff/door.h \
 		C:/Qt/6.3.0/mingw_64/include/QtCore/qfile.h \
 		C:/Qt/6.3.0/mingw_64/include/QtCore/qfiledevice.h \
 		C:/Qt/6.3.0/mingw_64/include/QtCore/QTextStream \
+		C:/Qt/6.3.0/mingw_64/include/QtCore/QVector \
+		C:/Qt/6.3.0/mingw_64/include/QtCore/qvector.h \
 		../QtStuff/player.h \
 		../QtStuff/score.h \
 		C:/Qt/6.3.0/mingw_64/include/QtWidgets/QGraphicsTextItem \
@@ -2071,6 +2079,8 @@ debug/enemy.o: ../QtStuff/enemy.cpp ../QtStuff/enemy.h \
 		C:/Qt/6.3.0/mingw_64/include/QtCore/qfile.h \
 		C:/Qt/6.3.0/mingw_64/include/QtCore/qfiledevice.h \
 		C:/Qt/6.3.0/mingw_64/include/QtCore/QTextStream \
+		C:/Qt/6.3.0/mingw_64/include/QtCore/QVector \
+		C:/Qt/6.3.0/mingw_64/include/QtCore/qvector.h \
 		../QtStuff/player.h \
 		../QtStuff/score.h \
 		C:/Qt/6.3.0/mingw_64/include/QtWidgets/QGraphicsTextItem \
@@ -2248,6 +2258,8 @@ debug/enemybullet.o: ../QtStuff/enemybullet.cpp C:/Qt/6.3.0/mingw_64/include/QtC
 		C:/Qt/6.3.0/mingw_64/include/QtCore/qfile.h \
 		C:/Qt/6.3.0/mingw_64/include/QtCore/qfiledevice.h \
 		C:/Qt/6.3.0/mingw_64/include/QtCore/QTextStream \
+		C:/Qt/6.3.0/mingw_64/include/QtCore/QVector \
+		C:/Qt/6.3.0/mingw_64/include/QtCore/qvector.h \
 		../QtStuff/player.h \
 		../QtStuff/score.h \
 		C:/Qt/6.3.0/mingw_64/include/QtWidgets/QGraphicsTextItem \
@@ -2426,6 +2438,8 @@ debug/game.o: ../QtStuff/game.cpp ../QtStuff/game.h \
 		C:/Qt/6.3.0/mingw_64/include/QtCore/qfile.h \
 		C:/Qt/6.3.0/mingw_64/include/QtCore/qfiledevice.h \
 		C:/Qt/6.3.0/mingw_64/include/QtCore/QTextStream \
+		C:/Qt/6.3.0/mingw_64/include/QtCore/QVector \
+		C:/Qt/6.3.0/mingw_64/include/QtCore/qvector.h \
 		../QtStuff/player.h \
 		../QtStuff/score.h \
 		C:/Qt/6.3.0/mingw_64/include/QtWidgets/QGraphicsTextItem \
@@ -2560,7 +2574,73 @@ debug/health.o: ../QtStuff/health.cpp ../QtStuff/health.h \
 		C:/Qt/6.3.0/mingw_64/include/QtGui/qimage.h \
 		C:/Qt/6.3.0/mingw_64/include/QtGui/qpixelformat.h \
 		C:/Qt/6.3.0/mingw_64/include/QtGui/QFont \
-		C:/Qt/6.3.0/mingw_64/include/QtGui/qfont.h
+		C:/Qt/6.3.0/mingw_64/include/QtGui/qfont.h \
+		../QtStuff/game.h \
+		C:/Qt/6.3.0/mingw_64/include/QtWidgets/QGraphicsView \
+		C:/Qt/6.3.0/mingw_64/include/QtWidgets/qgraphicsview.h \
+		C:/Qt/6.3.0/mingw_64/include/QtGui/qpainter.h \
+		C:/Qt/6.3.0/mingw_64/include/QtGui/qtextoption.h \
+		C:/Qt/6.3.0/mingw_64/include/QtGui/qpen.h \
+		C:/Qt/6.3.0/mingw_64/include/QtGui/qbrush.h \
+		C:/Qt/6.3.0/mingw_64/include/QtGui/qfontinfo.h \
+		C:/Qt/6.3.0/mingw_64/include/QtGui/qfontmetrics.h \
+		C:/Qt/6.3.0/mingw_64/include/QtWidgets/qscrollarea.h \
+		C:/Qt/6.3.0/mingw_64/include/QtWidgets/qabstractscrollarea.h \
+		C:/Qt/6.3.0/mingw_64/include/QtWidgets/qframe.h \
+		C:/Qt/6.3.0/mingw_64/include/QtWidgets/qwidget.h \
+		C:/Qt/6.3.0/mingw_64/include/QtGui/qaction.h \
+		C:/Qt/6.3.0/mingw_64/include/QtGui/qkeysequence.h \
+		C:/Qt/6.3.0/mingw_64/include/QtGui/qicon.h \
+		C:/Qt/6.3.0/mingw_64/include/QtGui/qpalette.h \
+		C:/Qt/6.3.0/mingw_64/include/QtWidgets/qsizepolicy.h \
+		C:/Qt/6.3.0/mingw_64/include/QtGui/qcursor.h \
+		C:/Qt/6.3.0/mingw_64/include/QtGui/qbitmap.h \
+		C:/Qt/6.3.0/mingw_64/include/QtGui/qevent.h \
+		C:/Qt/6.3.0/mingw_64/include/QtCore/qiodevice.h \
+		C:/Qt/6.3.0/mingw_64/include/QtCore/qpointer.h \
+		C:/Qt/6.3.0/mingw_64/include/QtCore/qurl.h \
+		C:/Qt/6.3.0/mingw_64/include/QtGui/qeventpoint.h \
+		C:/Qt/6.3.0/mingw_64/include/QtGui/qvector2d.h \
+		C:/Qt/6.3.0/mingw_64/include/QtGui/qvectornd.h \
+		C:/Qt/6.3.0/mingw_64/include/QtGui/qpointingdevice.h \
+		C:/Qt/6.3.0/mingw_64/include/QtGui/qinputdevice.h \
+		C:/Qt/6.3.0/mingw_64/include/QtGui/qscreen.h \
+		C:/Qt/6.3.0/mingw_64/include/QtCore/QList \
+		C:/Qt/6.3.0/mingw_64/include/QtCore/QObject \
+		C:/Qt/6.3.0/mingw_64/include/QtCore/QRect \
+		C:/Qt/6.3.0/mingw_64/include/QtCore/QSize \
+		C:/Qt/6.3.0/mingw_64/include/QtCore/QSizeF \
+		C:/Qt/6.3.0/mingw_64/include/QtGui/QTransform \
+		C:/Qt/6.3.0/mingw_64/include/QtCore/qnativeinterface.h \
+		C:/Qt/6.3.0/mingw_64/include/QtWidgets/qgraphicsscene.h \
+		C:/Qt/6.3.0/mingw_64/include/QtWidgets/QWidget \
+		C:/Qt/6.3.0/mingw_64/include/QtWidgets/QGraphicsScene \
+		../QtStuff/map.h \
+		../QtStuff/enemy.h \
+		C:/Qt/6.3.0/mingw_64/include/QtWidgets/QGraphicsPixmapItem \
+		C:/Qt/6.3.0/mingw_64/include/QtMultimedia/QMediaPlayer \
+		C:/Qt/6.3.0/mingw_64/include/QtMultimedia/qmediaplayer.h \
+		C:/Qt/6.3.0/mingw_64/include/QtMultimedia/qtmultimediaglobal.h \
+		C:/Qt/6.3.0/mingw_64/include/QtMultimedia/qtmultimedia-config.h \
+		C:/Qt/6.3.0/mingw_64/include/QtMultimedia/qtmultimediaexports.h \
+		C:/Qt/6.3.0/mingw_64/include/QtMultimedia/qmediaenumdebug.h \
+		C:/Qt/6.3.0/mingw_64/include/QtCore/qmetaobject.h \
+		C:/Qt/6.3.0/mingw_64/include/QtMultimedia/qaudio.h \
+		C:/Qt/6.3.0/mingw_64/include/QtMultimedia/QAudioOutput \
+		C:/Qt/6.3.0/mingw_64/include/QtMultimedia/qaudiooutput.h \
+		C:/Qt/6.3.0/mingw_64/include/QtCore/QString \
+		C:/Qt/6.3.0/mingw_64/include/QtCore/QFile \
+		C:/Qt/6.3.0/mingw_64/include/QtCore/qfile.h \
+		C:/Qt/6.3.0/mingw_64/include/QtCore/qfiledevice.h \
+		C:/Qt/6.3.0/mingw_64/include/QtCore/QTextStream \
+		C:/Qt/6.3.0/mingw_64/include/QtCore/QVector \
+		C:/Qt/6.3.0/mingw_64/include/QtCore/qvector.h \
+		../QtStuff/player.h \
+		../QtStuff/score.h \
+		C:/Qt/6.3.0/mingw_64/include/QtWidgets/QGraphicsTextItem \
+		../QtStuff/log_in.h \
+		C:/Qt/6.3.0/mingw_64/include/QtWidgets/QDialog \
+		C:/Qt/6.3.0/mingw_64/include/QtWidgets/qdialog.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\health.o ..\QtStuff\health.cpp
 
 debug/log_in.o: ../QtStuff/log_in.cpp ../QtStuff/log_in.h \
@@ -2731,6 +2811,8 @@ debug/log_in.o: ../QtStuff/log_in.cpp ../QtStuff/log_in.h \
 		C:/Qt/6.3.0/mingw_64/include/QtCore/qfile.h \
 		C:/Qt/6.3.0/mingw_64/include/QtCore/qfiledevice.h \
 		C:/Qt/6.3.0/mingw_64/include/QtCore/QTextStream \
+		C:/Qt/6.3.0/mingw_64/include/QtCore/QVector \
+		C:/Qt/6.3.0/mingw_64/include/QtCore/qvector.h \
 		../QtStuff/player.h \
 		../QtStuff/score.h \
 		C:/Qt/6.3.0/mingw_64/include/QtWidgets/QGraphicsTextItem \
@@ -2928,6 +3010,8 @@ debug/main.o: ../QtStuff/main.cpp C:/Qt/6.3.0/mingw_64/include/QtWidgets/QApplic
 		../QtStuff/enemy.h \
 		C:/Qt/6.3.0/mingw_64/include/QtWidgets/QGraphicsItem \
 		C:/Qt/6.3.0/mingw_64/include/QtCore/QString \
+		C:/Qt/6.3.0/mingw_64/include/QtCore/QVector \
+		C:/Qt/6.3.0/mingw_64/include/QtCore/qvector.h \
 		../QtStuff/score.h \
 		C:/Qt/6.3.0/mingw_64/include/QtWidgets/QGraphicsTextItem \
 		../QtStuff/health.h \
@@ -3064,6 +3148,8 @@ debug/map.o: ../QtStuff/map.cpp ../QtStuff/map.h \
 		C:/Qt/6.3.0/mingw_64/include/QtCore/qfiledevice.h \
 		C:/Qt/6.3.0/mingw_64/include/QtCore/qiodevice.h \
 		C:/Qt/6.3.0/mingw_64/include/QtCore/QTextStream \
+		C:/Qt/6.3.0/mingw_64/include/QtCore/QVector \
+		C:/Qt/6.3.0/mingw_64/include/QtCore/qvector.h \
 		../QtStuff/door.h \
 		C:/Qt/6.3.0/mingw_64/include/QtCore/QPointF \
 		../QtStuff/game.h \
@@ -3287,6 +3373,8 @@ debug/player.o: ../QtStuff/player.cpp ../QtStuff/player.h \
 		C:/Qt/6.3.0/mingw_64/include/QtCore/qfile.h \
 		C:/Qt/6.3.0/mingw_64/include/QtCore/qfiledevice.h \
 		C:/Qt/6.3.0/mingw_64/include/QtCore/QTextStream \
+		C:/Qt/6.3.0/mingw_64/include/QtCore/QVector \
+		C:/Qt/6.3.0/mingw_64/include/QtCore/qvector.h \
 		../QtStuff/score.h \
 		C:/Qt/6.3.0/mingw_64/include/QtWidgets/QGraphicsTextItem \
 		../QtStuff/health.h \

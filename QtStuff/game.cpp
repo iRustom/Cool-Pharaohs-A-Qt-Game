@@ -160,3 +160,48 @@ void Game::mainMenu2()
     status->setPos(this->width()/2-status->boundingRect().width()/2,500);
     scene->addItem(status);
 }
+void Game::lose()
+{
+   // scene->clear();
+    player->clearFocus();
+    scene->setSceneRect(0,0,600,600);
+    QGraphicsTextItem* done = new QGraphicsTextItem(QString("GAME OVER"));
+    QFont doneFont("comic sans",25);
+    done->setFont(doneFont);
+    done->setPos(this->width()/2-done->boundingRect().width()/2,100);
+    scene->addItem(done);
+
+    Button * quit = new Button(QString("Quit"));
+    quit->setPos(this->width()/2-quit->boundingRect().width()/2,400);
+    connect(quit, SIGNAL(clicked()),this,SLOT(close()));
+    scene->addItem(quit);
+
+    Button * restart = new Button(QString("Play Again"));
+    restart->setPos(this->width()/2-restart->boundingRect().width()/2,300);
+    connect(restart, SIGNAL(clicked()),this,SLOT(mainMenu2()));
+    scene->addItem(restart);
+
+}
+
+void Game::win()
+{
+
+    scene->clear();
+
+    QGraphicsTextItem* user_win = new QGraphicsTextItem(QString("WIN"));
+    QFont user_winFont("comic sans",25);
+    user_win->setFont(user_winFont);
+    user_win->setPos(this->width()/2-user_win->boundingRect().width()/2,100);
+    scene->addItem(user_win);
+
+    Button * quit = new Button(QString("Quit"));
+    quit->setPos(this->width()/2-quit->boundingRect().width()/2,400);
+    connect(quit, SIGNAL(clicked()),this,SLOT(close()));
+    scene->addItem(quit);
+
+    Button * restart = new Button(QString("Play Again"));
+    restart->setPos(this->width()/2-restart->boundingRect().width()/2,300);
+    connect(restart, SIGNAL(clicked()),this,SLOT(mainMenu2()));
+    scene->addItem(restart);
+
+}

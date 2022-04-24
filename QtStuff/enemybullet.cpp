@@ -32,10 +32,11 @@ void EnemyBullet::moveUp()
     QList<QGraphicsItem *> colliding_items = collidingItems();
     for(int i =0;i<colliding_items.size();i++){
         if(typeid(*(colliding_items[i]))==typeid(Player)){
-            game->health->decrease();
-
             scene()-> removeItem(this);
             delete this;
+            game->health->decrease();
+
+
             return;
         }
         if(enemyType == 0 && (typeid(*(colliding_items[i]))==typeid(Wall) || typeid(*(colliding_items[i]))==typeid(BedrockWall))){
@@ -69,10 +70,11 @@ void EnemyBullet::moveDown()
     QList<QGraphicsItem *> colliding_items = collidingItems();
     for(int i =0;i<colliding_items.size();i++){
         if(typeid(*(colliding_items[i]))==typeid(Player)){
-            game->health->decrease();
-
             scene()-> removeItem(this);
             delete this;
+            game->health->decrease();
+
+
             return;
         }
         if(enemyType == 0 && (typeid(*(colliding_items[i]))==typeid(Wall) || typeid(*(colliding_items[i]))==typeid(BedrockWall))){
@@ -106,10 +108,11 @@ void EnemyBullet::moveRight()
     QList<QGraphicsItem *> colliding_items = collidingItems();
     for(int i =0;i<colliding_items.size();i++){
         if(typeid(*(colliding_items[i]))==typeid(Player)){
-            game->health->decrease();
-
             scene()-> removeItem(this);
             delete this;
+            game->health->decrease();
+
+
             return;
         }
         if(enemyType == 0 && (typeid(*(colliding_items[i]))==typeid(Wall) || typeid(*(colliding_items[i]))==typeid(BedrockWall))){
@@ -143,10 +146,11 @@ void EnemyBullet::moveLeft()
     QList<QGraphicsItem *> colliding_items = collidingItems();
     for(int i =0;i<colliding_items.size();i++){
         if(typeid(*(colliding_items[i]))==typeid(Player)){
-            game->health->decrease();
-
             scene()-> removeItem(this);
             delete this;
+            game->health->decrease();
+
+
             return;
         }
         if(enemyType == 0 && (typeid(*(colliding_items[i]))==typeid(Wall) || typeid(*(colliding_items[i]))==typeid(BedrockWall))){
