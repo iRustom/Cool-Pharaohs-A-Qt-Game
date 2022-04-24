@@ -7,7 +7,7 @@
 #include "player.h"
 #include "score.h"
 #include "health.h"
-
+#include "log_in.h"
 class Game: public QGraphicsView
 {
     Q_OBJECT
@@ -21,10 +21,16 @@ public:
     Map * map;
 public slots:
     void start();
+    void display_login();
+    void mainMenu2();
 public:
     int volume;
 private slots:
     void toggleVol();
+private:
+private:
+    class log_in *log;
+
 
 };
 
