@@ -45,6 +45,7 @@ Door::Door(QGraphicsItem *parent):QObject(), QGraphicsPixmapItem(parent)
 
 void Door::teleportPlayer()
 {
+
     game->player->setPos(nextDestination);
     moveScene();
 }
@@ -84,7 +85,16 @@ void Door::checkCollison()
     QList<QGraphicsItem *> colliding_items = collidingItems();
     for(int i =0;i<colliding_items.size();i++){
         if(typeid(*colliding_items[i])==typeid(Player)){
-            teleportPlayer();
+            if(endRoomNum==1){
+                teleportPlayer();
+            }else if(endRoomNum==2 &&game->score->getScore()>=5){
+                teleportPlayer();
+            }else if(endRoomNum==3 &&game->score->getScore()>=10){
+                teleportPlayer();
+            }else if(endRoomNum==4 &&game->score->getScore()>=20){
+                teleportPlayer();
+            }
+
         }
     }
 }
