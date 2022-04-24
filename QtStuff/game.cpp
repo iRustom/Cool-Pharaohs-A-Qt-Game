@@ -37,8 +37,9 @@ void Game::start()
     scene->setSceneRect(0,0,1200,1200);
 
     qDebug()<< "i work";
-    map.readMap(":/maps/map.txt");
-    map.drawMap();
+    map = new Map();
+    map->readMap(":/maps/map.txt");
+    map->drawMap();
 
     setBackgroundBrush(QBrush(QImage(":/images/sand.jpg").scaled(600,600)));
 
@@ -46,6 +47,12 @@ void Game::start()
     player->setFlag(QGraphicsPixmapItem::ItemIsFocusable);
     player->setFocus();
     player->setPos(61,479);
+
+    for(int i=0;i<map->enemyVec.size();i++)
+    {
+        if(map->enemyVec[i]->pos().x()<600 && map->enemyVec[i]->pos().y()<600)
+            map->enemyVec[i]->active=true;
+     }
 
     player->setFlag(QGraphicsItem::ItemIsFocusable);
     player->setFocus();

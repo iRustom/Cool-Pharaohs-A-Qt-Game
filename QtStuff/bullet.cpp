@@ -22,7 +22,7 @@ Bullet::Bullet(int rotateCheck, QGraphicsItem* parent): QObject(), QGraphicsPixm
     }else if(rotateCheck == 90){
     connect(timer, SIGNAL(timeout()),this,SLOT(moveRight()));
     }
-    timer->start(5);
+    timer->start(3);
 }
 
 void Bullet::moveUp()

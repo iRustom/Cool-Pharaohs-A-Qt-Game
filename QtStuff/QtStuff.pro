@@ -21,6 +21,7 @@ SOURCES += \
     main.cpp \
     map.cpp \
     player.cpp \
+    puddle.cpp \
     score.cpp \
     wall.cpp
 
@@ -35,6 +36,7 @@ HEADERS += \
     health.h \
     map.h \
     player.h \
+    puddle.h \
     score.h \
     wall.h
 

@@ -18,7 +18,7 @@ public:
     Player * player;
     Score * score;
     Health * health;
-    Map map;
+    Map * map;
 public slots:
     void start();
 public:

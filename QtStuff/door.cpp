@@ -51,22 +51,50 @@ void Door::teleportPlayer()
 
 void Door::moveScene()
 {
+    qDebug()<<"Trying to move scene";
+    for(int i=0;i<game->map->enemyVec.size();i++)
+    {
+        game->map->enemyVec[i]->active=false;
+     }
+    qDebug()<<"active set to false";
     if(endRoomNum == 1){
         game->setSceneRect(0,0,600,600);
         game->score->setPos(0,0);
+        for(int i=0;i<game->map->enemyVec.size();i++)
+        {
+            if(game->map->enemyVec[i]->pos().x()<600 && game->map->enemyVec[i]->pos().y()<600)
+                game->map->enemyVec[i]->active=true;
+         }
+        qDebug()<<"Room 1 set to active";
     }else if(endRoomNum==2){
         game->setSceneRect(600,0,600,600);
         game->score->setPos(600,0);
-
+        qDebug()<<"ur mom"<<QString::number(game->map->enemyVec.size());
+        for(int i=0;i<game->map->enemyVec.size()-1;i++)
+        {
+            qDebug()<<QString::number(i)<<" ur momzzz "<<QString::number(game->map->enemyVec[i]->Type);
+            if(game->map->enemyVec[i]->pos().x()>600 && game->map->enemyVec[i]->pos().y()<600)
+                game->map->enemyVec[i]->active=true;
+         }
+         qDebug()<<"Room one set to active";
     }else if(endRoomNum==3){
         game->setSceneRect(600,600,600,600);
         game->score->setPos(600,600);
-
+        for(int i=0;i<game->map->enemyVec.size();i++)
+        {
+            if(game->map->enemyVec[i]->pos().x()>600 && game->map->enemyVec[i]->pos().y()>600)
+                game->map->enemyVec[i]->active=true;
+         }
     }else if(endRoomNum==4){
         game->setSceneRect(0,600,600,600);
         game->score->setPos(0,600);
-
+        for(int i=0;i<game->map->enemyVec.size();i++)
+        {
+            if(game->map->enemyVec[i]->pos().x()<600 && game->map->enemyVec[i]->pos().y()>600)
+                game->map->enemyVec[i]->active=true;
+         }
     }
+
 }
 
 void Door::checkCollison()

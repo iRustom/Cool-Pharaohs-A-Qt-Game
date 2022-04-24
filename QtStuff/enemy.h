@@ -12,6 +12,7 @@ class Enemy: public QObject, public QGraphicsPixmapItem
 public:
     Enemy(int type,QGraphicsItem * parent = 0);
     int Type;
+    bool active;
 public slots:
     void move();
 private:

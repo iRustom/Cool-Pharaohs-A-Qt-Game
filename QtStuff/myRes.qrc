@@ -16,6 +16,7 @@
         <file>portal4.png</file>
         <file>enemy1.png</file>
         <file>enemy2.png</file>
+        <file>puddle.png</file>
     </qresource>
     <qresource prefix="/sfx">
         <file>arrow.mp3</file>
