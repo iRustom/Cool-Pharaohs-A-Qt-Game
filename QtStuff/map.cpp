@@ -12,8 +12,8 @@ extern Game* game;
 Map::Map()
 {
     qDebug()<<"Map is being created";
-    Enemy* enemy = new Enemy(0);
-    enemyVec.push_back(enemy);
+    //Enemy* enemy = new Enemy(0);
+    //enemyVec.push_back(enemy);
     qDebug()<<"Map is created";
 
 }
@@ -67,7 +67,7 @@ void Map::drawMap()
                 qDebug()<<"placed door";
             }else if(objectCords[i][j]==4){
                 qDebug()<<"placing enemy";
-                enemy = new Enemy(0,game->player);
+                enemy = new Enemy(0);
                 qDebug()<<"222";
                 enemy->setPos(game->scene->sceneRect().x()+j*60,game->scene->sceneRect().y()+i*60);
                 objects[i][j]= enemy;
@@ -77,7 +77,7 @@ void Map::drawMap()
                 qDebug()<<"placed enemy";
             }else if(objectCords[i][j]==5){
                 qDebug()<<"placing enemy 2";
-                enemy = new Enemy(1,game->player);
+                enemy = new Enemy(1);
                 enemy->setPos(game->scene->sceneRect().x()+j*60,game->scene->sceneRect().y()+i*60);
                 objects[i][j]= enemy;
                 enemy->setZValue(99);

@@ -11,10 +11,12 @@ class Enemy: public QObject, public QGraphicsPixmapItem
     Q_OBJECT
 public:
     Enemy(int type,QGraphicsItem * parent = 0);
+    QPointF getPos();
     int Type;
     bool active;
 public slots:
     void move();
+    void checkActive();
 private:
     QMediaPlayer * enemyBulletSound;
     QAudioOutput * enemyBulletoutput;

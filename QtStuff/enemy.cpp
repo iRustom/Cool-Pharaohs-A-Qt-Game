@@ -43,7 +43,17 @@ Enemy::Enemy(int type, QGraphicsItem *parent): QObject(), QGraphicsPixmapItem() 
     connect(timer,SIGNAL(timeout()),this,SLOT(move()));
     timer->start(rand()%2000+1000);
 
+    QTimer * timer2 = new QTimer(this);
+    connect(timer2,SIGNAL(timeout()),this,SLOT(checkActive()));
+    timer2->start(100);
+
+
     qDebug()<<"Enemy is created";
+}
+
+QPointF Enemy::getPos()
+{
+    return pos();
 }
 //qDebug() << "Type is: " << QString::number(Type) << "moving to " << QString::number(notOcc[rando].x()) << QString::number(notOcc[rando].y());
 
@@ -172,5 +182,22 @@ void Enemy::move()
 
         //}
         }
+    }
+}
+
+void Enemy::checkActive()
+{
+    if(game->player->pos().x()<600&&game->player->pos().y()<600){
+        if(pos().x()<600 && pos().y()<600)
+            active = true;
+    }else if(game->player->pos().x()>600&&game->player->pos().y()<600){
+        if(pos().x()>600 && pos().y()<600)
+            active = true;
+    }else if(game->player->pos().x()>600&&game->player->pos().y()>600){
+        if(pos().x()>600 && pos().y()>600)
+            active = true;
+    }else if(game->player->pos().x()<600&&game->player->pos().y()>600){
+        if(pos().x()<600 && pos().y()>600)
+            active = true;
     }
 }

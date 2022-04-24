@@ -4,7 +4,7 @@
 #include <QGraphicsTextItem>
 extern Game* game;
 
-Button::Button(QString name, QGraphicsItem *parent): QGraphicsRectItem(parent), QWidget()
+Button::Button(QString name, QGraphicsItem *parent): QWidget(), QGraphicsRectItem(parent)
 {
     setRect(0,0,200,50);
     QBrush brush; brush.setStyle(Qt::SolidPattern); brush.setColor(Qt::darkCyan);

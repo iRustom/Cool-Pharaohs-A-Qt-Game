@@ -1028,6 +1028,8 @@ debug\moc_game.cpp: ..\QtStuff\game.h \
 		C:\Qt\6.3.0\msvc2019_64\include\QtCore\qfile.h \
 		C:\Qt\6.3.0\msvc2019_64\include\QtCore\qfiledevice.h \
 		C:\Qt\6.3.0\msvc2019_64\include\QtCore\QTextStream \
+		C:\Qt\6.3.0\msvc2019_64\include\QtCore\QVector \
+		C:\Qt\6.3.0\msvc2019_64\include\QtCore\qvector.h \
 		..\QtStuff\player.h \
 		..\QtStuff\score.h \
 		C:\Qt\6.3.0\msvc2019_64\include\QtWidgets\QGraphicsTextItem \
@@ -1451,6 +1453,8 @@ debug\bullet.obj: ..\QtStuff\bullet.cpp ..\QtStuff\bullet.h \
 		C:\Qt\6.3.0\msvc2019_64\include\QtCore\qfile.h \
 		C:\Qt\6.3.0\msvc2019_64\include\QtCore\qfiledevice.h \
 		C:\Qt\6.3.0\msvc2019_64\include\QtCore\QTextStream \
+		C:\Qt\6.3.0\msvc2019_64\include\QtCore\QVector \
+		C:\Qt\6.3.0\msvc2019_64\include\QtCore\qvector.h \
 		..\QtStuff\player.h \
 		..\QtStuff\score.h \
 		C:\Qt\6.3.0\msvc2019_64\include\QtWidgets\QGraphicsTextItem \
@@ -1627,6 +1631,8 @@ debug\button.obj: ..\QtStuff\button.cpp ..\QtStuff\button.h \
 		C:\Qt\6.3.0\msvc2019_64\include\QtCore\qfile.h \
 		C:\Qt\6.3.0\msvc2019_64\include\QtCore\qfiledevice.h \
 		C:\Qt\6.3.0\msvc2019_64\include\QtCore\QTextStream \
+		C:\Qt\6.3.0\msvc2019_64\include\QtCore\QVector \
+		C:\Qt\6.3.0\msvc2019_64\include\QtCore\qvector.h \
 		..\QtStuff\player.h \
 		..\QtStuff\score.h \
 		C:\Qt\6.3.0\msvc2019_64\include\QtWidgets\QGraphicsTextItem \
@@ -1799,6 +1805,8 @@ debug\door.obj: ..\QtStuff\door.cpp ..\QtStuff\door.h \
 		C:\Qt\6.3.0\msvc2019_64\include\QtCore\qfile.h \
 		C:\Qt\6.3.0\msvc2019_64\include\QtCore\qfiledevice.h \
 		C:\Qt\6.3.0\msvc2019_64\include\QtCore\QTextStream \
+		C:\Qt\6.3.0\msvc2019_64\include\QtCore\QVector \
+		C:\Qt\6.3.0\msvc2019_64\include\QtCore\qvector.h \
 		..\QtStuff\player.h \
 		..\QtStuff\score.h \
 		C:\Qt\6.3.0\msvc2019_64\include\QtWidgets\QGraphicsTextItem \
@@ -1974,6 +1982,8 @@ debug\enemy.obj: ..\QtStuff\enemy.cpp ..\QtStuff\enemy.h \
 		C:\Qt\6.3.0\msvc2019_64\include\QtCore\qfile.h \
 		C:\Qt\6.3.0\msvc2019_64\include\QtCore\qfiledevice.h \
 		C:\Qt\6.3.0\msvc2019_64\include\QtCore\QTextStream \
+		C:\Qt\6.3.0\msvc2019_64\include\QtCore\QVector \
+		C:\Qt\6.3.0\msvc2019_64\include\QtCore\qvector.h \
 		..\QtStuff\player.h \
 		..\QtStuff\score.h \
 		C:\Qt\6.3.0\msvc2019_64\include\QtWidgets\QGraphicsTextItem \
@@ -2147,6 +2157,8 @@ debug\enemybullet.obj: ..\QtStuff\enemybullet.cpp C:\Qt\6.3.0\msvc2019_64\includ
 		C:\Qt\6.3.0\msvc2019_64\include\QtCore\qfile.h \
 		C:\Qt\6.3.0\msvc2019_64\include\QtCore\qfiledevice.h \
 		C:\Qt\6.3.0\msvc2019_64\include\QtCore\QTextStream \
+		C:\Qt\6.3.0\msvc2019_64\include\QtCore\QVector \
+		C:\Qt\6.3.0\msvc2019_64\include\QtCore\qvector.h \
 		..\QtStuff\player.h \
 		..\QtStuff\score.h \
 		C:\Qt\6.3.0\msvc2019_64\include\QtWidgets\QGraphicsTextItem \
@@ -2321,6 +2333,8 @@ debug\game.obj: ..\QtStuff\game.cpp ..\QtStuff\game.h \
 		C:\Qt\6.3.0\msvc2019_64\include\QtCore\qfile.h \
 		C:\Qt\6.3.0\msvc2019_64\include\QtCore\qfiledevice.h \
 		C:\Qt\6.3.0\msvc2019_64\include\QtCore\QTextStream \
+		C:\Qt\6.3.0\msvc2019_64\include\QtCore\QVector \
+		C:\Qt\6.3.0\msvc2019_64\include\QtCore\qvector.h \
 		..\QtStuff\player.h \
 		..\QtStuff\score.h \
 		C:\Qt\6.3.0\msvc2019_64\include\QtWidgets\QGraphicsTextItem \
@@ -2644,6 +2658,8 @@ debug\main.obj: ..\QtStuff\main.cpp C:\Qt\6.3.0\msvc2019_64\include\QtWidgets\QA
 		..\QtStuff\enemy.h \
 		C:\Qt\6.3.0\msvc2019_64\include\QtWidgets\QGraphicsItem \
 		C:\Qt\6.3.0\msvc2019_64\include\QtCore\QString \
+		C:\Qt\6.3.0\msvc2019_64\include\QtCore\QVector \
+		C:\Qt\6.3.0\msvc2019_64\include\QtCore\qvector.h \
 		..\QtStuff\score.h \
 		C:\Qt\6.3.0\msvc2019_64\include\QtWidgets\QGraphicsTextItem \
 		..\QtStuff\health.h \
@@ -2776,6 +2792,8 @@ debug\map.obj: ..\QtStuff\map.cpp ..\QtStuff\map.h \
 		C:\Qt\6.3.0\msvc2019_64\include\QtCore\qfiledevice.h \
 		C:\Qt\6.3.0\msvc2019_64\include\QtCore\qiodevice.h \
 		C:\Qt\6.3.0\msvc2019_64\include\QtCore\QTextStream \
+		C:\Qt\6.3.0\msvc2019_64\include\QtCore\QVector \
+		C:\Qt\6.3.0\msvc2019_64\include\QtCore\qvector.h \
 		..\QtStuff\door.h \
 		C:\Qt\6.3.0\msvc2019_64\include\QtCore\QPointF \
 		..\QtStuff\game.h \
@@ -2995,6 +3013,8 @@ debug\player.obj: ..\QtStuff\player.cpp ..\QtStuff\player.h \
 		C:\Qt\6.3.0\msvc2019_64\include\QtCore\qfile.h \
 		C:\Qt\6.3.0\msvc2019_64\include\QtCore\qfiledevice.h \
 		C:\Qt\6.3.0\msvc2019_64\include\QtCore\QTextStream \
+		C:\Qt\6.3.0\msvc2019_64\include\QtCore\QVector \
+		C:\Qt\6.3.0\msvc2019_64\include\QtCore\qvector.h \
 		..\QtStuff\score.h \
 		C:\Qt\6.3.0\msvc2019_64\include\QtWidgets\QGraphicsTextItem \
 		..\QtStuff\health.h \
