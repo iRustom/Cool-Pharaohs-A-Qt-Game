@@ -116,10 +116,24 @@ void Enemy::move()
         else if(notOcc[rando].y() > currentY)
             setRotation(0);
 
-        if(Type == 1)
-        qDebug() << "Type is: " << QString::number(Type) << "moving to " << QString::number(notOcc[rando].x()) << QString::number(notOcc[rando].y());
+        //if(Type == 1)
+        //qDebug() << "Type is: " << QString::number(Type) << "moving to " << QString::number(notOcc[rando].x()) << QString::number(notOcc[rando].y());
 
         setPos(notOcc[rando]);
+
+        QList<QGraphicsItem *> colliding_items = collidingItems();
+            for(int i =0;i<colliding_items.size();i++)
+            {
+                if(typeid(*(colliding_items[i]))==typeid(Player))
+                {
+                    game->health->decrease();
+                    scene()->removeItem(this);
+                    delete this;
+                    return;
+                }
+            }
+
+
         qDebug()<<QString::number(rotation());
         EnemyBullet * enemyBullet = new EnemyBullet(rotation(), Type);
         if (rotation() == 0)
@@ -134,7 +148,7 @@ void Enemy::move()
         else if (rotation() == 180)
         {
             qDebug()<<"setting bullet 180";
-        enemyBullet->setPos(x()+(pixmap().width()/2)-(enemyBullet->pixmap().width()/2),y()-(pixmap().height()+11));
+        enemyBullet->setPos(x()+(pixmap().width()/2)-(enemyBullet->pixmap().width()/2),y()-(enemyBullet->pixmap().height()+11));
         qDebug()<<" bullet set adding to scene";
 
         game->scene->addItem(enemyBullet);//THIS IS THE PROBLEM
