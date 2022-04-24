@@ -104,10 +104,12 @@ void Map::drawMap()
             else if(objectCords[i][j]==8){
                  //skull
             }
-            QLine * line;
+            /*QLine * line;
             line = new QLine(600,120,600,180);
+            game->scene->addItem(line);
             line = new QLine(960,600,1020,600);
             line = new QLine(600,960,600,1020);
+            */
 
 
         }
