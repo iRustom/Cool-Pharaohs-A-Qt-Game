@@ -164,16 +164,18 @@ void Game::mainMenu2()
 void Game::lose()
 {
     lost= true;
+    setSceneRect(0,0,600,600);
     //scene->clear();
     player->clearFocus();
     delete scene;
     scene = new QGraphicsScene(this);
     setScene(scene);
 
-    scene->setSceneRect(0,0,600,600);
+    setSceneRect(0,0,600,600);
     QGraphicsTextItem* done = new QGraphicsTextItem(QString("GAME OVER"));
     QFont doneFont("comic sans",25);
     done->setFont(doneFont);
+
     done->setPos(this->width()/2-done->boundingRect().width()/2,100);
     scene->addItem(done);
 
@@ -198,7 +200,7 @@ void Game::win()
     scene = new QGraphicsScene(this);
     setScene(scene);
 
-    scene->setSceneRect(0,0,600,600);
+    setSceneRect(0,0,600,600);
     QGraphicsTextItem* user_win = new QGraphicsTextItem(QString("You win (p.s.boss wasnt home)"));
     QFont user_winFont("comic sans",25);
     user_win->setFont(user_winFont);

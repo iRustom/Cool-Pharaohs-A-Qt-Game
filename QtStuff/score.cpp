@@ -24,6 +24,27 @@ void Score::increase()
         game->win();
         return;
     }
+    if(score ==5){
+        scene()->removeItem(game->map->objects[2][9]);
+        delete game->map->objects[2][9];
+    }
+    if(score ==10){
+        scene()->removeItem(game->map->objects[2][10]);
+        scene()->removeItem(game->map->objects[9][16]);
+        delete game->map->objects[2][10];
+        delete game->map->objects[9][16];
+
+    }
+    if(score == 20){
+        scene()->removeItem(game->map->objects[10][16]);
+        scene()->removeItem(game->map->objects[15][10]);
+        delete game->map->objects[10][16];
+        delete game->map->objects[15][10];
+    }
+    if(score ==22){
+        scene()->removeItem(game->map->objects[15][9]);
+        delete game->map->objects[15][9];
+    }
 
 }
 

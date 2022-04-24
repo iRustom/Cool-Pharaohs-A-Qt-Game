@@ -32,7 +32,6 @@ void Bullet::moveUp()
     for(int i =0;i<colliding_items.size();i++){
         if(typeid(*(colliding_items[i]))==typeid (Enemy)){
 
-            game->score->increase();
 
             scene()->removeItem(colliding_items[i]);
             bool removed = false;
@@ -51,12 +50,14 @@ void Bullet::moveUp()
             scene()->removeItem(this);
             delete colliding_items[i];
             delete this;
+            game->score->increase();
             return;
         }else if(typeid(*(colliding_items[i]))==typeid(Player)){
-            game->health->decrease();
 
             scene()-> removeItem(this);
             delete this;
+            game->health->decrease();
+
             return;
         }else if(typeid(*(colliding_items[i]))==typeid(Wall) || typeid(*(colliding_items[i]))==typeid(BedrockWall)){
 
@@ -82,19 +83,19 @@ void Bullet::moveDown()
     QList<QGraphicsItem *> colliding_items = collidingItems();
     for(int i =0;i<colliding_items.size();i++){
         if(typeid(*(colliding_items[i]))==typeid (Enemy)){
-
-            game->score->increase();
-
             scene()->removeItem(colliding_items[i]);
             scene()->removeItem(this);
             delete colliding_items[i];
             delete this;
+            game->score->increase();
+
+
             return;
         }else if(typeid(*(colliding_items[i]))==typeid(Player)){
-            game->health->decrease();
-
             scene()-> removeItem(this);
             delete this;
+            game->health->decrease();
+
             return;
         }else if(typeid(*(colliding_items[i]))==typeid(Wall) || typeid(*(colliding_items[i]))==typeid(BedrockWall)){
 
@@ -120,18 +121,20 @@ void Bullet::moveRight()
     for(int i =0;i<colliding_items.size();i++){
         if(typeid(*(colliding_items[i]))==typeid (Enemy)){
 
-            game->score->increase();
 
             scene()->removeItem(colliding_items[i]);
             scene()->removeItem(this);
             delete colliding_items[i];
             delete this;
+            game->score->increase();
+
             return;
         }else if(typeid(*(colliding_items[i]))==typeid(Player)){
-            game->health->decrease();
 
             scene()-> removeItem(this);
             delete this;
+            game->health->decrease();
+
             return;
         }else if(typeid(*(colliding_items[i]))==typeid(Wall) || typeid(*(colliding_items[i]))==typeid(BedrockWall)){
 
@@ -157,18 +160,20 @@ void Bullet::moveLeft()
     for(int i =0;i<colliding_items.size();i++){
         if(typeid(*(colliding_items[i]))==typeid (Enemy)){
 
-            game->score->increase();
 
             scene()->removeItem(colliding_items[i]);
             scene()->removeItem(this);
             delete colliding_items[i];
             delete this;
+            game->score->increase();
+
             return;
         }else if(typeid(*(colliding_items[i]))==typeid(Player)){
-            game->health->decrease();
 
             scene()-> removeItem(this);
             delete this;
+            game->health->decrease();
+
             return;
         }else if(typeid(*(colliding_items[i]))==typeid(Wall)  || typeid(*(colliding_items[i]))==typeid(BedrockWall)){
 

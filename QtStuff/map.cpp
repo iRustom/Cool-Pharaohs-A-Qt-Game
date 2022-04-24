@@ -61,9 +61,14 @@ void Map::drawMap()
             }else if(objectCords[i][j]==3){
                 qDebug()<<"placing door";
                 door = new Door();
-                door->setPos(game->scene->sceneRect().x()+j*60 ,game->scene->sceneRect().y()+i*60);
+                door->setPos(game->scene->sceneRect().x()+j*60 +20,game->scene->sceneRect().y()+i*60+10);
                 objects[i][j]= door;
                 game->scene->addItem(door);
+                wall = new Wall();//player set as parent
+                wall->setPos(game->scene->sceneRect().x()+j*60,game->scene->sceneRect().y()+i*60);
+                wall->setZValue(99);
+                objects[i][j]= wall;
+                game->scene->addItem(wall);
                 qDebug()<<"placed door";
             }else if(objectCords[i][j]==4){
                 qDebug()<<"placing enemy";
