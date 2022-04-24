@@ -14,6 +14,8 @@
 
 Game::Game(QWidget *parent): QGraphicsView(parent)
 {
+    lost= false;
+
     setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     setFixedSize(600,600);
@@ -133,6 +135,7 @@ void Game::mainMenu()
 
 void Game::mainMenu2()
 {
+    lost= false;
     scene->clear();
     //can be reimplemented using widgets
     QGraphicsTextItem* title = new QGraphicsTextItem(QString("Guy kills cool pharaohs"));
@@ -162,11 +165,12 @@ void Game::mainMenu2()
 }
 void Game::lose()
 {
-    scene->clear();
-    //player->clearFocus();
-    //delete scene;
-    //scene = new QGraphicsScene(this);
-    //setScene(scene);
+    lost= true;
+    //scene->clear();
+    player->clearFocus();
+    delete scene;
+    scene = new QGraphicsScene(this);
+    setScene(scene);
 
     scene->setSceneRect(0,0,600,600);
     QGraphicsTextItem* done = new QGraphicsTextItem(QString("GAME OVER"));
@@ -192,7 +196,8 @@ void Game::win()
 
     scene->clear();
 
-    QGraphicsTextItem* user_win = new QGraphicsTextItem(QString("WIN"));
+    scene->setSceneRect(0,0,600,600);
+    QGraphicsTextItem* user_win = new QGraphicsTextItem(QString("You win (p.s.boss wasnt home)"));
     QFont user_winFont("comic sans",25);
     user_win->setFont(user_winFont);
     user_win->setPos(this->width()/2-user_win->boundingRect().width()/2,100);

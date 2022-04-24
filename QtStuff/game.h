@@ -21,6 +21,7 @@ public:
     Map * map;
     void lose();
     void win();
+    bool lost;
 public slots:
     void start();
     void display_login();

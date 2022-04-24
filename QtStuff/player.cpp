@@ -27,6 +27,7 @@ Player::Player(QGraphicsItem * parent): QGraphicsPixmapItem(parent)
 
 void Player::keyPressEvent(QKeyEvent *event)
 {
+    if(game->lost==false){
     QList<QGraphicsItem *> colliding_items = collidingItems();
     /*bool stop = false;
     for(int i =0;i<colliding_items.size();i++){
@@ -47,11 +48,14 @@ void Player::keyPressEvent(QKeyEvent *event)
         }
         setRotation(0);
         colliding_items = collidingItems();
+        if(game->lost==false)
         for(int i =0;i<colliding_items.size();i++){
-            if(typeid(*colliding_items[i])==typeid(Wall)||typeid(*colliding_items[i])==typeid(BedrockWall)||typeid(*(colliding_items[i]))==typeid(Enemy)){
+            if(game->lost==false)
+            if(typeid(*colliding_items[i])==typeid(Wall)||typeid(*colliding_items[i])==typeid(BedrockWall)){
                 stopUp= true;
                 //qDebug("stop up is true");
             }
+            if(game->lost==false)
             if(typeid(*(colliding_items[i]))==typeid(Enemy)){
                 delete (colliding_items[i]);
                 game->score->increase();
@@ -76,11 +80,14 @@ void Player::keyPressEvent(QKeyEvent *event)
         }
         setRotation(180);
         colliding_items = collidingItems();
+        if(game->lost==false)
         for(int i =0;i<colliding_items.size();i++){
-            if(typeid(*colliding_items[i])==typeid(Wall)||typeid(*colliding_items[i])==typeid(BedrockWall)||typeid(*colliding_items[i])==typeid(Enemy)){
+            if(game->lost==false)
+            if(typeid(*colliding_items[i])==typeid(Wall)||typeid(*colliding_items[i])==typeid(BedrockWall)){
                 stopDown= true;
                 //qDebug(" stop down true");
             }
+            if(game->lost==false)
             if(typeid(*(colliding_items[i]))==typeid(Enemy)){
                 delete (colliding_items[i]);
                 game->score->increase();
@@ -106,11 +113,14 @@ void Player::keyPressEvent(QKeyEvent *event)
         }
         setRotation(270);
         colliding_items = collidingItems();
+        if(game->lost==false)
         for(int i =0;i<colliding_items.size();i++){
-            if(typeid(*colliding_items[i])==typeid(Wall)||typeid(*colliding_items[i])==typeid(BedrockWall)||typeid(*(colliding_items[i]))==typeid(Enemy)){
+            if(game->lost==false)
+            if(typeid(*colliding_items[i])==typeid(Wall)||typeid(*colliding_items[i])==typeid(BedrockWall)){
                 stopLeft= true;
                 //qDebug("Stop left set to true");
             }
+            if(game->lost==false)
             if(typeid(*(colliding_items[i]))==typeid(Enemy)){
                  delete (colliding_items[i]);
                 game->score->increase();
@@ -137,11 +147,14 @@ void Player::keyPressEvent(QKeyEvent *event)
         }
         setRotation(90);
         colliding_items = collidingItems();
+        if(game->lost==false)
         for(int i =0;i<colliding_items.size();i++){
-            if(typeid(*colliding_items[i])==typeid(Wall)||typeid(*colliding_items[i])==typeid(BedrockWall)||typeid(*(colliding_items[i]))==typeid(Enemy)){
+            if(game->lost==false)
+            if(typeid(*colliding_items[i])==typeid(Wall)||typeid(*colliding_items[i])==typeid(BedrockWall)){
                 stopRight= true;
                 //qDebug("stop right set to true");
             }
+            if(game->lost==false)
             if(typeid(*(colliding_items[i]))==typeid(Enemy)){
                 delete (colliding_items[i]);
                 game->score->increase();
@@ -182,6 +195,7 @@ void Player::keyPressEvent(QKeyEvent *event)
             bulletSound->play();
         }
     }
+}
 }
 
 void Player::spawn()
