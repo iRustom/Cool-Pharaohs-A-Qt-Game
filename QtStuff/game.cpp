@@ -162,8 +162,12 @@ void Game::mainMenu2()
 }
 void Game::lose()
 {
-   // scene->clear();
-    player->clearFocus();
+    scene->clear();
+    //player->clearFocus();
+    //delete scene;
+    //scene = new QGraphicsScene(this);
+    //setScene(scene);
+
     scene->setSceneRect(0,0,600,600);
     QGraphicsTextItem* done = new QGraphicsTextItem(QString("GAME OVER"));
     QFont doneFont("comic sans",25);

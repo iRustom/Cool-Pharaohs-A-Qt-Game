@@ -136,11 +136,12 @@ void Enemy::move()
                 {
                     if(typeid(*(colliding_items[i]))==typeid(Player))
                     {
-                    game->score->increase();
-                    game->health->decrease();
-                    scene()->removeItem(this);
-                    delete this;
-                    return;
+                        scene()->removeItem(this);
+                        delete this;
+                        game->score->increase();
+                        game->health->decrease();
+
+                        return;
                     }
                 }
 
