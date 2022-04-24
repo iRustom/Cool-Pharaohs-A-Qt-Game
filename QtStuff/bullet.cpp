@@ -6,6 +6,7 @@
 #include "game.h"
 #include "wall.h"
 #include "door.h"
+#include "bedrockwall.h"
 extern Game * game;
 
 Bullet::Bullet(int rotateCheck, QGraphicsItem* parent): QObject(), QGraphicsPixmapItem(parent)
@@ -57,7 +58,7 @@ void Bullet::moveUp()
             scene()-> removeItem(this);
             delete this;
             return;
-        }else if(typeid(*(colliding_items[i]))==typeid(Wall)){
+        }else if(typeid(*(colliding_items[i]))==typeid(Wall) || typeid(*(colliding_items[i]))==typeid(BedrockWall)){
 
             scene()-> removeItem(this);
             delete this;
@@ -95,7 +96,7 @@ void Bullet::moveDown()
             scene()-> removeItem(this);
             delete this;
             return;
-        }else if(typeid(*(colliding_items[i]))==typeid(Wall)){
+        }else if(typeid(*(colliding_items[i]))==typeid(Wall) || typeid(*(colliding_items[i]))==typeid(BedrockWall)){
 
             scene()-> removeItem(this);
             delete this;
@@ -132,7 +133,7 @@ void Bullet::moveRight()
             scene()-> removeItem(this);
             delete this;
             return;
-        }else if(typeid(*(colliding_items[i]))==typeid(Wall)){
+        }else if(typeid(*(colliding_items[i]))==typeid(Wall) || typeid(*(colliding_items[i]))==typeid(BedrockWall)){
 
             scene()-> removeItem(this);
             delete this;
@@ -169,7 +170,7 @@ void Bullet::moveLeft()
             scene()-> removeItem(this);
             delete this;
             return;
-        }else if(typeid(*(colliding_items[i]))==typeid(Wall)){
+        }else if(typeid(*(colliding_items[i]))==typeid(Wall)  || typeid(*(colliding_items[i]))==typeid(BedrockWall)){
 
             scene()-> removeItem(this);
             delete this;
