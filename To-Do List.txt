@@ -10,7 +10,7 @@ Nour:
 		add login  - user should be able to enter name !!
 Omar:
 -game
-	need puddle + skull
+	need skull
 	door conditions (pos()&&keyevent enter && enemies dead
 -player
 	door-player collison invis barrier?
@@ -18,6 +18,5 @@ Omar:
 
 -enemy
 	implment boss subclass (targeting if there is time!!)
-	enemies should only move/shoot if player is in room - mapFromScene() !!
 	do boundaries and collisions including a collison with player in case enemy moves into player will replace players enemey detect
 	enemy-enemy collision prevention (objectCords needs to be updated)
