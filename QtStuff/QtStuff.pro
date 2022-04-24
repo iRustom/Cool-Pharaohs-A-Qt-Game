@@ -18,6 +18,7 @@ SOURCES += \
     enemybullet.cpp \
     game.cpp \
     health.cpp \
+    log_in.cpp \
     main.cpp \
     map.cpp \
     player.cpp \
@@ -34,13 +35,15 @@ HEADERS += \
     enemybullet.h \
     game.h \
     health.h \
+    log_in.h \
     map.h \
     player.h \
     puddle.h \
     score.h \
     wall.h
 
-FORMS +=
+FORMS += \
+    log_in.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

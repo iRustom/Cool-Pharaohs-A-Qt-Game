@@ -91,8 +91,17 @@ void Game::toggleVol()
     volume *=-1;
 }
 
+void Game::display_login()
+{
+    hide();
+    log = new class log_in(this);
+    log->show();
+}
+
+
 void Game::mainMenu()
 {
+ scene->clear();
     //can be reimplemented using widgets
     QGraphicsTextItem* title = new QGraphicsTextItem(QString("Guy kills cool pharaohs"));
     QFont titleFont("comic sans",25);
@@ -115,4 +124,39 @@ void Game::mainMenu()
     connect(togVol,SIGNAL(clicked()),this,SLOT(toggleVol()));
     scene->addItem(togVol);
 
+    Button * login = new Button(QString("Log in"));
+    login->setPos(this->width()/2-login->boundingRect().width()/2,500);
+    connect(login,SIGNAL(clicked()),this,SLOT(display_login()));
+    scene->addItem(login);
+
+}
+
+void Game::mainMenu2()
+{
+    scene->clear();
+    //can be reimplemented using widgets
+    QGraphicsTextItem* title = new QGraphicsTextItem(QString("Guy kills cool pharaohs"));
+    QFont titleFont("comic sans",25);
+    title->setFont(titleFont);
+    title->setPos(this->width()/2-title->boundingRect().width()/2,100);
+    scene->addItem(title);
+
+    Button * play = new Button(QString("Play"));
+    play->setPos(this->width()/2-play->boundingRect().width()/2,200);
+    connect(play, SIGNAL(clicked()),this,SLOT(start()));
+    scene->addItem(play);
+
+    Button * quit = new Button(QString("Quit"));
+    quit->setPos(this->width()/2-quit->boundingRect().width()/2,300);
+    connect(quit, SIGNAL(clicked()),this,SLOT(close()));
+    scene->addItem(quit);
+
+    Button * togVol = new Button(QString("Toggle Volume"));
+    togVol->setPos(this->width()/2-togVol->boundingRect().width()/2,400);
+    connect(togVol,SIGNAL(clicked()),this,SLOT(toggleVol()));
+    scene->addItem(togVol);
+
+    QGraphicsTextItem* status = new QGraphicsTextItem(QString("Logged in!"));
+    status->setPos(this->width()/2-status->boundingRect().width()/2,500);
+    scene->addItem(status);
 }
