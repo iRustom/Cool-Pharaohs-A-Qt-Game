@@ -8,13 +8,12 @@
 #include <QGraphicsPixmapItem>
 #include <QApplication>
 #include <player.h>
-#include <QDebug>
 #include <player.h>
 #include <QTimer>
 #include "game.h"
 #include "door.h"
 
-// all this stuff should be moved into a game class...
+// MADE BY: OMAR ELFOULY; AHMED ALI; NOUR KASABY
 Game * game;
 int Door::count = 0;
 int main(int argc, char *argv[])

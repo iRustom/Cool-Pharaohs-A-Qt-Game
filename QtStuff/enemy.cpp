@@ -9,7 +9,6 @@ extern Game* game;
 
 Enemy::Enemy(int type, QGraphicsItem *parent): QObject(), QGraphicsPixmapItem(parent) //this should probably be changed to a new abstract class that all of our objects inherit from
 {
-    qDebug()<<"Enemy is being created";
     active = false;
     //setPos(rand()%600,0);    
     enemyBulletSound = new QMediaPlayer();
@@ -18,11 +17,8 @@ Enemy::Enemy(int type, QGraphicsItem *parent): QObject(), QGraphicsPixmapItem(pa
     enemyBulletSound->setAudioOutput(enemyBulletoutput);
     enemyBulletSound->setSource(QUrl("qrc:/sfx/bulletsound.mp3"));
 
-    if(game!=nullptr){
-        qDebug()<<"Fuck ur life";
-    }
 
-    qDebug()<<"Volume is " << QString::number(game->volume);
+
 
     if(game->volume == 1){
         enemyBulletoutput->setVolume(100);
@@ -48,7 +44,6 @@ Enemy::Enemy(int type, QGraphicsItem *parent): QObject(), QGraphicsPixmapItem(pa
     timer2->start(100);
 
 
-    qDebug()<<"Enemy is created";
     oldVal = Type;
 }
 
@@ -56,12 +51,10 @@ QPointF Enemy::getPos()
 {
     return pos();
 }
-//qDebug() << "Type is: " << QString::number(Type) << "moving to " << QString::number(notOcc[rando].x()) << QString::number(notOcc[rando].y());
 
 void Enemy::move()
 {
     if(active){
-        qDebug()<<"enemy is active";
         QVector<QPoint> notOcc;
         int currentX = pos().x();
         int currentY = pos().y();
@@ -127,8 +120,7 @@ void Enemy::move()
         else if(notOcc[rando].y() > currentY)
             setRotation(0);
 
-        if(Type == 1)
-        qDebug() << "Type is: " << QString::number(Type) << "moving to " << QString::number(notOcc[rando].x()) << QString::number(notOcc[rando].y());
+
         game->map->objectCords[currentY/60][currentX/60]=oldVal;
         oldVal= game->map->objectCords[notOcc[rando].y()/60][notOcc[rando].x()/60];
         game->map->objectCords[notOcc[rando].y()/60][notOcc[rando].x()/60] = 4 + Type;
@@ -149,44 +141,34 @@ void Enemy::move()
                     }
                 }
 
-        qDebug()<<QString::number(rotation());
         EnemyBullet * enemyBullet = new EnemyBullet(rotation(), Type);
         if (rotation() == 0)
         {
-            qDebug()<<"setting bullet 0";
 
-        enemyBullet->setPos(x()+(pixmap().width()/2)-(enemyBullet->pixmap().width()/2),y()+(enemyBullet->pixmap().height()+11));
-        qDebug()<<" bullet set adding to scene";
+            enemyBullet->setPos(x()+(pixmap().width()/2)-(enemyBullet->pixmap().width()/2),y()+(enemyBullet->pixmap().height()+11));
 
-        game->scene->addItem(enemyBullet);
+            game->scene->addItem(enemyBullet);
         }
         else if (rotation() == 180)
         {
-            qDebug()<<"setting bullet 180";
-        enemyBullet->setPos(x()+(pixmap().width()/2)-(enemyBullet->pixmap().width()/2),y()-(pixmap().height()+11));
-        qDebug()<<" bullet set adding to scene";
+            enemyBullet->setPos(x()+(pixmap().width()/2)-(enemyBullet->pixmap().width()/2),y()-(pixmap().height()+11));
 
-        game->scene->addItem(enemyBullet);//THIS IS THE PROBLEM
-        qDebug()<<" bullet added to scene";
+            game->scene->addItem(enemyBullet);//THIS IS THE PROBLEM
 
         }
         else if (rotation() == 270)
         {
-            qDebug()<<"setting bullet 270";
 
-        enemyBullet->setPos(x()-enemyBullet->pixmap().width()+11,y()+pixmap().height()/2-enemyBullet->pixmap().height()/2);
-        qDebug()<<" bullet set adding to scene";
+            enemyBullet->setPos(x()-enemyBullet->pixmap().width()+11,y()+pixmap().height()/2-enemyBullet->pixmap().height()/2);
 
-        game->scene->addItem(enemyBullet);
+            game->scene->addItem(enemyBullet);
         }
         else if (rotation() == 90)
         {
-            qDebug()<<"setting bullet 90";
 
-        enemyBullet->setPos(x()+pixmap().width()-11,y()+pixmap().height()/2-enemyBullet->pixmap().height()/2);
-        qDebug()<<" bullet set adding to scene";
+            enemyBullet->setPos(x()+pixmap().width()-11,y()+pixmap().height()/2-enemyBullet->pixmap().height()/2);
 
-        game->scene->addItem(enemyBullet);
+            game->scene->addItem(enemyBullet);
         }
         if(enemyBulletSound->playbackState()==QMediaPlayer::PlayingState){
             enemyBulletSound -> setPosition(0);

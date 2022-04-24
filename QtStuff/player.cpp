@@ -7,7 +7,6 @@
 #include "bullet.h"
 #include "game.h"
 #include "wall.h"
-#include <QDebug>
 extern Game* game;
 Player::Player(QGraphicsItem * parent): QGraphicsPixmapItem(parent)
 {
@@ -41,7 +40,6 @@ void Player::keyPressEvent(QKeyEvent *event)
 
         if(!stopUp&&!stopDown){
         setPos(x(),y()-10);
-        //qDebug("not stop up");
         }
         if(stopDown&&!stopUp){
             setPos(x(),y()-11);
@@ -53,7 +51,6 @@ void Player::keyPressEvent(QKeyEvent *event)
             if(game->lost==false)
             if(typeid(*colliding_items[i])==typeid(Wall)||typeid(*colliding_items[i])==typeid(BedrockWall)){
                 stopUp= true;
-                //qDebug("stop up is true");
             }
             if(game->lost==false)
             if(typeid(*(colliding_items[i]))==typeid(Enemy)){
@@ -61,19 +58,16 @@ void Player::keyPressEvent(QKeyEvent *event)
                 game->score->increase();
                 game->health->decrease();
 
-                //qDebug("Hit enemy");
             }
         }
         if(stopDown==true){
             stopDown=false;
-            //qDebug("stop down set to false");
         }
     }
     else if(event->key()==Qt::Key_Down)
     {
         if(!stopDown&&!stopUp){
         setPos(x(),y()+10);
-        //qDebug("not stop down");
         }
         if(stopUp&&!stopDown){
             setPos(x(),y()+11);
@@ -85,7 +79,6 @@ void Player::keyPressEvent(QKeyEvent *event)
             if(game->lost==false)
             if(typeid(*colliding_items[i])==typeid(Wall)||typeid(*colliding_items[i])==typeid(BedrockWall)){
                 stopDown= true;
-                //qDebug(" stop down true");
             }
             if(game->lost==false)
             if(typeid(*(colliding_items[i]))==typeid(Enemy)){
@@ -93,23 +86,19 @@ void Player::keyPressEvent(QKeyEvent *event)
                 game->score->increase();
                 game->health->decrease();
 
-                //qDebug("Hit enemy");
             }
         }
         if(stopUp==true){
             stopUp = false;
-            //qDebug(" stop up set false");
         }
     }
     else if(event->key()==Qt::Key_Left)
     {
         if(!stopLeft&&!stopRight){
             setPos(x()-10,y());
-            //qDebug("Allowed to move left and right");
         }
         if(stopRight&&!stopLeft){
             setPos(x()-11,y());
-            //qDebug("allowed to move left but not right");
         }
         setRotation(270);
         colliding_items = collidingItems();
@@ -118,7 +107,6 @@ void Player::keyPressEvent(QKeyEvent *event)
             if(game->lost==false)
             if(typeid(*colliding_items[i])==typeid(Wall)||typeid(*colliding_items[i])==typeid(BedrockWall)){
                 stopLeft= true;
-                //qDebug("Stop left set to true");
             }
             if(game->lost==false)
             if(typeid(*(colliding_items[i]))==typeid(Enemy)){
@@ -126,24 +114,20 @@ void Player::keyPressEvent(QKeyEvent *event)
                 game->score->increase();
                 game->health->decrease();
 
-                //qDebug("Hit enemy");
             }
 
         }
         if(stopRight == true){
             stopRight = false;
-            //qDebug("Stop right set to false");
         }
     }
     else if(event->key()==Qt::Key_Right)
     {
         if(!stopRight&&!stopLeft){
         setPos(x()+10,y());
-        //qDebug("allowed to move left and right");
         }
         if(!stopRight&&stopLeft){
             setPos(x()+11,y());
-            //qDebug("allowed to move right but not left so big step");
         }
         setRotation(90);
         colliding_items = collidingItems();
@@ -152,7 +136,6 @@ void Player::keyPressEvent(QKeyEvent *event)
             if(game->lost==false)
             if(typeid(*colliding_items[i])==typeid(Wall)||typeid(*colliding_items[i])==typeid(BedrockWall)){
                 stopRight= true;
-                //qDebug("stop right set to true");
             }
             if(game->lost==false)
             if(typeid(*(colliding_items[i]))==typeid(Enemy)){
@@ -160,12 +143,10 @@ void Player::keyPressEvent(QKeyEvent *event)
                 game->score->increase();
                 game->health->decrease();
 
-                //qDebug("Hit enemy");
             }
         }
         if(stopLeft == true){
             stopLeft = false;
-            //qDebug("Stop left set to false");
         }
     }else if(event->key() == Qt::Key_Space){
         Bullet * bullet = new Bullet(rotation());

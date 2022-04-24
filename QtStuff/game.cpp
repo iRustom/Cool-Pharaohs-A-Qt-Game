@@ -8,7 +8,6 @@
 #include <QVBoxLayout>
 #include <QWidget>
 #include "button.h"
-#include <QDebug>
 
 Game::Game(QWidget *parent): QGraphicsView(parent)
 {
@@ -36,7 +35,6 @@ void Game::start()
     setFixedSize(600,600);
     scene->setSceneRect(0,0,1200,1200);
 
-    qDebug()<< "i work";
     map = new Map();
     map->readMap(":/maps/map.txt");
     map->drawMap();

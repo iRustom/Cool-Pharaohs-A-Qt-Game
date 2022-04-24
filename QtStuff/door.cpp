@@ -52,18 +52,15 @@ void Door::teleportPlayer()
 
 void Door::moveScene()
 {
-    qDebug()<<"Trying to move scene";
     for(int i=0;i<game->map->enemyVec.size();i++)
     {
         game->map->enemyVec.at(i)->active=false;
      }
-    qDebug()<<"active set to false";
 
     if(endRoomNum == 1){
         game->setSceneRect(0,0,600,600);
         game->score->setPos(0,0);
 
-        qDebug()<<"Room 1 set to active";
     }else if(endRoomNum==2){
         game->setSceneRect(600,0,600,600);
         game->score->setPos(600,0);

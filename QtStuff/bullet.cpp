@@ -34,19 +34,14 @@ void Bullet::moveUp()
 
 
             scene()->removeItem(colliding_items[i]);
-            bool removed = false;
+            //bool removed = false;
             for(int j=0;j<game->map->enemyVec.size();j++){
                 if(game->map->enemyVec[j]==colliding_items[i]){
-                    qDebug("REMOVED enemy from vector-----------");
                     game->map->enemyVec.erase(game->map->enemyVec.begin()+j);
-                    removed= true;
-                }else{
+                    //removed= true;
                 }
             }
-            if(removed ==false){
-                qDebug("DID NOT REMOVE ENEMY ----------------------------");
 
-            }
             scene()->removeItem(this);
             delete colliding_items[i];
             delete this;
