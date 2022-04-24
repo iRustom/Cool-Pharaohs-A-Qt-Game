@@ -5,11 +5,9 @@
 #include <QAudioOutput>
 #include <QImage>
 #include <QGraphicsTextItem>
-#include <QSlider>
 #include <QVBoxLayout>
 #include <QWidget>
 #include "button.h"
-#include "slider.h"
 #include <QDebug>
 
 Game::Game(QWidget *parent): QGraphicsView(parent)

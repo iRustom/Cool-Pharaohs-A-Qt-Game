@@ -7,7 +7,7 @@
 
 extern Game* game;
 
-Enemy::Enemy(int type, QGraphicsItem *parent): QObject(), QGraphicsPixmapItem() //this should probably be changed to a new abstract class that all of our objects inherit from
+Enemy::Enemy(int type, QGraphicsItem *parent): QObject(), QGraphicsPixmapItem(parent) //this should probably be changed to a new abstract class that all of our objects inherit from
 {
     qDebug()<<"Enemy is being created";
     active = false;
@@ -49,6 +49,7 @@ Enemy::Enemy(int type, QGraphicsItem *parent): QObject(), QGraphicsPixmapItem() 
 
 
     qDebug()<<"Enemy is created";
+    oldVal = Type;
 }
 
 QPointF Enemy::getPos()
@@ -128,6 +129,9 @@ void Enemy::move()
 
         if(Type == 1)
         qDebug() << "Type is: " << QString::number(Type) << "moving to " << QString::number(notOcc[rando].x()) << QString::number(notOcc[rando].y());
+        game->map->objectCords[currentY/60][currentX/60]=oldVal;
+        oldVal= game->map->objectCords[notOcc[rando].y()/60][notOcc[rando].x()/60];
+        game->map->objectCords[notOcc[rando].y()/60][notOcc[rando].x()/60] = 4 + Type;
 
         setPos(notOcc[rando]);
 

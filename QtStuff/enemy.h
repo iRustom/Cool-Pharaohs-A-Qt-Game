@@ -14,6 +14,7 @@ public:
     QPointF getPos();
     int Type;
     bool active;
+    int oldVal;
 public slots:
     void move();
     void checkActive();

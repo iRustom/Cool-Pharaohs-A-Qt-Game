@@ -17,6 +17,9 @@ Button::Button(QString name, QGraphicsItem *parent): QWidget(), QGraphicsRectIte
 
 void Button::mousePressEvent(QGraphicsSceneMouseEvent *event)
 {
+    if(event->isInputEvent()){
+    //stops warning
+    }
     QBrush brush;brush.setStyle(Qt::SolidPattern); brush.setColor(Qt::red);
     setBrush(brush);
     volCheck = true;
@@ -25,6 +28,9 @@ void Button::mousePressEvent(QGraphicsSceneMouseEvent *event)
 
 void Button::hoverEnterEvent(QGraphicsSceneHoverEvent *event)
 {
+    if(event->isInputEvent()){
+    //stops warning
+    }
     QBrush brush;
     if(game->volume<0 && volCheck == true){
         brush.setStyle(Qt::SolidPattern); brush.setColor(Qt::red);
@@ -36,6 +42,9 @@ void Button::hoverEnterEvent(QGraphicsSceneHoverEvent *event)
 
 void Button::hoverLeaveEvent(QGraphicsSceneHoverEvent *event)
 {
+    if(event->isInputEvent()){
+    //stops warning
+    }
     QBrush brush;
     if(game->volume<0 && volCheck == true){
         brush.setStyle(Qt::SolidPattern); brush.setColor(Qt::darkRed);

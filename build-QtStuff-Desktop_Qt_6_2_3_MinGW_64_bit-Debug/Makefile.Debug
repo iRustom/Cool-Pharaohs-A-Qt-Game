@@ -2513,9 +2513,6 @@ debug\game.obj: ..\QtStuff\game.cpp ..\QtStuff\game.h \
 		C:\Qt\6.3.0\msvc2019_64\include\QtCore\qtimer.h \
 		C:\Qt\6.3.0\msvc2019_64\include\QtCore\qbasictimer.h \
 		C:\Qt\6.3.0\msvc2019_64\include\QtGui\QImage \
-		C:\Qt\6.3.0\msvc2019_64\include\QtWidgets\QSlider \
-		C:\Qt\6.3.0\msvc2019_64\include\QtWidgets\qslider.h \
-		C:\Qt\6.3.0\msvc2019_64\include\QtWidgets\qabstractslider.h \
 		C:\Qt\6.3.0\msvc2019_64\include\QtWidgets\QVBoxLayout \
 		C:\Qt\6.3.0\msvc2019_64\include\QtWidgets\qboxlayout.h \
 		C:\Qt\6.3.0\msvc2019_64\include\QtWidgets\qlayout.h \
@@ -2525,7 +2522,6 @@ debug\game.obj: ..\QtStuff\game.cpp ..\QtStuff\game.h \
 		C:\Qt\6.3.0\msvc2019_64\include\QtWidgets\QGraphicsRectItem \
 		C:\Qt\6.3.0\msvc2019_64\include\QtWidgets\QGraphicsSceneMouseEvent \
 		C:\Qt\6.3.0\msvc2019_64\include\QtWidgets\qgraphicssceneevent.h \
-		..\QtStuff\slider.h \
 		C:\Qt\6.3.0\msvc2019_64\include\QtCore\QDebug
 
 debug\health.obj: ..\QtStuff\health.cpp ..\QtStuff\health.h \
