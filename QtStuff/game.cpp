@@ -194,7 +194,11 @@ void Game::lose()
 void Game::win()
 {
 
-    scene->clear();
+    lost= true;
+    player->clearFocus();
+    delete scene;
+    scene = new QGraphicsScene(this);
+    setScene(scene);
 
     scene->setSceneRect(0,0,600,600);
     QGraphicsTextItem* user_win = new QGraphicsTextItem(QString("You win (p.s.boss wasnt home)"));

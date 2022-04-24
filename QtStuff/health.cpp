@@ -13,10 +13,12 @@ Health::Health(QGraphicsItem *parent): QGraphicsTextItem(parent)
 
 void Health::decrease()
 {
+    if(game->lost==false){
     health--;
     setPlainText(QString("       ")+ QString::number(health));
     if (health == 0)
         game->lose();
+    }
 }
 
 int Health::getHealth()
