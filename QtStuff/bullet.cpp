@@ -7,6 +7,8 @@
 #include "wall.h"
 #include "door.h"
 #include "bedrockwall.h"
+#include "coin.h"
+
 extern Game * game;
 
 Bullet::Bullet(int rotateCheck, QGraphicsItem* parent): QObject(), QGraphicsPixmapItem(parent)
@@ -31,9 +33,11 @@ void Bullet::moveUp()
     QList<QGraphicsItem *> colliding_items = collidingItems();
     for(int i =0;i<colliding_items.size();i++){
         if(typeid(*(colliding_items[i]))==typeid (Enemy)){
-
-
+            Coin * coin = new Coin();
+            coin->setPos(x(),y());
+            scene()->addItem(coin);
             scene()->removeItem(colliding_items[i]);
+
             //bool removed = false;
             for(int j=0;j<game->map->enemyVec.size();j++){
                 if(game->map->enemyVec[j]==colliding_items[i]){
@@ -78,7 +82,11 @@ void Bullet::moveDown()
     QList<QGraphicsItem *> colliding_items = collidingItems();
     for(int i =0;i<colliding_items.size();i++){
         if(typeid(*(colliding_items[i]))==typeid (Enemy)){
+            Coin * coin = new Coin();
+            coin->setPos(x(),y());
+            scene()->addItem(coin);
             scene()->removeItem(colliding_items[i]);
+
             scene()->removeItem(this);
             delete colliding_items[i];
             delete this;
@@ -115,9 +123,11 @@ void Bullet::moveRight()
     QList<QGraphicsItem *> colliding_items = collidingItems();
     for(int i =0;i<colliding_items.size();i++){
         if(typeid(*(colliding_items[i]))==typeid (Enemy)){
-
-
+            Coin * coin = new Coin();
+            coin->setPos(x(),y());
+            scene()->addItem(coin);
             scene()->removeItem(colliding_items[i]);
+
             scene()->removeItem(this);
             delete colliding_items[i];
             delete this;
@@ -155,8 +165,11 @@ void Bullet::moveLeft()
     for(int i =0;i<colliding_items.size();i++){
         if(typeid(*(colliding_items[i]))==typeid (Enemy)){
 
-
+            Coin * coin = new Coin();
+            coin->setPos(x(),y());
+            scene()->addItem(coin);
             scene()->removeItem(colliding_items[i]);
+
             scene()->removeItem(this);
             delete colliding_items[i];
             delete this;

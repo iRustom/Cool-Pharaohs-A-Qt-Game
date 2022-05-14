@@ -65,6 +65,7 @@ void Game::start()
     //scene->addItem(health);
     health->setParentItem(player);
 
+
     /*QTimer * timer = new QTimer();
     QObject::connect(timer,SIGNAL(timeout()), player, SLOT(spawn())); // switch from p to game later
     timer->start(2000);*/

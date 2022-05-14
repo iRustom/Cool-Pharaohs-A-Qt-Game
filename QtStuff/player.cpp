@@ -7,6 +7,8 @@
 #include "bullet.h"
 #include "game.h"
 #include "wall.h"
+#include "coin.h"
+
 extern Game* game;
 Player::Player(QGraphicsItem * parent): QGraphicsPixmapItem(parent)
 {
@@ -54,7 +56,10 @@ void Player::keyPressEvent(QKeyEvent *event)
                     delete (colliding_items[i]);
                     game->score->increase();
                     game->health->decrease();
-                }
+                }else if(typeid(*(colliding_items[i]))==typeid(Coin)){
+                    delete (colliding_items[i]);
+                    game->score->increaseCoins();
+            }
         }
 
 
@@ -79,7 +84,10 @@ void Player::keyPressEvent(QKeyEvent *event)
                     delete (colliding_items[i]);
                     game->score->increase();
                     game->health->decrease();
-                }
+                }else if(typeid(*(colliding_items[i]))==typeid(Coin)){
+                    delete (colliding_items[i]);
+                    game->score->increaseCoins();
+            }
         }
     }
     else if(event->key()==Qt::Key_Left)
@@ -102,7 +110,10 @@ void Player::keyPressEvent(QKeyEvent *event)
                     delete (colliding_items[i]);
                     game->score->increase();
                     game->health->decrease();
-                }
+                }else if(typeid(*(colliding_items[i]))==typeid(Coin)){
+                    delete (colliding_items[i]);
+                    game->score->increaseCoins();
+            }
         }
 
     }
@@ -126,7 +137,10 @@ void Player::keyPressEvent(QKeyEvent *event)
                     delete (colliding_items[i]);
                     game->score->increase();
                     game->health->decrease();
-                }
+                }else if(typeid(*(colliding_items[i]))==typeid(Coin)){
+                    delete (colliding_items[i]);
+                    game->score->increaseCoins();
+            }
         }
     }else if(event->key() == Qt::Key_Space){
         Bullet * bullet = new Bullet(rotation());

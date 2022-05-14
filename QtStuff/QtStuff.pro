@@ -14,6 +14,7 @@ SOURCES += \
     boss.cpp \
     bullet.cpp \
     button.cpp \
+    coin.cpp \
     door.cpp \
     enemy.cpp \
     enemybullet.cpp \
@@ -32,6 +33,7 @@ HEADERS += \
     boss.h \
     bullet.h \
     button.h \
+    coin.h \
     door.h \
     enemy.h \
     enemybullet.h \
