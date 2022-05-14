@@ -1,7 +1,9 @@
 #include "map.h"
+#include "boss.h"
 #include "door.h"
 #include "game.h"
 #include "enemy.h"
+#include "plsboss.h"
 #include "puddle.h"
 #include "wall.h"
 #include "bedrockwall.h"
@@ -34,7 +36,7 @@ void Map::readMap(QString fileName)
 //empty = 0; bedrock wall =1;normal wall =2 ;door = 3 ; enemy type 1= 4;enemy type 2=5;boss =6; pudlle =7 ;skull =  8; player =9;
 void Map::drawMap()
 {
-    Wall * wall;Enemy * enemy;Door* door; BedrockWall* bedrockWall;Puddle* puddle;//Skull * skull
+    Wall * wall;Enemy * enemy;Door* door; BedrockWall* bedrockWall;Puddle* puddle;plsBoss* boss;//Skull * skull
     for(int i = 0;i<20;i++)
         for(int j=0;j<20;j++){
             if(objectCords[i][j]==1){
@@ -74,7 +76,12 @@ void Map::drawMap()
 
 
             }else if(objectCords[i][j]==6){
-                //boss
+                //boss = new plsBoss(game->map->objectCords, game->player);
+                //boss->setPos(game->scene->sceneRect().x()+j*60,game->scene->sceneRect().y()+i*60);
+                //objects[i][j]= boss;
+                //boss->setZValue(99);
+                //game->scene->addItem(boss);
+
 
             }else if(objectCords[i][j]==7){
                 puddle = new Puddle();

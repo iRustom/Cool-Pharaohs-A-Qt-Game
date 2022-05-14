@@ -24,6 +24,7 @@ SOURCES += \
     main.cpp \
     map.cpp \
     player.cpp \
+    plsboss.cpp \
     puddle.cpp \
     score.cpp \
     wall.cpp
@@ -42,6 +43,7 @@ HEADERS += \
     log_in.h \
     map.h \
     player.h \
+    plsboss.h \
     puddle.h \
     score.h \
     wall.h

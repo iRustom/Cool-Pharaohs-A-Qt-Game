@@ -1,4 +1,4 @@
-#ifndef BOSS_H
+/*#ifndef BOSS_H
 #define BOSS_H
 #include <QMediaPlayer>
 #include <QAudioOutput>
@@ -37,7 +37,6 @@ public:
 private:
     QMediaPlayer * bossBulletSound;
     QAudioOutput * bossBulletoutput;
-    void makeMatrix();
 
 public slots:
     void move();
@@ -45,3 +44,4 @@ public slots:
 };
 
 #endif // BOSS_H
+*/

@@ -6,6 +6,7 @@
 #include <QGraphicsScene>
 #include "bullet.h"
 #include "game.h"
+#include "plsboss.h"
 #include "wall.h"
 #include "coin.h"
 
@@ -24,6 +25,7 @@ Player::Player(QGraphicsItem * parent): QGraphicsPixmapItem(parent)
     }
     setPixmap(QPixmap(":/images/mainCharacterUp.png").scaled(60,60));
     setTransformOriginPoint(pixmap().width()/2,pixmap().height()/2);
+
 }
 
 void Player::keyPressEvent(QKeyEvent *event)
