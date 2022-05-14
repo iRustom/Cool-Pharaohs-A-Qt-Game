@@ -10,15 +10,12 @@ extern Game* game;
 Enemy::Enemy(int type, QGraphicsItem *parent): QObject(), QGraphicsPixmapItem(parent) //this should probably be changed to a new abstract class that all of our objects inherit from
 {
     active = false;
-    //setPos(rand()%600,0);    
+
     enemyBulletSound = new QMediaPlayer();
     enemyBulletoutput = new QAudioOutput();
 
     enemyBulletSound->setAudioOutput(enemyBulletoutput);
     enemyBulletSound->setSource(QUrl("qrc:/sfx/bulletsound.mp3"));
-
-
-
 
     if(game->volume == 1){
         enemyBulletoutput->setVolume(100);
