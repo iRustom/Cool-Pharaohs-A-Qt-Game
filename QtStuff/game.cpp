@@ -44,7 +44,7 @@ void Game::start()
     player = new Player();
     player->setFlag(QGraphicsPixmapItem::ItemIsFocusable);
     player->setFocus();
-    player->setPos(61,479);
+    player->setPos(60,480);
 
     for(int i=0;i<map->enemyVec.size();i++)
     {

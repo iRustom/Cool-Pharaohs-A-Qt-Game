@@ -31,7 +31,7 @@ void Map::readMap(QString fileName)
 
 
 }
-//empty = 0; bedrock wall =1;normal wall =2 ;door = 3 ; enemy type 1= 4;enemy type 2=5;boss =6; pudlle =7 ;skull =  8
+//empty = 0; bedrock wall =1;normal wall =2 ;door = 3 ; enemy type 1= 4;enemy type 2=5;boss =6; pudlle =7 ;skull =  8; player =9;
 void Map::drawMap()
 {
     Wall * wall;Enemy * enemy;Door* door; BedrockWall* bedrockWall;Puddle* puddle;//Skull * skull

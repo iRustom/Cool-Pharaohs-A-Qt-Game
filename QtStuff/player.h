@@ -11,6 +11,7 @@ class Player : public QObject, public QGraphicsPixmapItem
 public:
     Player(QGraphicsItem * parent = 0);
     void keyPressEvent(QKeyEvent* event);
+    int oldVal;
 public slots:
     void spawn();// should be moved to game class
 private:

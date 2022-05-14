@@ -20,7 +20,7 @@ Player::Player(QGraphicsItem * parent): QGraphicsPixmapItem(parent)
     }else{
         bulletoutput->setVolume(0);
     }
-    setPixmap(QPixmap(":/images/mainCharacterUp.png").scaled(30,30));
+    setPixmap(QPixmap(":/images/mainCharacterUp.png").scaled(60,60));
     setTransformOriginPoint(pixmap().width()/2,pixmap().height()/2);
 }
 
@@ -37,116 +37,96 @@ void Player::keyPressEvent(QKeyEvent *event)
 
     if(event->key()==Qt::Key_Up)
     {
-
-        if(!stopUp&&!stopDown){
-        setPos(x(),y()-10);
-        }
-        if(stopDown&&!stopUp){
-            setPos(x(),y()-11);
-        }
         setRotation(0);
+        int currentX = pos().x();
+        int currentY = pos().y();
+        if(game->map->objectCords[currentY/60-1][currentX/60]!=1 && game->map->objectCords[currentY/60-1][currentX/60]!=2){
+            setPos(QPoint(currentX, currentY - 60));
+            game->map->objectCords[currentY/60][currentX/60] = 0; // might introduce errors
+            game->map->objectCords[currentY/60 -1][currentX/60] = 9;
+        }
+
         colliding_items = collidingItems();
         if(game->lost==false)
-        for(int i =0;i<colliding_items.size();i++){
+        for(int i =0;i<colliding_items.size();i++){            
             if(game->lost==false)
-            if(typeid(*colliding_items[i])==typeid(Wall)||typeid(*colliding_items[i])==typeid(BedrockWall)){
-                stopUp= true;
-            }
-            if(game->lost==false)
-            if(typeid(*(colliding_items[i]))==typeid(Enemy)){
-                delete (colliding_items[i]);
-                game->score->increase();
-                game->health->decrease();
+                if(typeid(*(colliding_items[i]))==typeid(Enemy)){
+                    delete (colliding_items[i]);
+                    game->score->increase();
+                    game->health->decrease();
+                }
+        }
 
-            }
-        }
-        if(stopDown==true){
-            stopDown=false;
-        }
+
     }
     else if(event->key()==Qt::Key_Down)
     {
-        if(!stopDown&&!stopUp){
-        setPos(x(),y()+10);
-        }
-        if(stopUp&&!stopDown){
-            setPos(x(),y()+11);
-        }
+
         setRotation(180);
+        int currentX = pos().x();
+        int currentY = pos().y();
+        if(game->map->objectCords[currentY/60+1][currentX/60]!=1 && game->map->objectCords[currentY/60+1][currentX/60]!=2){
+            setPos(QPoint(currentX, currentY + 60));
+            game->map->objectCords[currentY/60][currentX/60] = 0; // might introduce errors
+            game->map->objectCords[currentY/60 +1][currentX/60] = 9;
+        }
+
         colliding_items = collidingItems();
         if(game->lost==false)
         for(int i =0;i<colliding_items.size();i++){
             if(game->lost==false)
-            if(typeid(*colliding_items[i])==typeid(Wall)||typeid(*colliding_items[i])==typeid(BedrockWall)){
-                stopDown= true;
-            }
-            if(game->lost==false)
-            if(typeid(*(colliding_items[i]))==typeid(Enemy)){
-                delete (colliding_items[i]);
-                game->score->increase();
-                game->health->decrease();
-
-            }
-        }
-        if(stopUp==true){
-            stopUp = false;
+                if(typeid(*(colliding_items[i]))==typeid(Enemy)){
+                    delete (colliding_items[i]);
+                    game->score->increase();
+                    game->health->decrease();
+                }
         }
     }
     else if(event->key()==Qt::Key_Left)
     {
-        if(!stopLeft&&!stopRight){
-            setPos(x()-10,y());
-        }
-        if(stopRight&&!stopLeft){
-            setPos(x()-11,y());
-        }
+
         setRotation(270);
+        int currentX = pos().x();
+        int currentY = pos().y();
+        if(game->map->objectCords[currentY/60][currentX/60-1]!=1 && game->map->objectCords[currentY/60][currentX/60-1]!=2){
+            setPos(QPoint(currentX-60, currentY));
+            game->map->objectCords[currentY/60][currentX/60] = 0; // might introduce errors
+            game->map->objectCords[currentY/60][currentX/60-1] = 9;
+        }
+
         colliding_items = collidingItems();
         if(game->lost==false)
         for(int i =0;i<colliding_items.size();i++){
             if(game->lost==false)
-            if(typeid(*colliding_items[i])==typeid(Wall)||typeid(*colliding_items[i])==typeid(BedrockWall)){
-                stopLeft= true;
-            }
-            if(game->lost==false)
-            if(typeid(*(colliding_items[i]))==typeid(Enemy)){
-                 delete (colliding_items[i]);
-                game->score->increase();
-                game->health->decrease();
-
-            }
-
+                if(typeid(*(colliding_items[i]))==typeid(Enemy)){
+                    delete (colliding_items[i]);
+                    game->score->increase();
+                    game->health->decrease();
+                }
         }
-        if(stopRight == true){
-            stopRight = false;
-        }
+
     }
     else if(event->key()==Qt::Key_Right)
     {
-        if(!stopRight&&!stopLeft){
-        setPos(x()+10,y());
-        }
-        if(!stopRight&&stopLeft){
-            setPos(x()+11,y());
-        }
+
         setRotation(90);
+        int currentX = pos().x();
+        int currentY = pos().y();
+        if(game->map->objectCords[currentY/60][currentX/60+1]!=1 && game->map->objectCords[currentY/60][currentX/60+1]!=2){
+            setPos(QPoint(currentX+60, currentY));
+            game->map->objectCords[currentY/60][currentX/60] = 0; // might introduce errors
+            game->map->objectCords[currentY/60][currentX/60+1] = 9;
+        }
+
         colliding_items = collidingItems();
         if(game->lost==false)
         for(int i =0;i<colliding_items.size();i++){
             if(game->lost==false)
-            if(typeid(*colliding_items[i])==typeid(Wall)||typeid(*colliding_items[i])==typeid(BedrockWall)){
-                stopRight= true;
-            }
-            if(game->lost==false)
-            if(typeid(*(colliding_items[i]))==typeid(Enemy)){
-                delete (colliding_items[i]);
-                game->score->increase();
-                game->health->decrease();
-
-            }
-        }
-        if(stopLeft == true){
-            stopLeft = false;
+                if(typeid(*(colliding_items[i]))==typeid(Enemy)){
+                    delete (colliding_items[i]);
+                    game->score->increase();
+                    game->health->decrease();
+                }
         }
     }else if(event->key() == Qt::Key_Space){
         Bullet * bullet = new Bullet(rotation());
