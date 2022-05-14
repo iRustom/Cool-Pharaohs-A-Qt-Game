@@ -6,7 +6,7 @@ extern Game* game;
 Score::Score(QGraphicsItem *parent): QGraphicsTextItem(parent)
 {
     score = 0;
-
+    coins = 0;
     setPlainText(QString("Score: ") + QString::number(score));
     setDefaultTextColor(Qt::blue);
     setFont(QFont("times",16));
@@ -51,4 +51,14 @@ void Score::increase()
 int Score::getScore()
 {
     return score;
+}
+
+void Score::increaseCoins()
+{
+    coins++;
+}
+
+int Score::getCoins()
+{
+    return coins;
 }

@@ -13,6 +13,7 @@ SOURCES += \
     bedrockwall.cpp \
     bullet.cpp \
     button.cpp \
+    coin.cpp \
     door.cpp \
     enemy.cpp \
     enemybullet.cpp \
@@ -30,6 +31,7 @@ HEADERS += \
     bedrockwall.h \
     bullet.h \
     button.h \
+    coin.h \
     door.h \
     enemy.h \
     enemybullet.h \
