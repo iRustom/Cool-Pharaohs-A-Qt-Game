@@ -424,7 +424,9 @@ plsBoss::plsBoss(int boarddata[][20], Player *ptr)
 void  plsBoss:: move()
 {
     if(active){
-        Pair src = std::make_pair(pos().y()/60, (pos().x()-600)/60);
+        qDebug()<<"Source is "<<(pos().y()-600)/60<<" "<<pos().x()/60;
+        Pair src = std::make_pair((pos().y()-600)/60, pos().x()/60);
+        qDebug()<<"Destination is "<<(ptr->pos().y()-600)/60<<" "<<(ptr->pos().x())/60;
         Pair dest = std::make_pair((ptr->pos().y()-600)/60, ptr->pos().x()/60);
         for (int i=0;i<10;i++)
             for (int j=0;j<10;j++)
