@@ -11,7 +11,7 @@ CONFIG += c++11
 
 SOURCES += \
     bedrockwall.cpp \
-    boss.cpp \
+    bosshealth.cpp \
     bullet.cpp \
     button.cpp \
     coin.cpp \
@@ -31,7 +31,7 @@ SOURCES += \
 
 HEADERS += \
     bedrockwall.h \
-    boss.h \
+    bosshealth.h \
     bullet.h \
     button.h \
     coin.h \

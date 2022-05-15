@@ -386,7 +386,7 @@ plsBoss::plsBoss(int boarddata[][20], Player *ptr)
     bossBulletoutput = new QAudioOutput();
 
 
-    health = new Health();
+    health = new bossHealth();
     //health-> setPos(health->x(),health->y()+25);
     //scene->addItem(health);
     health->setParentItem(this);
@@ -467,6 +467,18 @@ void  plsBoss:: move()
         else if(600+ro*60 > pos().y())
             setRotation(180);
         setPos(co*60,600+ro*60);
+        QList<QGraphicsItem *> colliding_items = collidingItems();
+        for(int i =0;i<colliding_items.size();i++)
+                {
+                    if(typeid(*(colliding_items[i]))==typeid(Player))
+                    {
+                        game->score->increase();
+                        game->health->decrease();
+                        health->decrease();
+
+                        return;
+                    }
+                }
         }
 
         }

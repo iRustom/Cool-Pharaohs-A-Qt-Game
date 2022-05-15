@@ -1,5 +1,5 @@
 release/bedrockwall.o
-release/boss.o
+release/bosshealth.o
 release/bullet.o
 release/button.o
 release/coin.o

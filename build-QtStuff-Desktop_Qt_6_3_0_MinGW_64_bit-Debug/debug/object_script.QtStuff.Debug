@@ -1,5 +1,5 @@
 debug/bedrockwall.o
-debug/boss.o
+debug/bosshealth.o
 debug/bullet.o
 debug/button.o
 debug/coin.o

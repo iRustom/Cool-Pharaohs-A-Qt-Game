@@ -1,5 +1,4 @@
 #include "map.h"
-#include "boss.h"
 #include "door.h"
 #include "game.h"
 #include "enemy.h"
