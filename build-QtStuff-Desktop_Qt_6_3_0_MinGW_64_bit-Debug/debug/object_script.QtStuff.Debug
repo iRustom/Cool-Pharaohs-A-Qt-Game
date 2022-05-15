@@ -1,5 +1,5 @@
 debug/bedrockwall.o
-debug/boss.o
+debug/bosshealth.o
 debug/bullet.o
 debug/button.o
 debug/coin.o
@@ -12,6 +12,7 @@ debug/log_in.o
 debug/main.o
 debug/map.o
 debug/player.o
+debug/plsboss.o
 debug/puddle.o
 debug/score.o
 debug/wall.o
@@ -25,3 +26,4 @@ debug/moc_enemybullet.o
 debug/moc_game.o
 debug/moc_log_in.o
 debug/moc_player.o
+debug/moc_plsboss.o
