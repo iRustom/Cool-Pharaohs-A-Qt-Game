@@ -421,6 +421,9 @@ plsBoss::plsBoss(int boarddata[][20], Player *ptr)
     connect(timer2,SIGNAL(timeout()),this,SLOT(checkActive()));
     timer2->start(100);
 
+    QTimer * timer3 = new QTimer(this);
+    connect(timer2,SIGNAL(timeout()),this,SLOT(checkActive()));
+    timer2->start(100);
     //qDebug()<<Pathfinal.size() << "after";
     //qDebug()<<Pathfinal.top()<<"top";
 
@@ -467,7 +470,14 @@ void  plsBoss:: move()
             setRotation(0);
         else if(600+ro*60 > pos().y())
             setRotation(180);
-        setPos(co*60,600+ro*60);
+        int tempInt = rand()%8;
+        if(tempInt == 0 ){
+            Enemy * enemy =new Enemy(rand()%2);
+            enemy->setPos(pos());
+            scene()->addItem(enemy);
+        }
+        setPos(co*60,600+ro*60); // moved
+
         QList<QGraphicsItem *> colliding_items = collidingItems();
         for(int i =0;i<colliding_items.size();i++)
                 {
