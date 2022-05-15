@@ -41,7 +41,14 @@ Enemy::Enemy(int type, QGraphicsItem *parent): QObject(), QGraphicsPixmapItem(pa
     timer2->start(100);
 
 
-    oldVal = Type;
+    oldVal = 0;
+}
+
+Enemy::~Enemy()
+{
+    if(oldVal==2){
+        game->map->objectCords[int(pos().y()/60)][int(pos().x()/60)] = 2;
+    }
 }
 
 QPointF Enemy::getPos()
@@ -117,10 +124,10 @@ void Enemy::move()
         else if(notOcc[rando].y() > currentY)
             setRotation(0);
 
-
         game->map->objectCords[currentY/60][currentX/60]=oldVal;
         oldVal= game->map->objectCords[notOcc[rando].y()/60][notOcc[rando].x()/60];
-        game->map->objectCords[notOcc[rando].y()/60][notOcc[rando].x()/60] = 4 + Type;
+        if(game->map->objectCords[notOcc[rando].y()/60][notOcc[rando].x()/60]!=2)
+            game->map->objectCords[notOcc[rando].y()/60][notOcc[rando].x()/60] = 4 + Type;
 
         setPos(notOcc[rando]);
 

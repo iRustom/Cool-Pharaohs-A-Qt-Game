@@ -452,6 +452,14 @@ void  plsBoss:: move()
         int co=temp.second;
         qDebug()<<"still moving";
         qDebug()<<"((" <<ro<<","<<co<<"))";
+        if(co*60 > pos().x() )
+            setRotation(90);
+        else if(co*60 < pos().x())
+            setRotation(270);
+        else if(600+ro*60 < pos().y())
+            setRotation(0);
+        else if(600+ro*60 > pos().y())
+            setRotation(180);
         setPos(co*60,600+ro*60);
         }
 
