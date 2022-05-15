@@ -8,6 +8,11 @@
 #include <QVBoxLayout>
 #include <QWidget>
 #include "button.h"
+#include "score.h"
+#include "health.h"
+
+extern Health* health;
+extern Score*score;
 
 Game::Game(QWidget *parent): QGraphicsView(parent)
 {
@@ -85,10 +90,118 @@ void Game::start()
 
 }
 
+void Game::display_coins()
+{
+    QGraphicsTextItem* coin_amount = new QGraphicsTextItem(QString("Coins: " + QString::number(score->getCoins())));
+    coin_amount->setZValue(1000);
+    QFont coinFont("comic sans",18);
+    coin_amount->setFont(coinFont);
+    coin_amount->setPos(this->width()/2-coin_amount->boundingRect().width()/2,200);
+    scene->addItem(coin_amount);
+}
+
 void Game::toggleVol()
 {
     volume *=-1;
 }
+
+void Game::draw(int x, int y, int width, int height, QColor colour, double opacity)
+{
+panel = new QGraphicsRectItem(x,y,width,height);
+panel->setZValue(999);
+QBrush brush;
+brush.setStyle(Qt::SolidPattern);
+brush.setColor(colour);
+panel->setBrush(brush);
+panel->setOpacity(opacity);
+scene->addItem(panel);
+}
+
+void Game::resume()
+{
+   scene->removeItem(panel);
+   scene->removeItem(shop_title);
+   scene->removeItem(coin_amount);
+   scene->removeItem(health_amount);
+   scene->removeItem(buy_health);
+   scene->removeItem(back);
+   for (size_t i=0, n=scene->items().size();i<n;i++)
+   {
+       scene->items()[i]->setEnabled(true);
+   }
+}
+
+void Game::display_shop()
+{
+
+    for (size_t i=0, n=scene->items().size();i<n;i++)
+    {
+        scene->items()[i]->setEnabled(false);
+    }
+
+    draw(100,150,400,300,Qt::lightGray,0.75);
+
+
+
+    shop_title = new QGraphicsTextItem(QString("Welcome to Shop"));
+    shop_title->setZValue(1000);
+    QFont titleFont("comic sans",25);
+    shop_title->setFont(titleFont);
+    shop_title->setPos(this->width()/2-shop_title->boundingRect().width()/2,175);
+    scene->addItem(shop_title);
+
+    coin_amount = new QGraphicsTextItem(QString("Coins: " + QString::number(score->getCoins())));
+    coin_amount->setZValue(1000);
+    QFont coinFont("comic sans",18);
+    coin_amount->setFont(coinFont);
+    coin_amount->setPos(this->width()/2-coin_amount->boundingRect().width()/2,230);
+    scene->addItem(coin_amount);
+
+    health_amount = new QGraphicsTextItem(QString("Lives: " + QString::number(health->getHealth())));
+    health_amount->setZValue(1000);
+    QFont healthFont("comic sans",18);
+    health_amount->setFont(healthFont);
+    health_amount->setPos(this->width()/2-health_amount->boundingRect().width()/2,260);
+    scene->addItem(health_amount);
+
+    buy_health = new Button (QString("life"));
+    buy_health->setZValue(1000);
+    buy_health->setPos(this->width()/2-buy_health->boundingRect().width()/2,300);
+    connect(buy_health,SIGNAL(clicked()),this,SLOT(purchase()));
+    scene->addItem(buy_health);
+
+    back = new Button (QString("return"));
+    back->setZValue(1000);
+    back->setPos(this->width()/2-back->boundingRect().width()/2,380);
+    connect(back,SIGNAL(clicked()),this,SLOT(resume()));
+    scene->addItem(back);
+}
+
+void Game::purchase()
+{
+    if (score->getCoins()>0 && (health->getHealth()>0 || health->getHealth()<5) )
+    {
+
+        score->decreaseCoins();
+        coin_amount->setPlainText(QString("Coins: " + QString::number(score->getCoins())));
+
+        health->increase();
+        health_amount->setPlainText("Lives: " + QString::number(health->getHealth()));
+
+    }
+    else if (score->getCoins()<=0)
+    {
+        QGraphicsTextItem* low_funds = new QGraphicsTextItem(QString("insufficient number of coins"));
+        low_funds->setZValue(1000);
+        QFont coinFont("comic sans",18);
+        low_funds->setFont(coinFont);
+        low_funds->setPos(this->width()/2-low_funds->boundingRect().width()/2,500);
+        scene->addItem(low_funds);
+
+    }
+
+}
+
 
 void Game::display_login()
 {
@@ -160,6 +273,8 @@ void Game::mainMenu2()
     status->setPos(this->width()/2-status->boundingRect().width()/2,500);
     scene->addItem(status);
 }
+
+
 void Game::lose()
 {
     lost= true;

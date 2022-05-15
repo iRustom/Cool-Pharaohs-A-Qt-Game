@@ -1,4 +1,4 @@
-#ifndef BOSS_H
+/*#ifndef BOSS_H
 #define BOSS_H
 #include <QMediaPlayer>
 #include <QAudioOutput>
@@ -45,3 +45,4 @@ public slots:
 };
 
 #endif // BOSS_H
+*/

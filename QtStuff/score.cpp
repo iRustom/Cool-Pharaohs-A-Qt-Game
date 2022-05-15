@@ -58,6 +58,11 @@ void Score::increaseCoins()
     coins++;
 }
 
+void Score::decreaseCoins()
+{
+    coins--;
+}
+
 int Score::getCoins()
 {
     return coins;

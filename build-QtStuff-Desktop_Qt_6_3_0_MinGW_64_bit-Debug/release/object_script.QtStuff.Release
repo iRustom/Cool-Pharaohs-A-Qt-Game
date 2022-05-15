@@ -1,6 +1,8 @@
 release/bedrockwall.o
+release/boss.o
 release/bullet.o
 release/button.o
+release/coin.o
 release/door.o
 release/enemy.o
 release/enemybullet.o
@@ -16,6 +18,7 @@ release/wall.o
 release/qrc_myRes.o
 release/moc_bullet.o
 release/moc_button.o
+release/moc_coin.o
 release/moc_door.o
 release/moc_enemy.o
 release/moc_enemybullet.o

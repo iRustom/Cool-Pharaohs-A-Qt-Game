@@ -1,4 +1,4 @@
-#include "boss.h"
+/* #include "boss.h"
 #include "game.h"
 #include <QTimer>
 #include <QPair>
@@ -175,7 +175,7 @@ void Boss::aStar(int grid[][20],QPair<int,int> src, QPair<int,int> dest){
                             return;
                         }
 }
-void Boss::checkActive()
+/*void Boss::checkActive()
 {
     if(game->player->pos().x()<600&&game->player->pos().y()<600){
         if(pos().x()<600 && pos().y()<600)
@@ -190,4 +190,4 @@ void Boss::checkActive()
         if(pos().x()<600 && pos().y()>600)
             active = true;
     }
-}
+}*/

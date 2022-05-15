@@ -1,6 +1,8 @@
 debug/bedrockwall.o
+debug/boss.o
 debug/bullet.o
 debug/button.o
+debug/coin.o
 debug/door.o
 debug/enemy.o
 debug/enemybullet.o
@@ -16,6 +18,7 @@ debug/wall.o
 debug/qrc_myRes.o
 debug/moc_bullet.o
 debug/moc_button.o
+debug/moc_coin.o
 debug/moc_door.o
 debug/moc_enemy.o
 debug/moc_enemybullet.o

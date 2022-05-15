@@ -25,3 +25,8 @@ int Health::getHealth()
 {
     return health;
 }
+
+void Health::increase()
+{
+    health++;
+}

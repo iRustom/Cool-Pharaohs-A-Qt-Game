@@ -86,8 +86,6 @@ Makefile: ../QtStuff/QtStuff.pro C:/Qt/6.3.0/mingw_64/mkspecs/win32-g++/qmake.co
 		C:/Qt/6.3.0/mingw_64/mkspecs/modules/qt_lib_concurrent.pri \
 		C:/Qt/6.3.0/mingw_64/mkspecs/modules/qt_lib_concurrent_private.pri \
 		C:/Qt/6.3.0/mingw_64/mkspecs/modules/qt_lib_core.pri \
-		C:/Qt/6.3.0/mingw_64/mkspecs/modules/qt_lib_core5compat.pri \
-		C:/Qt/6.3.0/mingw_64/mkspecs/modules/qt_lib_core5compat_private.pri \
 		C:/Qt/6.3.0/mingw_64/mkspecs/modules/qt_lib_core_private.pri \
 		C:/Qt/6.3.0/mingw_64/mkspecs/modules/qt_lib_dbus.pri \
 		C:/Qt/6.3.0/mingw_64/mkspecs/modules/qt_lib_dbus_private.pri \
@@ -247,8 +245,6 @@ C:/Qt/6.3.0/mingw_64/mkspecs/modules/qt_ext_libpng.pri:
 C:/Qt/6.3.0/mingw_64/mkspecs/modules/qt_lib_concurrent.pri:
 C:/Qt/6.3.0/mingw_64/mkspecs/modules/qt_lib_concurrent_private.pri:
 C:/Qt/6.3.0/mingw_64/mkspecs/modules/qt_lib_core.pri:
-C:/Qt/6.3.0/mingw_64/mkspecs/modules/qt_lib_core5compat.pri:
-C:/Qt/6.3.0/mingw_64/mkspecs/modules/qt_lib_core5compat_private.pri:
 C:/Qt/6.3.0/mingw_64/mkspecs/modules/qt_lib_core_private.pri:
 C:/Qt/6.3.0/mingw_64/mkspecs/modules/qt_lib_dbus.pri:
 C:/Qt/6.3.0/mingw_64/mkspecs/modules/qt_lib_dbus_private.pri:

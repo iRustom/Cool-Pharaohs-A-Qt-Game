@@ -64,6 +64,10 @@ void Player::keyPressEvent(QKeyEvent *event)
 
 
     }
+     else if(event->key()==Qt::Key_Shift)
+    {
+        game->display_shop();
+    }
     else if(event->key()==Qt::Key_Down)
     {
 

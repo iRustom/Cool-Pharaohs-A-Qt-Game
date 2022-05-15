@@ -9,6 +9,7 @@ public:
     void increase();
     int getScore();
     void increaseCoins();
+    void decreaseCoins();
     int getCoins();
 private:
     int score;
