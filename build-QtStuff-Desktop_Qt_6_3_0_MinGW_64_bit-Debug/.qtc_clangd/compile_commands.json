@@ -156,10 +156,10 @@
         "-Wno-unknown-warning-option",
         "-Wno-documentation-unknown-command",
         "-fno-delayed-template-parsing",
-        "C:\\Users\\0mar3\\Desktop\\coolPharohs\\CoolPharaohs\\QtStuff\\boss.cpp"
+        "C:\\Users\\0mar3\\Desktop\\coolPharohs\\CoolPharaohs\\QtStuff\\bosshealth.cpp"
     ],
     "directory": "C:/Users/0mar3/Desktop/coolPharohs/CoolPharaohs/build-QtStuff-Desktop_Qt_6_3_0_MinGW_64_bit-Debug/.qtc_clangd",
-    "file": "C:/Users/0mar3/Desktop/coolPharohs/CoolPharaohs/QtStuff/boss.cpp"
+    "file": "C:/Users/0mar3/Desktop/coolPharohs/CoolPharaohs/QtStuff/bosshealth.cpp"
 },
 {
     "arguments": [
@@ -1614,10 +1614,10 @@
         "-Wno-unknown-warning-option",
         "-Wno-documentation-unknown-command",
         "-fno-delayed-template-parsing",
-        "C:\\Users\\0mar3\\Desktop\\coolPharohs\\CoolPharaohs\\QtStuff\\boss.h"
+        "C:\\Users\\0mar3\\Desktop\\coolPharohs\\CoolPharaohs\\QtStuff\\bosshealth.h"
     ],
     "directory": "C:/Users/0mar3/Desktop/coolPharohs/CoolPharaohs/build-QtStuff-Desktop_Qt_6_3_0_MinGW_64_bit-Debug/.qtc_clangd",
-    "file": "C:/Users/0mar3/Desktop/coolPharohs/CoolPharaohs/QtStuff/boss.h"
+    "file": "C:/Users/0mar3/Desktop/coolPharohs/CoolPharaohs/QtStuff/bosshealth.h"
 },
 {
     "arguments": [
