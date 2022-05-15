@@ -51,7 +51,7 @@ void Game::start()
     player->setFocus();
     player->setPos(60,480);
 
-    plsBoss* boss = new plsBoss(map->objectCords,player);
+    boss = new plsBoss(map->objectCords,player);
 
     for(int i=0;i<map->enemyVec.size();i++)
     {
@@ -317,7 +317,7 @@ void Game::win()
     setScene(scene);
 
     setSceneRect(0,0,600,600);
-    QGraphicsTextItem* user_win = new QGraphicsTextItem(QString("You win (p.s.boss wasnt home)"));
+    QGraphicsTextItem* user_win = new QGraphicsTextItem(QString("You win! Hope you had fun!"));
     QFont user_winFont("comic sans",25);
     user_win->setFont(user_winFont);
     user_win->setPos(this->width()/2-user_win->boundingRect().width()/2,100);

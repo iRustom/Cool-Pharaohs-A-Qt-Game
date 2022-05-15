@@ -30,8 +30,11 @@ Bullet::Bullet(int rotateCheck, QGraphicsItem* parent): QObject(), QGraphicsPixm
 
 void Bullet::moveUp()
 {
+    if(game->lost!=true){
     QList<QGraphicsItem *> colliding_items = collidingItems();
+    if(game->lost!=true)
     for(int i =0;i<colliding_items.size();i++){
+        if(game->lost!=true)
         if(typeid(*(colliding_items[i]))==typeid (Enemy)){
             Coin * coin = new Coin();
             coin->setPos(x(),y());
@@ -68,6 +71,10 @@ void Bullet::moveUp()
             scene()-> removeItem(this);
             delete this;
             return;
+        }else if(typeid(*(colliding_items[i]))==typeid(plsBoss)){
+            game->boss->health->decrease();
+            delete this;
+            return;
         }
     }
     setPos(x(),y()-2);
@@ -75,12 +82,16 @@ void Bullet::moveUp()
         scene()->removeItem(this);
         delete this;
     }
+    }
 }
 
 void Bullet::moveDown()
 {
+    if(game->lost!=true){
     QList<QGraphicsItem *> colliding_items = collidingItems();
+    if(game->lost!=true)
     for(int i =0;i<colliding_items.size();i++){
+        if(game->lost!=true)
         if(typeid(*(colliding_items[i]))==typeid (Enemy)){
             Coin * coin = new Coin();
             coin->setPos(x(),y());
@@ -108,6 +119,10 @@ void Bullet::moveDown()
         }else if(typeid(*(colliding_items[i]))==typeid(Door)){
 
             scene()-> removeItem(this);
+            delete this;
+            return;
+        }else if(typeid(*(colliding_items[i]))==typeid(plsBoss)){
+            game->boss->health->decrease();
             delete this;
             return;
         }
@@ -117,11 +132,15 @@ void Bullet::moveDown()
         scene()->removeItem(this);
         delete this;
     }
+    }
 }
 void Bullet::moveRight()
 {
+    if(game->lost!=true){
     QList<QGraphicsItem *> colliding_items = collidingItems();
+    if(game->lost!=true)
     for(int i =0;i<colliding_items.size();i++){
+        if(game->lost!=true)
         if(typeid(*(colliding_items[i]))==typeid (Enemy)){
             Coin * coin = new Coin();
             coin->setPos(x(),y());
@@ -151,6 +170,10 @@ void Bullet::moveRight()
             scene()-> removeItem(this);
             delete this;
             return;
+        }else if(typeid(*(colliding_items[i]))==typeid(plsBoss)){
+            game->boss->health->decrease();
+            delete this;
+            return;
         }
     }
     setPos(x()+2,y());
@@ -158,11 +181,15 @@ void Bullet::moveRight()
         scene()->removeItem(this);
         delete this;
     }
+    }
 }
 void Bullet::moveLeft()
 {
+    if(game->lost!=true){
     QList<QGraphicsItem *> colliding_items = collidingItems();
+    if(game->lost!=true)
     for(int i =0;i<colliding_items.size();i++){
+        if(game->lost!=true)
         if(typeid(*(colliding_items[i]))==typeid (Enemy)){
 
             Coin * coin = new Coin();
@@ -193,11 +220,16 @@ void Bullet::moveLeft()
             scene()-> removeItem(this);
             delete this;
             return;
+        }else if(typeid(*(colliding_items[i]))==typeid(plsBoss)){
+            game->boss->health->decrease();
+            delete this;
+            return;
         }
     }
     setPos(x()-2,y());
     if(pos().y()+pixmap().height()<0){
         scene()->removeItem(this);
         delete this;
+    }
     }
 }
