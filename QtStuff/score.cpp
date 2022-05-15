@@ -7,7 +7,7 @@ Score::Score(QGraphicsItem *parent): QGraphicsTextItem(parent)
 {
     score = 0;
     coins = 0;
-    setPlainText(QString("Score: ") + QString::number(score));
+    setPlainText(QString("Score: ") + QString::number(score)+QString(" Coins: ")+QString::number(coins));
     setDefaultTextColor(Qt::blue);
     setFont(QFont("times",16));
 }
@@ -19,7 +19,7 @@ void Score::increase()
         return;
     }
     score++;
-    setPlainText(QString("Score: ") + QString::number(score));
+    setPlainText(QString("Score: ") + QString::number(score)+QString(" Coins: ")+QString::number(coins));
     if(score>=22){
         //game->win();
         return;
@@ -56,11 +56,15 @@ int Score::getScore()
 void Score::increaseCoins()
 {
     coins++;
+    setPlainText(QString("Score: ") + QString::number(score)+QString(" Coins: ")+QString::number(coins));
+
 }
 
 void Score::decreaseCoins()
 {
     coins--;
+    setPlainText(QString("Score: ") + QString::number(score)+QString(" Coins: ")+QString::number(coins));
+
 }
 
 int Score::getCoins()

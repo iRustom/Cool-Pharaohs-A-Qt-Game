@@ -25,6 +25,8 @@ public:
     void lose();
     void win();
     bool lost;
+    int xOff;
+    int yOff;
 public slots:
     void start();
     void display_login();

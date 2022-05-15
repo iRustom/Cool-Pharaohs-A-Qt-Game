@@ -16,6 +16,8 @@ extern Score*score;
 
 Game::Game(QWidget *parent): QGraphicsView(parent)
 {
+    xOff = 0;
+    yOff = 0;
     lost= false;
 
     setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
@@ -141,7 +143,7 @@ void Game::display_shop()
         scene->items()[i]->setEnabled(false);
     }
 
-    draw(100,150,400,300,Qt::lightGray,0.75);
+    draw(xOff+100,yOff+150,400,300,Qt::lightGray,0.75);
 
 
 
@@ -149,32 +151,32 @@ void Game::display_shop()
     shop_title->setZValue(1000);
     QFont titleFont("comic sans",25);
     shop_title->setFont(titleFont);
-    shop_title->setPos(this->width()/2-shop_title->boundingRect().width()/2,175);
+    shop_title->setPos(xOff+this->width()/2-shop_title->boundingRect().width()/2,yOff+175);
     scene->addItem(shop_title);
 
     coin_amount = new QGraphicsTextItem(QString("Coins: " + QString::number(score->getCoins())));
     coin_amount->setZValue(1000);
     QFont coinFont("comic sans",18);
     coin_amount->setFont(coinFont);
-    coin_amount->setPos(this->width()/2-coin_amount->boundingRect().width()/2,230);
+    coin_amount->setPos(xOff+this->width()/2-coin_amount->boundingRect().width()/2,yOff+230);
     scene->addItem(coin_amount);
 
     health_amount = new QGraphicsTextItem(QString("Lives: " + QString::number(health->getHealth())));
     health_amount->setZValue(1000);
     QFont healthFont("comic sans",18);
     health_amount->setFont(healthFont);
-    health_amount->setPos(this->width()/2-health_amount->boundingRect().width()/2,260);
+    health_amount->setPos(xOff+this->width()/2-health_amount->boundingRect().width()/2,yOff+260);
     scene->addItem(health_amount);
 
     buy_health = new Button (QString("life"));
     buy_health->setZValue(1000);
-    buy_health->setPos(this->width()/2-buy_health->boundingRect().width()/2,300);
+    buy_health->setPos(xOff+this->width()/2-buy_health->boundingRect().width()/2,yOff+300);
     connect(buy_health,SIGNAL(clicked()),this,SLOT(purchase()));
     scene->addItem(buy_health);
 
     back = new Button (QString("return"));
     back->setZValue(1000);
-    back->setPos(this->width()/2-back->boundingRect().width()/2,380);
+    back->setPos(xOff+this->width()/2-back->boundingRect().width()/2,yOff+380);
     connect(back,SIGNAL(clicked()),this,SLOT(resume()));
     scene->addItem(back);
 }
