@@ -11,7 +11,7 @@ CONFIG += c++11
 
 SOURCES += \
     bedrockwall.cpp \
-    boss.cpp \
+    bosshealth.cpp \
     bullet.cpp \
     button.cpp \
     coin.cpp \
@@ -24,13 +24,14 @@ SOURCES += \
     main.cpp \
     map.cpp \
     player.cpp \
+    plsboss.cpp \
     puddle.cpp \
     score.cpp \
     wall.cpp
 
 HEADERS += \
     bedrockwall.h \
-    boss.h \
+    bosshealth.h \
     bullet.h \
     button.h \
     coin.h \
@@ -42,6 +43,7 @@ HEADERS += \
     log_in.h \
     map.h \
     player.h \
+    plsboss.h \
     puddle.h \
     score.h \
     wall.h

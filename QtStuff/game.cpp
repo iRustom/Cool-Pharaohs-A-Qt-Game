@@ -51,6 +51,8 @@ void Game::start()
     player->setFocus();
     player->setPos(60,480);
 
+    plsBoss* boss = new plsBoss(map->objectCords,player);
+
     for(int i=0;i<map->enemyVec.size();i++)
     {
         if(map->enemyVec[i]->pos().x()<600 && map->enemyVec[i]->pos().y()<600)

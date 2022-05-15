@@ -5,6 +5,7 @@
 #include <QGraphicsScene>
 #include "map.h"
 #include "player.h"
+#include "plsboss.h"
 #include "score.h"
 #include "health.h"
 #include "log_in.h"
@@ -17,6 +18,7 @@ public:
     void mainMenu();
     QGraphicsScene * scene;
     Player * player;
+    plsBoss* boss;
     Score * score;
     Health * health;
     Map * map;

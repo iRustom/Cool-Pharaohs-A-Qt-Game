@@ -15,13 +15,13 @@ Score::Score(QGraphicsItem *parent): QGraphicsTextItem(parent)
 void Score::increase()
 {
     if(score>=22){
-        game->win();
+        //game->win();
         return;
     }
     score++;
     setPlainText(QString("Score: ") + QString::number(score));
     if(score>=22){
-        game->win();
+        //game->win();
         return;
     }
     if(score ==5){
