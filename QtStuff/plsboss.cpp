@@ -385,6 +385,12 @@ plsBoss::plsBoss(int boarddata[][20], Player *ptr)
     bossBulletSound = new QMediaPlayer();
     bossBulletoutput = new QAudioOutput();
 
+
+    health = new Health();
+    //health-> setPos(health->x(),health->y()+25);
+    //scene->addItem(health);
+    health->setParentItem(this);
+
     bossBulletSound->setAudioOutput(bossBulletoutput);
     bossBulletSound->setSource(QUrl("qrc:/sfx/bulletsound.mp3"));
 

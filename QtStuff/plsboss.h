@@ -1,5 +1,6 @@
 #ifndef PLSBOSS_H
 #define PLSBOSS_H
+#include "health.h"
 #include <QGraphicsPixmapItem>
 #include <QObject>
 #include <QKeyEvent>
@@ -43,6 +44,7 @@ public:
     QAudioOutput * bossBulletoutput;
     std::stack<Pair> Pathfinal;
     int data[10][10];
+    Health * health;
 
     bool active;
 public slots:
