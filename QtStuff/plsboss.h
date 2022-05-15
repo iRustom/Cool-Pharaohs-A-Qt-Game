@@ -30,7 +30,6 @@ class plsBoss: public QObject, public QGraphicsPixmapItem
 private:
 int row;
 int column;
-int data[10][10];
 Player *ptr;
 public:
     plsBoss(int [][20], Player *);
@@ -43,6 +42,7 @@ public:
     QMediaPlayer * bossBulletSound;
     QAudioOutput * bossBulletoutput;
     std::stack<Pair> Pathfinal;
+    int data[10][10];
 
     bool active;
 public slots:

@@ -68,7 +68,7 @@ void plsBoss::tracePath(cell cellDetails[][COL], Pair dest)
 }
 void plsBoss::aStarSearch(int grid[][COL], Pair src, Pair dest)
 {
-    //qDebug()<<"here1";
+    qDebug()<<"here1";
     // If the source is out of range
     if (isValid(src.first, src.second) == false) {
         qDebug()<<"Source is invalid\n";
@@ -82,8 +82,7 @@ void plsBoss::aStarSearch(int grid[][COL], Pair src, Pair dest)
     }
 
     // Either the source or the destination is blocked
-    if (isUnBlocked(grid, src.first, src.second) == false
-        || isUnBlocked(grid, dest.first, dest.second)
+    if (isUnBlocked(grid, src.first, src.second) == false|| isUnBlocked(grid, dest.first, dest.second)
                == false) {
         qDebug()<<"Source or the destination is blocked\n";
         return;
@@ -258,8 +257,7 @@ void plsBoss::aStarSearch(int grid[][COL], Pair src, Pair dest)
                 // better, using 'f' cost as the measure.
                 if (cellDetails[i + 1][j].f == FLT_MAX
                     || cellDetails[i + 1][j].f > fNew) {
-                    openList.insert(make_pair(
-                        fNew, std::make_pair(i + 1, j)));
+                    openList.insert(make_pair(fNew, std::make_pair(i + 1, j)));
                     // Update the details of this cell
                     cellDetails[i + 1][j].f = fNew;
                     cellDetails[i + 1][j].g = gNew;
@@ -395,12 +393,12 @@ plsBoss::plsBoss(int boarddata[][20], Player *ptr)
     }else{
         bossBulletoutput->setVolume(0);
     }
-    row=15;
+    row=5;
     column=1;
     this->ptr=ptr;
 
     setPixmap(QPixmap(":/images/boss.png").scaled(60,60));
-    setPos(60+column*60,60+row*60);
+    setPos(column*60,600+row*60);
 
     setZValue(99);
     for (int i=0;i<10;i++)
@@ -426,13 +424,18 @@ plsBoss::plsBoss(int boarddata[][20], Player *ptr)
 void  plsBoss:: move()
 {
     if(active){
-        Pair src = std::make_pair(row, column);
-        Pair dest = std::make_pair(ptr->pos().y()/60, ptr->pos().x()/60);
+        Pair src = std::make_pair(pos().y()/60, (pos().x()-600)/60);
+        Pair dest = std::make_pair((ptr->pos().y()-600)/60, ptr->pos().x()/60);
         for (int i=0;i<10;i++)
             for (int j=0;j<10;j++)
             {
-            data[i][j]=game->map->objectCords[i][j];
+            data[i][j]=game->map->objectCords[i+10][j];
             };
+        for (int i=0;i<10;i++)
+                for (int j=0;j<10;j++)
+                {
+                    qDebug() << "Data: " << data[i][j] << Qt::endl;
+                }
         aStarSearch(data, src, dest);
         Pathfinal.pop();
         qDebug("Pathfinal top is ");
@@ -446,7 +449,8 @@ void  plsBoss:: move()
         int co=temp.second;
         qDebug()<<"still moving";
         qDebug()<<"((" <<ro<<","<<co<<"))";
-        setPos(60+co*60,60+ro*60);
+        setPos(co*60,600+ro*60);
+
         }
     }
 }
