@@ -439,19 +439,21 @@ void  plsBoss:: move()
                     qDebug() << "Data: " << data[i][j] << Qt::endl;
                 }
         aStarSearch(data, src, dest);
-        Pathfinal.pop();
-        qDebug("Pathfinal top is ");
-        qDebug()<<Pathfinal.top().first<<" "<<Pathfinal.top().second;
-        Pair temp=Pathfinal.top();
+
+        //Pair temp=Pathfinal.top();
 
         if(Pathfinal.empty()==false)
         {
-            Pathfinal.pop();
+        Pathfinal.pop();
+        if(!Pathfinal.empty()){
+        Pair temp=Pathfinal.top();
+
         int ro=temp.first;
         int co=temp.second;
         qDebug()<<"still moving";
         qDebug()<<"((" <<ro<<","<<co<<"))";
         setPos(co*60,600+ro*60);
+        }
 
         }
     }
