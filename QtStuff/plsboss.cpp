@@ -1,4 +1,5 @@
 #include "plsboss.h"
+#include "enemybullet.h"
 #include "game.h"
 #include <cmath>
 #include <QDebug>
@@ -479,6 +480,40 @@ void  plsBoss:: move()
                         return;
                     }
                 }
+        EnemyBullet * enemyBullet = new EnemyBullet(int(int(rotation()+180)%360),1 );
+        if (rotation() == 180)
+        {
+
+            enemyBullet->setPos(x()+(pixmap().width()/2)-(enemyBullet->pixmap().width()/2)-50,y()+(enemyBullet->pixmap().height()+11));
+
+            game->scene->addItem(enemyBullet);
+        }
+        else if (rotation() == 0)
+        {
+            enemyBullet->setPos(x()+(pixmap().width()/2)-(enemyBullet->pixmap().width()/2),y()-(pixmap().height()+11));
+
+            game->scene->addItem(enemyBullet);//THIS IS THE PROBLEM
+
+        }
+        else if (rotation() == 90)
+        {
+
+            enemyBullet->setPos(x()-enemyBullet->pixmap().width()+11,y()+pixmap().height()/2-enemyBullet->pixmap().height()/2);
+
+            game->scene->addItem(enemyBullet);
+        }
+        else if (rotation() == 270)
+        {
+
+            enemyBullet->setPos(x()+pixmap().width()/2,y()+pixmap().height()/2-enemyBullet->pixmap().height()/2-50);
+
+            game->scene->addItem(enemyBullet);
+        }
+        if(bossBulletSound->playbackState()==QMediaPlayer::PlayingState){
+            bossBulletSound -> setPosition(0);
+        }else if(bossBulletSound->playbackState()==QMediaPlayer::StoppedState){
+            bossBulletSound->play();
+        }
         }
 
         }

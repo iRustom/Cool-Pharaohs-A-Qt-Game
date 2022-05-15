@@ -4,6 +4,9 @@ extern Game * game;
 bossHealth::bossHealth()
 {
     health = 10;
+    setPlainText(QString("       ")+ QString::number(health));
+    setDefaultTextColor(Qt::red);
+    setFont(QFont("times",20));
 }
 void bossHealth::decrease(){
     if(game->lost==false){
