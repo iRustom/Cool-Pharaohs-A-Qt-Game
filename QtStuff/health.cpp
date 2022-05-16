@@ -4,7 +4,7 @@
 extern Game* game;
 Health::Health(QGraphicsItem *parent): QGraphicsTextItem(parent)
 {
-    health = 10;
+    health = 100;
 
     setPlainText(QString("       ")+ QString::number(health));
     setDefaultTextColor(Qt::red);

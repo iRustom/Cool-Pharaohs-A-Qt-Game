@@ -44,7 +44,7 @@ void Player::keyPressEvent(QKeyEvent *event)
         setRotation(0);
         int currentX = pos().x();
         int currentY = pos().y();
-        if(game->map->objectCords[currentY/60-1][currentX/60]!=1 && game->map->objectCords[currentY/60-1][currentX/60]!=2){
+        if(game->map->objectCords[currentY/60-1][currentX/60]!=1 && game->map->objectCords[currentY/60-1][currentX/60]!=2 && game->map->objectCords[currentY/60-1][currentX/60]!=3){
             setPos(QPoint(currentX, currentY - 60));
             game->map->objectCords[currentY/60][currentX/60] = 0; // might introduce errors
             game->map->objectCords[currentY/60 -1][currentX/60] = 9;
@@ -76,7 +76,7 @@ void Player::keyPressEvent(QKeyEvent *event)
         setRotation(180);
         int currentX = pos().x();
         int currentY = pos().y();
-        if(game->map->objectCords[currentY/60+1][currentX/60]!=1 && game->map->objectCords[currentY/60+1][currentX/60]!=2){
+        if(game->map->objectCords[currentY/60+1][currentX/60]!=1 && game->map->objectCords[currentY/60+1][currentX/60]!=2 && game->map->objectCords[currentY/60+1][currentX/60]!=3){
             setPos(QPoint(currentX, currentY + 60));
             game->map->objectCords[currentY/60][currentX/60] = 0; // might introduce errors
             game->map->objectCords[currentY/60 +1][currentX/60] = 9;
@@ -102,7 +102,7 @@ void Player::keyPressEvent(QKeyEvent *event)
         setRotation(270);
         int currentX = pos().x();
         int currentY = pos().y();
-        if(game->map->objectCords[currentY/60][currentX/60-1]!=1 && game->map->objectCords[currentY/60][currentX/60-1]!=2){
+        if(game->map->objectCords[currentY/60][currentX/60-1]!=1 && game->map->objectCords[currentY/60][currentX/60-1]!=2 && game->map->objectCords[currentY/60][currentX/60-1]!=3){
             setPos(QPoint(currentX-60, currentY));
             game->map->objectCords[currentY/60][currentX/60] = 0; // might introduce errors
             game->map->objectCords[currentY/60][currentX/60-1] = 9;
@@ -129,7 +129,7 @@ void Player::keyPressEvent(QKeyEvent *event)
         setRotation(90);
         int currentX = pos().x();
         int currentY = pos().y();
-        if(game->map->objectCords[currentY/60][currentX/60+1]!=1 && game->map->objectCords[currentY/60][currentX/60+1]!=2){
+        if(game->map->objectCords[currentY/60][currentX/60+1]!=1 && game->map->objectCords[currentY/60][currentX/60+1]!=2 && game->map->objectCords[currentY/60][currentX/60+1]!=3){
             setPos(QPoint(currentX+60, currentY));
             game->map->objectCords[currentY/60][currentX/60] = 0; // might introduce errors
             game->map->objectCords[currentY/60][currentX/60+1] = 9;

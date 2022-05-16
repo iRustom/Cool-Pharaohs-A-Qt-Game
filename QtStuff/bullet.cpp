@@ -73,6 +73,12 @@ void Bullet::moveUp()
             return;
         }else if(typeid(*(colliding_items[i]))==typeid(plsBoss)){
             game->boss->health->decrease();
+            Coin * coin = new Coin();
+            coin->setPos(x(),y());
+            scene()->addItem(coin);
+            scene()->removeItem(colliding_items[i]);
+
+            if(!game->lost)
             delete this;
             return;
         }
@@ -123,6 +129,12 @@ void Bullet::moveDown()
             return;
         }else if(typeid(*(colliding_items[i]))==typeid(plsBoss)){
             game->boss->health->decrease();
+            Coin * coin = new Coin();
+            coin->setPos(x(),y());
+            scene()->addItem(coin);
+            scene()->removeItem(colliding_items[i]);
+
+            if(!game->lost)
             delete this;
             return;
         }
@@ -172,6 +184,12 @@ void Bullet::moveRight()
             return;
         }else if(typeid(*(colliding_items[i]))==typeid(plsBoss)){
             game->boss->health->decrease();
+            Coin * coin = new Coin();
+            coin->setPos(x(),y());
+            scene()->addItem(coin);
+            scene()->removeItem(colliding_items[i]);
+
+            if(!game->lost)
             delete this;
             return;
         }
@@ -222,6 +240,13 @@ void Bullet::moveLeft()
             return;
         }else if(typeid(*(colliding_items[i]))==typeid(plsBoss)){
             game->boss->health->decrease();
+
+            Coin * coin = new Coin();
+            coin->setPos(x(),y());
+            scene()->addItem(coin);
+            scene()->removeItem(colliding_items[i]);
+
+            if(!game->lost)
             delete this;
             return;
         }
