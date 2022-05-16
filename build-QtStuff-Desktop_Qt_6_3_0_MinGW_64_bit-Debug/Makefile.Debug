@@ -4194,6 +4194,7 @@ debug/plsboss.o: ../QtStuff/plsboss.cpp ../QtStuff/plsboss.h \
 		C:/Qt/6.3.0/mingw_64/include/QtCore/QTimer \
 		C:/Qt/6.3.0/mingw_64/include/QtCore/qtimer.h \
 		C:/Qt/6.3.0/mingw_64/include/QtCore/qbasictimer.h \
+		../QtStuff/enemybullet.h \
 		../QtStuff/game.h \
 		C:/Qt/6.3.0/mingw_64/include/QtWidgets/QGraphicsView \
 		C:/Qt/6.3.0/mingw_64/include/QtWidgets/qgraphicsview.h \

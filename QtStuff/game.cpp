@@ -129,6 +129,7 @@ void Game::resume()
    scene->removeItem(health_amount);
    scene->removeItem(buy_health);
    scene->removeItem(back);
+   scene->removeItem(low_funds);
    for (size_t i=0, n=scene->items().size();i<n;i++)
    {
        scene->items()[i]->setEnabled(true);
@@ -195,11 +196,11 @@ void Game::purchase()
     }
     else if (score->getCoins()<=0)
     {
-        QGraphicsTextItem* low_funds = new QGraphicsTextItem(QString("insufficient number of coins"));
+        low_funds = new QGraphicsTextItem(QString("insufficient number of coins"));
         low_funds->setZValue(1000);
         QFont coinFont("comic sans",18);
         low_funds->setFont(coinFont);
-        low_funds->setPos(this->width()/2-low_funds->boundingRect().width()/2,500);
+        low_funds->setPos(xOff+this->width()/2-low_funds->boundingRect().width()/2,yOff+500);
         scene->addItem(low_funds);
 
     }

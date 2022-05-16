@@ -40,6 +40,7 @@ public:
     QGraphicsTextItem* health_amount;
     Button* buy_health;
     Button* back;
+    QGraphicsTextItem* low_funds;
     int volume;
     void display_shop();
     void display_coins();
